@@ -1,0 +1,3 @@
+#Use actual scrolling in screen
+termcapinfo xterm ti@:te@
+termcapinfo xterm-color ti@:te@
