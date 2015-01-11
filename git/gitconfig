@@ -4,3 +4,6 @@
 
 [github]
 	user = HeroCC
+
+[core]
+	excludesfile = ~/.gitignore_global
