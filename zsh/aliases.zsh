@@ -13,3 +13,7 @@ alias sudo='sudo ' #Makes sudo use aliases
 alias apt-get='apt-fast'
 alias gpg='sudo gpg2'
 alias please='sudo $(fc -nl -1)'
+
+#I like verbose in chmod & chown
+alias chmod='chmod -v'
+alias chown='chown -v'
