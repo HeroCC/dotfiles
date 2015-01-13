@@ -1,0 +1,4 @@
+#Sublime Text 3
+*.cache
+*.last-run
+*.*-ca-bundle
