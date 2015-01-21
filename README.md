@@ -37,6 +37,14 @@ This may be different on a Mac
 	$ mv ~/.config/sublime-text-3/Packages/User ~/.dotfiles/sublimetext/User
 	$ cd ~/.config/sublime-text-3/Packages/
 	$ ln -s ~/.dotfiles/sublimetext/User User
+
+##VIM:
+	$ ln -s ~/.dotfiles/vim ~/.vim
+	$ ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
+	$ ln -s ~/.dotfiles/vim/gvimrc ~/.gvimrc
+
+If Vundle is not installed:
+	$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ---
 
 #Thanks
