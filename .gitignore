@@ -2,3 +2,7 @@
 *.cache
 *.last-run
 *.*-ca-bundle
+
+# Vim
+vim/bundle
+vim/tmp
