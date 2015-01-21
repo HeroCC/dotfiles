@@ -4,5 +4,8 @@
 *.*-ca-bundle
 
 # Vim
-vim/bundle
+vim/bundle/*
+!vim/bundle/Vundle.vim
+vim/bundle/plugins/*
+!vim/bundle/plugins
 vim/tmp
