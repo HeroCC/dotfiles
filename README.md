@@ -4,7 +4,9 @@ My Main OS is Ubuntu (14.04 ATM), and settings will be tuned to that platform, a
 #Update & Install
 	$ git clone git://github.com/HeroCC/dotfiles.git ~/.dotfiles && cd ./dotfiles
 	$ git submodule foreach git pull origin master
+
 This clones the respository, CDs into it, and updates the submodules
+
 ---
 
 #Setup:
