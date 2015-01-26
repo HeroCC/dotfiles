@@ -17,3 +17,5 @@ alias please='sudo $(fc -nl -1)'
 #I like verbose in chmod & chown
 alias chmod='chmod -v'
 alias chown='chown -v'
+
+alias cls="clr"
