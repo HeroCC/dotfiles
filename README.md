@@ -2,10 +2,15 @@ Hello! This respository is a compilation of many of my configs and dotfiles
 My Main OS is Ubuntu (14.04 ATM), and settings will be tuned to that platform, as well as some for other OSes
 
 #Update & Install
-	$ git clone git://github.com/HeroCC/dotfiles.git ~/.dotfiles && cd ./dotfiles
-	$ git submodule foreach git pull origin master
+	$ git clone git://github.com/HeroCC/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 
-This clones the respository, CDs into it, and updates the submodules
+This clones the respository, and CDs into it
+
+To install automatically, run:
+
+	$ ./install.sh
+
+If you want to do it manually, than follow the instructions below...
 
 ---
 
