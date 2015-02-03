@@ -38,6 +38,8 @@ ln -s ~/.dotfiles/ssh/config ~/.ssh/config
 update ruby-full
 echo "Installing Gem Config"
 ln -s ~/.dotfiles/gem/gemrc ~/.gemrc
+echo Installing Rbenv
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 
 #Sublime 3
 echo "Installing Sublime Text 3 Config"
