@@ -15,4 +15,8 @@ source ~/.zsh/setopt.zsh
 source ~/.zsh/norris.zsh
 source  ${HOME}/.dotfiles/z/z.sh
 
-norris 2
+if [[ -n $SSH_CONNECTION ]]; then
+
+else
+	norris 2
+fi
