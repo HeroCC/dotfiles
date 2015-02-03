@@ -31,6 +31,8 @@ echo "Installing Screen Config"
 ln -s ~/.dotfiles/screen/screenrc ~/.screenrc
 
 #SSH
+update openssh-client
+update openssh-server
 echo "Installing SSH Config"
 ln -s ~/.dotfiles/ssh/config ~/.ssh/config
 
@@ -48,6 +50,7 @@ cd ~/.config/sublime-text-3/Packages/
 ln -s ~/.dotfiles/sublimetext/User User
 
 #VIM
+update vim
 echo "Installing VIM config"
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
