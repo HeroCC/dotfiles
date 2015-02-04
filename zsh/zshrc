@@ -5,6 +5,9 @@ plugins=(git systemadmin screen)
 export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
 source $ZSH/oh-my-zsh.sh
 
+MOTD_MODE='screenfetch'
+#norris or screenfetch
+
 source ~/.zsh/history.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
@@ -13,10 +16,6 @@ source ~/.zsh/exports.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/norris.zsh
+source ~/.zsh/motd.zsh
 source  ${HOME}/.dotfiles/z/z.sh
 
-if [[ -n $SSH_CONNECTION ]]; then
-
-else
-	norris 2
-fi
