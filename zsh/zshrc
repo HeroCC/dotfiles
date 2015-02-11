@@ -5,8 +5,7 @@ plugins=(git systemadmin screen)
 export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-MOTD_MODE='screenfetch'
-#norris or screenfetch
+motd_mode='none'
 
 source ~/.zsh/history.zsh
 source ~/.zsh/aliases.zsh
@@ -18,4 +17,3 @@ source ~/.zsh/setopt.zsh
 source ~/.zsh/norris.zsh
 source ~/.zsh/motd.zsh
 source  ${HOME}/.dotfiles/z/z.sh
-
