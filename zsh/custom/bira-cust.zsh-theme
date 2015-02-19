@@ -3,8 +3,10 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 if [[ -n $SSH_CONNECTION ]]; then
 	local username_color='red'
-else
+elif [[ $EUID -ne 0 ]]; then
 	local username_color='green'
+else
+	local username_color='yellow'
 fi
 
 local show_rvm='false'
