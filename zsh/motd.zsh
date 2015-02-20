@@ -15,7 +15,7 @@ elif
 	fortune
 elif
 	[ "$motd_mode" = updates ]; then
-	local updates=$(/usr/lib/update-notifier/apt-check 2>&1)
+	local updates=$(cat $HOME/.updates) # See script @ http://go.herocc.com/refresh-available-updates
 	local sec_updates=$(echo "$updates" | cut -d ";" -f 2)
 	local non_sec_updates=$(echo "$updates" | cut -d ";" -f 1)
 
