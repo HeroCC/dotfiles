@@ -5,7 +5,7 @@ plugins=(git systemadmin screen)
 export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-motd_mode='none'
+motd_mode='updates'
 
 source ~/.zsh/history.zsh
 source ~/.zsh/aliases.zsh
