@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
 ZSH_THEME="bira-cust"
 plugins=(git systemadmin screen)
-export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
+export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/software/android-sdk-linux/tools:$HOME/software/android-sdk-linux/platform-tools:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 motd_mode='updates'
