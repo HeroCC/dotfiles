@@ -20,3 +20,4 @@ alias chmod='chmod -v'
 alias chown='chown -v'
 
 alias rm='trash-put' # Requires trash-cli
+alias dd='dcfldd' # DD with a progress report
