@@ -1,3 +1,6 @@
 Host server
 	Hostname 10.0.0.51
 	User herocc
+Host pi
+        Hostname 10.0.0.53
+        User pi
