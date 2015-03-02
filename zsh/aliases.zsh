@@ -21,3 +21,13 @@ alias chown='chown -v'
 
 alias rm='trash-put' # Requires trash-cli
 alias dd='dcfldd' # DD with a progress report
+
+# Apt stuff
+if which apt-get >/dev/null; then
+	alias agi='sudo apt-get install'
+	alias agp='sudo apt-get purge'
+	alias agr='sudo apt-get remove'
+	alias agu='sudo apt-get update'
+	alias agug='sudo apt-get upgrade'
+	alias aguu='sudo apt-get update && sudo apt-get upgrade'
+fi
