@@ -1,7 +1,7 @@
 #!/bin/bash
 git pull origin master
 cd $HOME/.dotfiles
-git submodule update --recursive
+git submodule update --init
 
 function update {
 	echo Do you want to update $1
