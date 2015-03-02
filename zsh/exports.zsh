@@ -15,6 +15,18 @@ export EDITOR='vim'
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
 
-export GRADLE_HOME='/opt/gradle/'
+# Path Stuff
+if [ -d /opt/gradle/ ]; then
+	export GRADLE_HOME='/opt/gradle/'
+	export PATH="$PATH:$GRADLE_HOME/bin/"
+fi
 
-export PATH="$PATH:$GRADLE_HOME/bin/"
+if [ -d /usr/local/heroku/ ]; then
+	export PATH="$PATH:/usr/local/heroku/bin"
+fi
+
+if [ -d /opt/android-sdk/ ]; then
+	export ANDROID_SDK_ROOT="/opt/android-sdk/"
+	export ANDROID_SDK_HOME="$HOME/.android/"
+	export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools/:$ANDROID_SDK_ROOT/tools/"
+fi
