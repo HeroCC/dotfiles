@@ -23,7 +23,7 @@ alias rm='trash-put' # Requires trash-cli
 alias dd='dcfldd' # DD with a progress report
 
 # Apt stuff
-if which apt-get >/dev/null; then
+if command -v apt-get >/dev/null 2>&1; then
 	alias agi='sudo apt-get install'
 	alias agp='sudo apt-get purge'
 	alias agr='sudo apt-get remove'
