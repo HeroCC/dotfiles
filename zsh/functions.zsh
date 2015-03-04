@@ -52,3 +52,15 @@ else
   screen -d -m -S $1
 fi
 }
+
+function ialias {
+  oldCmd=$(cut -f1 -d"=") <<< "$1"
+  newCmd=$(cut -f2 -d"=") <<< "$1"
+  baseCmd=$(cut -f1 -d" ") <<< "$newCmd"
+
+  if command -v $baseCmd >/dev/null 2>&1; then
+    alias $oldCmd=$newCmd
+  else
+    echo "Command '$baseCmd' not found, using '$oldCmd'";
+  fi
+}

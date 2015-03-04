@@ -10,8 +10,8 @@ alias mysql='mysql -u root'
 alias mysqladmin='mysqladmin -u root'
 
 alias sudo='sudo ' # Makes sudo use aliases, from http://go.herocc.com/sudo_aliases
-alias apt-get='apt-fast' # http://go.herocc.com/aptfast
-alias gpg='gpg2'
+ialias apt-get='apt-fast' # http://go.herocc.com/aptfast
+ialias gpg='gpg2'
 alias please='sudo $(fc -nl -1)'
 alias cls='clr'
 
@@ -19,15 +19,13 @@ alias cls='clr'
 alias chmod='chmod -v'
 alias chown='chown -v'
 
-alias rm='trash-put' # Requires trash-cli
-alias dd='dcfldd' # DD with a progress report
+ialias rm='trash-put' # Requires trash-cli
+ialias dd='dcfldd' # DD with a progress report
 
 # Apt stuff
-if command -v apt-get >/dev/null 2>&1; then
-	alias agi='sudo apt-get install'
-	alias agp='sudo apt-get purge'
-	alias agr='sudo apt-get remove'
-	alias agu='sudo apt-get update'
-	alias agug='sudo apt-get upgrade'
-	alias aguu='sudo apt-get update && sudo apt-get upgrade'
-fi
+ialias agi='sudo apt-get install'
+ialias agp='sudo apt-get purge'
+ialias agr='sudo apt-get remove'
+ialias agu='sudo apt-get update'
+ialias agug='sudo apt-get upgrade'
+ialias aguu='sudo apt-get update && sudo apt-get upgrade'
