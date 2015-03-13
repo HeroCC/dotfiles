@@ -17,8 +17,8 @@ export LC_COLLATE=C
 
 # Path Stuff
 if [ -d /opt/gradle/ ]; then
-	export GRADLE_HOME='/opt/gradle/'
-	export PATH="$PATH:$GRADLE_HOME/bin/"
+	export GRADLE_HOME='/opt/gradle'
+	export PATH="$PATH:$GRADLE_HOME/bin"
 fi
 
 if [ -d /usr/local/heroku/ ]; then
@@ -26,7 +26,7 @@ if [ -d /usr/local/heroku/ ]; then
 fi
 
 if [ -d /opt/android-sdk/ ]; then
-	export ANDROID_SDK_ROOT="/opt/android-sdk/"
+	export ANDROID_SDK_ROOT="/opt/android-sdk"
 	export ANDROID_SDK_HOME="$HOME/.android/"
-	export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools/:$ANDROID_SDK_ROOT/tools/"
+	export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools"
 fi
