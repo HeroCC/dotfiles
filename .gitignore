@@ -9,3 +9,4 @@ vim/bundle/*
 vim/bundle/plugins/*
 !vim/bundle/plugins
 vim/tmp
+.netrwhist
