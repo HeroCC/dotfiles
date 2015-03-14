@@ -21,9 +21,7 @@ if [ -d /opt/gradle/ ]; then
 	export PATH="$PATH:$GRADLE_HOME/bin"
 fi
 
-if [ -d /usr/local/heroku/ ]; then
-	export PATH="$PATH:/usr/local/heroku/bin"
-fi
+ipath /usr/local/heroku
 
 if [ -d /opt/android-sdk/ ]; then
 	export ANDROID_SDK_ROOT="/opt/android-sdk"

@@ -64,3 +64,11 @@ function ialias {
     echo "Command '$baseCmd' not found, using '$oldCmd'";
   fi
 }
+
+function ipath {
+  dir="$1"
+
+  if [ -d $dir ]; then
+    export PATH="$PATH:$dir"
+  fi
+}
