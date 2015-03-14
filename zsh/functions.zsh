@@ -61,7 +61,8 @@ function ialias {
   if command -v $baseCmd >/dev/null 2>&1; then
     alias $oldCmd=$newCmd
   else
-    echo "Command '$baseCmd' not found, using '$oldCmd'";
+    #echo "Command '$baseCmd' not found, using '$oldCmd'";
+    alias $oldCmd='echo "Command $baseCmd not found, using $oldCmd" && $oldCmd'
   fi
 }
 
