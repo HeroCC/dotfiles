@@ -54,15 +54,15 @@ fi
 }
 
 function ialias {
-  local oldCmd=$(cut -f1 -d"=") <<< "$1"
-  local newCmd=$(cut -f2 -d"=") <<< "$1"
-  local baseCmd=$(cut -f1 -d" ") <<< "$newCmd"
+  oldCmd=$(cut -f1 -d"=") <<< "$1"
+  newCmd=$(cut -f2 -d"=") <<< "$1"
+  baseCmd=$(cut -f1 -d" ") <<< "$newCmd"
 
   if command -v $baseCmd >/dev/null 2>&1; then
     alias $oldCmd=$newCmd
   else
-    #echo "Command '$baseCmd' not found, using '$oldCmd'";
-    alias $oldCmd='echo "Command $baseCmd not found, using $oldCmd" && $oldCmd'
+    echo "Command '$baseCmd' not found, using '$oldCmd'";
+    #alias $oldCmd='echo "Command $baseCmd not found, using $oldCmd" && $oldCmd'
   fi
 }
 
