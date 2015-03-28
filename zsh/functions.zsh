@@ -77,3 +77,15 @@ function ipath {
 function refresh_zshrc {
   source ~/.zshrc
 }
+
+function set_terminal_title
+{
+  if [[ $1 == "" ]]; then
+    # Re-enable oh-my-zsh's title
+    DISABLE_AUTO_TITLE=false
+  else
+    # Set title
+    DISABLE_AUTO_TITLE=true # Oh-My-ZSH fix
+    echo -ne "\e]2;$1\a"
+  fi
+}

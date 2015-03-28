@@ -29,3 +29,5 @@ ialias agr='sudo apt-get remove'
 ialias agu='sudo apt-get update'
 ialias agug='sudo apt-get upgrade'
 ialias aguu='sudo apt-get update && sudo apt-get upgrade'
+
+alias xtitle='set_terminal_title'
