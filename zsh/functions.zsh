@@ -73,3 +73,7 @@ function ipath {
     export PATH="$PATH:$dir"
   fi
 }
+
+function refresh_zshrc {
+  source ~/.zshrc
+}
