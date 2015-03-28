@@ -2,6 +2,7 @@
 HISTSIZE=10000
 SAVEHIST=9000
 HISTFILE=~/.zsh_history
+HISTCONTROL=ignoredups:erasedups
 
 # better history management, using partial term and arrow keys
 # https://coderwall.com/p/jpj_6q
