@@ -3,11 +3,14 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.72
-    backspace_binding = automatic
-    background_type = transparent
+    use_system_font = False
+    background_darkness = 0.78
     scrollback_lines = 1000
+    background_type = transparent
     background_image = None
+    foreground_color = "#ffffff"
+    backspace_binding = automatic
+    font = Monospace 11
 [layouts]
   [[default]]
     [[[child1]]]
