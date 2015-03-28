@@ -45,9 +45,14 @@ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 
 #Sublime 3
 echo "Installing Sublime Text 3 Config"
-mv ~/.config/sublime-text-3/Packages/User ~/.dotfiles/sublimetext/User
 cd ~/.config/sublime-text-3/Packages/
 ln -s ~/.dotfiles/sublimetext/User User
+
+#Terminator
+echo "Installing Terminator Config"
+ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
+update terminator
+
 
 #VIM
 update vim
