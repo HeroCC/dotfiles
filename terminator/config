@@ -1,0 +1,20 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.72
+    backspace_binding = automatic
+    background_type = transparent
+    scrollback_lines = 1000
+    background_image = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
