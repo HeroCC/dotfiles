@@ -23,7 +23,7 @@ elif
 elif
 	[ "$motd_mode" = none ]; then
 	clear
-elif 
+elif
 	[ "$motd_mode" ]; then
 	echo "Unknown motd_mode '$motd_mode', please check your .zshrc or motd file"
 fi

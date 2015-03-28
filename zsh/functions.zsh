@@ -33,7 +33,7 @@ magic-enter () {
   if [[ -z $BUFFER ]]; then
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
       echo -ne '\n'
-      git status 
+      git status
     fi
     zle accept-line
   else
@@ -45,7 +45,7 @@ bindkey "^M" magic-enter
 
 function exists { which $1 &> /dev/null }
 
-function bgsc { 
+function bgsc {
 if screen -list | awk '{print $1}' | grep -q "$1$"; then
   echo "screen $1 already exists"
 else
