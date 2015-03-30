@@ -19,6 +19,12 @@ ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/.dotfiles/zsh/zshenv ~/.zshenv
 chsh -s $(which zsh)
 
+echo "Do you want to install OhMyZSH"
+read update_ohmy
+if [ "$update_ohmy" == y ]; then
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
+
 #git
 update git
 echo "Installing Git Config"
@@ -34,6 +40,7 @@ ln -s ~/.dotfiles/screen/screenrc ~/.screenrc
 update openssh-client
 update openssh-server
 echo "Installing SSH Config"
+mkdir ~/.dotfiles/ssh/
 ln -s ~/.dotfiles/ssh/config ~/.ssh/config
 
 #Gem
@@ -45,11 +52,13 @@ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 
 #Sublime 3
 echo "Installing Sublime Text 3 Config"
+mkdir ~/.config/sublime-text-3/Packages/
 cd ~/.config/sublime-text-3/Packages/
 ln -s ~/.dotfiles/sublimetext/User User
 
 #Terminator
 echo "Installing Terminator Config"
+mkdir ~/.config/terminator/config
 ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
 update terminator
 
