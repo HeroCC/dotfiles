@@ -18,8 +18,13 @@ elif
 	local updates=$(cat $HOME/.updates) # See script @ http://go.herocc.com/refresh-available-updates
 	local sec_updates=$(echo "$updates" | cut -d ";" -f 2)
 	local non_sec_updates=$(echo "$updates" | cut -d ";" -f 1)
+  local updates_required=$(/usr/lib/update-notifier/update-motd-reboot-required)
+  local message="There are $sec_updates security updates and $non_sec_updates regular updates"
 
-	echo "There are $sec_updates security updates and $non_sec_updates regular updates"
+  if [[ "$updates_required" != "" ]]; then
+    message="$message, possibly requiring a reboot"
+  fi
+  echo "$message"
 elif
 	[ "$motd_mode" = none ]; then
 	clear
