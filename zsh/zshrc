@@ -3,10 +3,11 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
 ZSH_THEME="bira-cust"
 plugins=(git systemadmin screen adb colorize command-not-found colored-man)
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-source $ZSH/oh-my-zsh.sh
 
 motd_mode='updates'
 
+source $ZSH/oh-my-zsh.sh
+source ~/.zshenv
 source ~/.zsh/history.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
@@ -16,4 +17,4 @@ source ~/.zsh/exports.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/norris.zsh
 source ~/.zsh/motd.zsh
-source  ${HOME}/.dotfiles/z/z.sh
+source ${HOME}/.dotfiles/z/z.sh
