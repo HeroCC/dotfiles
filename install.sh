@@ -1,6 +1,6 @@
 #!/bin/bash
-git pull origin master
 cd $HOME/.dotfiles
+git pull origin master
 git submodule update --init
 
 function update {
