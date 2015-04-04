@@ -78,8 +78,7 @@ function refresh_zshrc {
   source ~/.zshrc
 }
 
-function set_terminal_title
-{
+function set_terminal_title {
   if [[ $1 == "" ]]; then
     # Re-enable oh-my-zsh's title
     DISABLE_AUTO_TITLE=false
@@ -87,5 +86,19 @@ function set_terminal_title
     # Set title
     DISABLE_AUTO_TITLE=true # Oh-My-ZSH fix
     echo -ne "\e]2;$1\a"
+  fi
+}
+
+function update_gitpulls {
+  if [ -d $HOME/.dotfiles ]; then
+    cd $HOME/.dotfiles && git pull origin master && git submodule update
+  fi
+
+  if [ -d $HOME/.rbenv ]; then
+    cd $HOME/.rbenv && git pull origin master
+  fi
+
+  if [ -d $HOME/.oh-my-zsh ]; then
+    cd $HOME/.oh-my-zsh && git pull origin master
   fi
 }
