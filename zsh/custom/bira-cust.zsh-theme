@@ -9,7 +9,7 @@ else
 	local username_color='yellow'
 fi
 
-local show_rvm='false'
+show_rvm='true'
 
 local user_host='%{$terminfo[bold]$fg[$username_color]%}%n%{$fg_bold[green]%}@%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
