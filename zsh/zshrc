@@ -6,8 +6,8 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 
 motd_mode='updates'
 
-source $ZSH/oh-my-zsh.sh
 source ~/.zshenv
+source $ZSH/oh-my-zsh.sh
 source ~/.zsh/history.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
