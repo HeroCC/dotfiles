@@ -9,18 +9,23 @@ else
 	local username_color='yellow'
 fi
 
-show_rvm='true'
-
 local user_host='%{$terminfo[bold]$fg[$username_color]%}%n%{$fg_bold[green]%}@%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
+
+show_rvm='true'
 local rvm_ruby=''
+local rvm_version="$(rbenv version | sed 's/\s.*$//')"
+if which rvm-prompt &> /dev/null; then
+	rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%} '
+else
+	if which rbenv &> /dev/null; then
+		rvm_ruby='%{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%} '
+	fi
+fi
+
 if [[ "$show_rvm" == true ]]; then
-	if which rvm-prompt &> /dev/null; then
-		rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%} '
-	else
-		if which rbenv &> /dev/null; then
-			rvm_ruby='%{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%} '
-		fi
+	if [[ "$rvm_version" == system ]]; then
+		rvm_ruby=''
 	fi
 fi
 
