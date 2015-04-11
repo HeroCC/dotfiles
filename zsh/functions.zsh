@@ -91,7 +91,7 @@ function set_terminal_title {
 
 function update_gitpulls {
   if [ -d $HOME/.dotfiles ]; then
-    cd $HOME/.dotfiles && git pull origin master && git submodule update
+    cd $HOME/.dotfiles && ./install.sh -n
   fi
 
   if [ -d $HOME/.rbenv ]; then
