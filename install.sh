@@ -1,25 +1,21 @@
 #!/bin/bash
 
-function main {
-  if [ "$1" == '-n' ]; then
-    pull
-  else
-    pull
-    installConfigs
-  fi
-}
-
 function pull {
   cd $HOME/.dotfiles
   git pull origin master
-  git submodule update --init
+  git submodule foreach git submodule update --init
+  # git submodule foreach update --init
 }
 
 function update {
- echo Do you want to update $1
- read update
- if [ "$update" == y ]; then
-  sudo apt-get install $1
+  if [ "$autoUpdate" == 'true' ]; then
+    sudo apt-get install $1
+  else
+   echo Do you want to update $1
+   read update
+   if [ "$update" == y ]; then
+    sudo apt-get install $1
+  fi
 fi
 }
 
@@ -88,6 +84,26 @@ function installConfigs {
   if [ "$update_Vundle" == y ]; then
    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
  fi
+}
+
+function main {
+  autoUpdate='false'
+  noInstall='false'
+
+  while getopts 'nu' flag; do
+    case "${flag}" in
+      n) noInstall='true' ;;
+u) autoUpdate='true' ;;
+*) error "Unexpected option ${flag}" ;;
+esac
+done
+
+if [ "$noInstall" == 'true' ]; then
+  pull
+elif [ "$noInstall" == 'false' ]; then
+  pull
+  installConfigs
+fi
 }
 
 main "$@"
