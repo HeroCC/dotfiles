@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function pull {
-  cd $HOME/.dotfiles
+  cd $DOTFILE_DIR
   git pull origin master
   git submodule foreach git submodule update --init
   # git submodule foreach update --init
@@ -27,7 +27,7 @@ function installConfigs {
   ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
   ln -s ~/.dotfiles/zsh/zshenv ~/.zshenv
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-  if [ "$USER" != "travis" ]; then
+  if [ "$CI" == "false" ]; then
     chsh -s $(which zsh)
   fi
 
@@ -76,6 +76,7 @@ function installConfigs {
   ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
   ln -s ~/.dotfiles/vim/gvimrc ~/.gvimrc
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 }
 
 function main {
@@ -89,6 +90,11 @@ u) autoUpdate='true' ;;
 *) error "Unexpected option ${flag}" ;;
 esac
 done
+
+if [ "$USER" == "travis" ]; then
+  CI='true'
+  DOTFILE_DIR="$HOME/HeroCC/dotfiles"
+fi
 
 if [ "$noInstall" == 'true' ]; then
   pull
