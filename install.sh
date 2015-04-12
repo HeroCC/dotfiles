@@ -94,6 +94,9 @@ done
 if [ "$USER" == "travis" ]; then
   CI='true'
   DOTFILE_DIR="$(pwd)"
+else
+  CI='false'
+  DOTFILE_DIR="$HOME/.dotfiles"
 fi
 
 if [ "$noInstall" == 'true' ]; then
