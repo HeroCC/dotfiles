@@ -75,12 +75,7 @@ function installConfigs {
   ln -s ~/.dotfiles/vim ~/.vim
   ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
   ln -s ~/.dotfiles/vim/gvimrc ~/.gvimrc
-
-  echo "Do you want to install Vundle for Vim?"
-  read update_Vundle
-  if [ "$update_Vundle" == y ]; then
-   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
- fi
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 }
 
 function main {
