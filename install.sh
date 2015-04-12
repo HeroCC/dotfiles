@@ -58,13 +58,13 @@ function installConfigs {
 
   #Sublime 3
   echo "Installing Sublime Text 3 Config"
-  mkdir ~/.config/sublime-text-3/Packages/
+  mkdir -p ~/.config/sublime-text-3/Packages/
   cd ~/.config/sublime-text-3/Packages/
   ln -s $DOTFILE_DIR/sublimetext/User User
 
   #Terminator
   echo "Installing Terminator Config"
-  mkdir ~/.config/terminator/config
+  mkdir -p ~/.config/terminator/config
   ln -s $DOTFILE_DIR/terminator/config ~/.config/terminator/config
   update terminator
 
