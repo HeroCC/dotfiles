@@ -26,7 +26,9 @@ function installConfigs {
   ln -s ~/.dotfiles/zsh ~/.zsh
   ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
   ln -s ~/.dotfiles/zsh/zshenv ~/.zshenv
-  chsh -s $(which zsh)
+  if [ "$USER" != "travis" ]; then
+    chsh -s $(which zsh)
+  fi
 
   echo "Do you want to install OhMyZSH"
   read update_ohmy
