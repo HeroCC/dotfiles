@@ -93,7 +93,7 @@ done
 
 if [ "$USER" == "travis" ]; then
   CI='true'
-  DOTFILE_DIR="$HOME/HeroCC/dotfiles"
+  DOTFILE_DIR="HeroCC/dotfiles"
 fi
 
 if [ "$noInstall" == 'true' ]; then
