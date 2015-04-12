@@ -26,15 +26,10 @@ function installConfigs {
   ln -s ~/.dotfiles/zsh ~/.zsh
   ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
   ln -s ~/.dotfiles/zsh/zshenv ~/.zshenv
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   if [ "$USER" != "travis" ]; then
     chsh -s $(which zsh)
   fi
-
-  echo "Do you want to install OhMyZSH"
-  read update_ohmy
-  if [ "$update_ohmy" == y ]; then
-   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
- fi
 
   #git
   update git
