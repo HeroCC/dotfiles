@@ -74,6 +74,7 @@ function installConfigs {
   echo "Installing VIM config"
   ln -s $DOTFILE_DIR/vim ~/.vim
   ln -s $DOTFILE_DIR/vim/vimrc ~/.vimrc
+  ln -s $DOTFILE_DIR/vim/vimrc ~/.nvimrc
   ln -s $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
