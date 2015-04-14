@@ -31,3 +31,5 @@ ialias agug='sudo apt-get upgrade'
 ialias aguu='sudo apt-get update && sudo apt-get upgrade'
 
 alias xtitle='set_terminal_title'
+
+ialias vim='nvim'

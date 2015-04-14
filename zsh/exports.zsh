@@ -11,7 +11,7 @@ export GREP_COLOR='3;33'
 export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
-export EDITOR='vim'
+export EDITOR='nvim'
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
 
