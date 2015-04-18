@@ -28,3 +28,5 @@ if [ -d /opt/android-sdk/ ]; then
 	export ANDROID_SDK_HOME="$HOME/.android/"
 	export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools"
 fi
+
+fpath=($HOME/.zsh/zsh-completions/src $fpath)
