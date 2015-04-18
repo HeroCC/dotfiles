@@ -90,6 +90,7 @@ function set_terminal_title {
 }
 
 function update_gitpulls {
+  local current_dir="$(pwd)"
   if [ -d $HOME/.dotfiles ]; then
     cd $HOME/.dotfiles && ./install.sh -n
   fi
@@ -101,4 +102,5 @@ function update_gitpulls {
   if [ -d $HOME/.oh-my-zsh ]; then
     cd $HOME/.oh-my-zsh && git pull origin master
   fi
+  cd $current_dir
 }
