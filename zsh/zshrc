@@ -1,13 +1,27 @@
-export ZSH=$HOME/.oh-my-zsh
-ZSH_CUSTOM=$HOME/.zsh/custom
-ZSH_THEME="bira-cust"
-plugins=(git systemadmin screen colorize command-not-found colored-man npm)
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
+source ~/.zsh/antigen/antigen.zsh
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+git
+systemadmin
+screen
+colorize
+command-not-found
+npm
+
+zsh-users/zsh-completions src
+zsh-users/zsh-syntax-highlighting
+
+rupa/z
+EOBUNDLES
+
+antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
+
+antigen apply
 
 motd_mode='updates'
 
-source ~/.zshenv
-source $ZSH/oh-my-zsh.sh
 source ~/.zsh/history.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
@@ -16,4 +30,5 @@ source ~/.zsh/colors.zsh
 source ~/.zsh/exports.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/motd.zsh
-source ${HOME}/.dotfiles/z/z.sh
+
+
