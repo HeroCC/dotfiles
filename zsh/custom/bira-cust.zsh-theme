@@ -1,16 +1,19 @@
 # ZSH Theme - Preview: http://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-local username_color=''
+username_color=''
+host_color=''
 if [[ -n $SSH_CONNECTION ]]; then
-	username_color='red'
-elif [[ $EUID -ne 0 ]]; then
+	host_color='red'
+fi
+
+if [[ $EUID -ne 0 ]]; then
 	username_color='green'
 else
 	username_color='yellow'
 fi
 
-local user_host='%{$terminfo[bold]$fg[$username_color]%}%n%{$fg_bold[green]%}@%m%{$reset_color%}'
+local user_host='%{$terminfo[bold]$fg[$username_color]%}%n%{$fg_bold[$host_color]%}@%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
 
 show_rvm='true'
