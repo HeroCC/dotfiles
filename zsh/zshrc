@@ -4,7 +4,6 @@ antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 git
-systemadmin
 screen
 command-not-found
 
