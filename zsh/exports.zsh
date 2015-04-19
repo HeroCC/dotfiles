@@ -15,6 +15,8 @@ export EDITOR='nvim'
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
 
+export PAGER='most'
+
 # Path Stuff
 if [ -d /opt/gradle/ ]; then
 	export GRADLE_HOME='/opt/gradle'
@@ -28,5 +30,3 @@ if [ -d /opt/android-sdk/ ]; then
 	export ANDROID_SDK_HOME="$HOME/.android/"
 	export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools"
 fi
-
-fpath=($HOME/.zsh/zsh-completions/src $fpath)
