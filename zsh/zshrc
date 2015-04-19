@@ -6,18 +6,14 @@ antigen bundles <<EOBUNDLES
 git
 systemadmin
 screen
-colorize
 command-not-found
-npm
 
 zsh-users/zsh-completions src
 zsh-users/zsh-syntax-highlighting
 
 rupa/z
 EOBUNDLES
-
 antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
-
 antigen apply
 
 motd_mode='updates'
