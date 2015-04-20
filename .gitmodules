@@ -3,4 +3,4 @@
 	url = https://github.com/gmarik/Vundle.vim.git
 [submodule "zsh/antigen"]
 	path = zsh/antigen
-	url = git@github.com:zsh-users/antigen.git
+	url = https://github.com/zsh-users/antigen.git
