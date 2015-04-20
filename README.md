@@ -1,7 +1,8 @@
+#HeroCC's Dotfiles [![Build Status](https://travis-ci.org/HeroCC/dotfiles.svg?branch=master)](https://travis-ci.org/HeroCC/dotfiles)
 Hello! This respository is a compilation of many of my configs and dotfiles
 My Main OS is Ubuntu (14.04 ATM), and settings will be tuned to that platform, as well as some for other OSes
 
-#Update & Install
+##Update & Install
 	$ git clone git://github.com/HeroCC/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 
 This clones the respository, and CDs into it
