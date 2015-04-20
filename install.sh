@@ -91,7 +91,7 @@ function main {
   noInstall='false'
   forseLN='false'
 
-  while getopts 'nu' flag; do
+  while getopts 'nuf' flag; do
     case "${flag}" in
       n) noInstall='true' ;;
 u) autoUpdate='true' ;;
