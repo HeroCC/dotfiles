@@ -1,4 +1,4 @@
 language: bash
 sudo: required
 script:
-  - bash install.sh -uf
+  - bash install.sh -ufi

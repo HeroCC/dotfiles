@@ -10,7 +10,7 @@ function pull {
 function update {
   if [ "$autoUpdate" == 'true' ]; then
     sudo apt-get install $1
-  else
+  elif [ "noUpdate" = 'false' ]; then
    echo Do you want to update $1
    read update
    if [ "$update" == y ]; then
@@ -82,18 +82,19 @@ function installConfigs {
   link $DOTFILE_DIR/vim/vimrc ~/.vimrc
   link $DOTFILE_DIR/vim/vimrc ~/.nvimrc
   link $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 }
 
 function main {
   autoUpdate='false'
-  noInstall='false'
+  noLN='false'
   forseLN='false'
+  noUpdate='false'
 
-  while getopts 'nuf' flag; do
+  while getopts 'nufi' flag; do
     case "${flag}" in
-      n) noInstall='true' ;;
+      i) noUpdate='true' ;;
+n) noLN='true' ;;
 u) autoUpdate='true' ;;
 f) forseLN='true' ;;
 *) error "Unexpected option ${flag}" ;;
@@ -108,9 +109,9 @@ else
   DOTFILE_DIR="$HOME/.dotfiles"
 fi
 
-if [ "$noInstall" == 'true' ]; then
+if [ "$noLN" == 'true' ]; then
   pull
-elif [ "$noInstall" == 'false' ]; then
+elif [ "$noLN" == 'false' ]; then
   pull
   installConfigs
 fi
