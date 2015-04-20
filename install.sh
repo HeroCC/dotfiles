@@ -26,7 +26,6 @@ function installConfigs {
   ln -s $DOTFILE_DIR/zsh ~/.zsh
   ln -s $DOTFILE_DIR/zsh/zshrc ~/.zshrc
   ln -s $DOTFILE_DIR/zsh/zshenv ~/.zshenv
-  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   if [ "$CI" == "false" ]; then
     chsh -s $(which zsh)
   fi
@@ -67,7 +66,6 @@ function installConfigs {
   mkdir -p ~/.config/terminator/config
   ln -s $DOTFILE_DIR/terminator/config ~/.config/terminator/config
   update terminator
-
 
   #VIM
   update vim
