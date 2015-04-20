@@ -19,13 +19,21 @@ function update {
 fi
 }
 
+function link {
+  if [ "$forseLN" = 'true' ]; then
+    ln -sf $1 $2
+  else
+    ln -s $1 $2
+  fi
+}
+
 function installConfigs {
   #ZSH
   update zsh
   echo "Installing ZSH Config"
-  ln -s $DOTFILE_DIR/zsh ~/.zsh
-  ln -s $DOTFILE_DIR/zsh/zshrc ~/.zshrc
-  ln -s $DOTFILE_DIR/zsh/zshenv ~/.zshenv
+  link $DOTFILE_DIR/zsh ~/.zsh
+  link $DOTFILE_DIR/zsh/zshrc ~/.zshrc
+  link $DOTFILE_DIR/zsh/zshenv ~/.zshenv
   if [ "$CI" == "false" ]; then
     chsh -s $(which zsh)
   fi
@@ -33,25 +41,25 @@ function installConfigs {
   #git
   update git
   echo "Installing Git Config"
-  ln -s $DOTFILE_DIR/git/gitconfig ~/.gitconfig
-  ln -s $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
+  link $DOTFILE_DIR/git/gitconfig ~/.gitconfig
+  link $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
 
   #Screen
   update screen
   echo "Installing Screen Config"
-  ln -s $DOTFILE_DIR/screen/screenrc ~/.screenrc
+  link $DOTFILE_DIR/screen/screenrc ~/.screenrc
 
   #SSH
   update openssh-client
   update openssh-server
   echo "Installing SSH Config"
   mkdir $DOTFILE_DIR/ssh/
-  ln -s $DOTFILE_DIR/ssh/config ~/.ssh/config
+  link $DOTFILE_DIR/ssh/config ~/.ssh/config
 
   #Gem
   update ruby-full
   echo "Installing Gem Config"
-  ln -s $DOTFILE_DIR/gem/gemrc ~/.gemrc
+  link $DOTFILE_DIR/gem/gemrc ~/.gemrc
   echo Installing Rbenv
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 
@@ -59,21 +67,21 @@ function installConfigs {
   echo "Installing Sublime Text 3 Config"
   mkdir -p ~/.config/sublime-text-3/Packages/
   cd ~/.config/sublime-text-3/Packages/
-  ln -s $DOTFILE_DIR/sublimetext/User User
+  link $DOTFILE_DIR/sublimetext/User User
 
   #Terminator
   echo "Installing Terminator Config"
   mkdir -p ~/.config/terminator/config
-  ln -s $DOTFILE_DIR/terminator/config ~/.config/terminator/config
+  link $DOTFILE_DIR/terminator/config ~/.config/terminator/config
   update terminator
 
   #VIM
   update vim
   echo "Installing VIM config"
-  ln -s $DOTFILE_DIR/vim ~/.vim
-  ln -s $DOTFILE_DIR/vim/vimrc ~/.vimrc
-  ln -s $DOTFILE_DIR/vim/vimrc ~/.nvimrc
-  ln -s $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
+  link $DOTFILE_DIR/vim ~/.vim
+  link $DOTFILE_DIR/vim/vimrc ~/.vimrc
+  link $DOTFILE_DIR/vim/vimrc ~/.nvimrc
+  link $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 }
@@ -81,11 +89,13 @@ function installConfigs {
 function main {
   autoUpdate='false'
   noInstall='false'
+  forseLN='false'
 
   while getopts 'nu' flag; do
     case "${flag}" in
       n) noInstall='true' ;;
 u) autoUpdate='true' ;;
+f) forseLN='true' ;;
 *) error "Unexpected option ${flag}" ;;
 esac
 done
