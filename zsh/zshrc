@@ -24,5 +24,3 @@ source ~/.zsh/colors.zsh
 source ~/.zsh/exports.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/motd.zsh
-
-
