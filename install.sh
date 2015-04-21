@@ -94,12 +94,12 @@ function main {
   while getopts 'nufi' flag; do
     case "${flag}" in
       i) noUpdate='true' ;;
-n) noLN='true' ;;
-u) autoUpdate='true' ;;
-f) forseLN='true' ;;
-*) error "Unexpected option ${flag}" ;;
-esac
-done
+      n) noLN='true' ;;
+      u) autoUpdate='true' ;;
+      f) forseLN='true' ;;
+      *) error "Unexpected option ${flag}" ;;
+    esac
+  done
 
 if [ "$USER" == "travis" ]; then
   CI='true'
