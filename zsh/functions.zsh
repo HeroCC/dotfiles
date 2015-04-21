@@ -99,10 +99,6 @@ function update_gitpulls {
     cd $HOME/.rbenv && git pull origin master
   fi
 
-  if [ -d $HOME/.oh-my-zsh ]; then
-    cd $HOME/.oh-my-zsh && git pull origin master
-  fi
-
   if which antigen &> /dev/null; then
     antigen update
   fi
