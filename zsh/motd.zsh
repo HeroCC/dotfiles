@@ -12,21 +12,22 @@ elif [ "$motd_mode" = fortune ]; then
 elif [ "$motd_mode" = fortune_nocow ]; then
 	fortune
 elif [ "$motd_mode" = updates ]; then
-	local updates=$(cat $HOME/.updates | sed -n 1p) # See script @ http://go.herocc.com/refresh-available-updates
-  local update_mode=$(cat $HOME/.updates | sed -n 2p)
+	updates=$(cat $HOME/.updates | sed -n 1p) # See script @ http://go.herocc.com/refresh-available-updates
+  update_mode=$(cat $HOME/.updates | sed -n 2p)
 
   if [ "$update_mode" = sec ]; then
     local sec_updates=$(echo "$updates" | cut -d ";" -f 2)
     local non_sec_updates=$(echo "$updates" | cut -d ";" -f 1)
     local reboot_required="$(/usr/lib/update-notifier/update-motd-reboot-required)"
-    local message="There are $sec_updates security updates and $non_sec_updates regular updates"
+    message="There are $sec_updates security updates and $non_sec_updates regular updates"
 
     if [[ "$reboot_required" != "" ]]; then
       message="$message, possibly requiring a reboot"
     fi
+
   elif [ "$update_mode" = total ]; then
     local non_sec_updates=$(echo "$updates")
-    local message="There are $non_sec_updates avaliable updates"
+    message="There are $non_sec_updates avaliable updates"
   fi
 
   echo "$message"
