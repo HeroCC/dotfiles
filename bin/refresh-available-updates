@@ -1,0 +1,12 @@
+#!/bin/bash
+rm $HOME/.updates
+if [[ -d /usr/lib/update-notifier ]]; then
+  updates=$(/usr/lib/update-notifier/apt-check 2>&1)
+  update_mode='sec'
+elif [[ $(which aptitude) ]]; then
+  updates=$(aptitude search '~U' | wc -l)
+  update_mode='total'
+fi
+
+echo "$updates" >> $HOME/.updates
+echo "$update_mode" >> $HOME/.updates
