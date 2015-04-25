@@ -25,3 +25,7 @@ source ~/.zsh/exports.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/completions.zsh
 source ~/.zsh/motd.zsh
+
+if [ -e "$HOME/.zsh/local.zsh" ]; then
+  source ~/.zsh/local.zsh
+fi
