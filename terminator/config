@@ -13,6 +13,15 @@
     backspace_binding = automatic
     scroll_on_output = False
     font = Monospace 11
+  [[HeroiCraft]]
+    use_system_font = False
+    background_darkness = 0.76
+    scrollback_lines = 1000
+    background_type = transparent
+    foreground_color = "#ffffff"
+    backspace_binding = automatic
+    scroll_on_output = False
+    font = Monospace 11
 [layouts]
   [[default]]
     [[[child1]]]
