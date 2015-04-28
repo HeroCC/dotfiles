@@ -12,6 +12,7 @@ To install automatically, run:
 	$ ./install.sh
 
 If you want to do it manually, than follow the instructions below...
+Please note, the manual instructions may be out of date. Use your best judgement!
 
 ---
 
@@ -22,9 +23,6 @@ This particular setup uses a combination of, [oh-my-zsh](https://github.com/robb
 	$ ln -s ~/.dotfiles/zsh ~/.zsh
 	$ ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 	$ ln -s ~/.dotfiles/zsh/zshenv ~/.zshenv
-And if you want to use Oh-My-ZSH:
-
-	$ curl -L http://install.ohmyz.sh | sh
 
 ##GIT:
 	$ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
