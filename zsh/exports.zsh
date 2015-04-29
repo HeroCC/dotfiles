@@ -20,7 +20,7 @@ fi
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
 
-export PAGER='most'
+export PAGER='less'
 
 # Path Stuff
 if [ -d /opt/gradle/ ]; then

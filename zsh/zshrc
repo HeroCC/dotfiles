@@ -5,6 +5,7 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
 screen
 command-not-found
+colored-man
 
 zsh-users/zsh-completions src
 zsh-users/zsh-syntax-highlighting
