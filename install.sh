@@ -19,7 +19,6 @@ function update {
       fi
     fi
   fi
-fi
 }
 
 function link {
