@@ -8,13 +8,16 @@ function pull {
 }
 
 function update {
-  if [ "$autoUpdate" == 'true' ]; then
-    sudo apt-get install $1
-  elif [ "noUpdate" = 'false' ]; then
-   echo Do you want to update $1
-   read update
-   if [ "$update" == y ]; then
-    sudo apt-get install $1
+  if [ "$noUpdate" == 'false' ]; then
+    if [ "$autoUpdate" == 'true' ]; then
+      sudo apt-get install $1
+    elif [ "$autoUpdate" == 'false' ]; then
+      echo Do you want to update $1
+      read update
+      if [ "$update" == y ]; then
+        sudo apt-get install $1
+      fi
+    fi
   fi
 fi
 }
@@ -102,12 +105,12 @@ function main {
   while getopts 'nufi' flag; do
     case "${flag}" in
       i) noUpdate='true' ;;
-      n) noLN='true' ;;
-      u) autoUpdate='true' ;;
-      f) forseLN='true' ;;
-      *) error "Unexpected option ${flag}" ;;
-    esac
-  done
+n) noLN='true' ;;
+u) autoUpdate='true' ;;
+f) forseLN='true' ;;
+*) error "Unexpected option ${flag}" ;;
+esac
+done
 
 if [ "$USER" == "travis" ]; then
   CI='true'
