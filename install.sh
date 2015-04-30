@@ -73,7 +73,7 @@ function installConfigs {
 
   #Terminator
   echo "Installing Terminator Config"
-  mkdir -p ~/.config/terminator/config
+  mkdir -p ~/.config/terminator
   link $DOTFILE_DIR/terminator/config ~/.config/terminator/config
   update terminator
 
