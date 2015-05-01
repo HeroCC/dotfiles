@@ -18,6 +18,7 @@
     background_darkness = 0.76
     scrollback_lines = 1000
     background_type = transparent
+    background_image = None
     foreground_color = "#ffffff"
     backspace_binding = automatic
     scroll_on_output = False
@@ -28,7 +29,82 @@
       type = Terminal
       parent = window0
       profile = default
+      command = ""
     [[[window0]]]
       type = Window
       parent = ""
+  [[HeroiCraft]]
+    [[[child0]]]
+      position = 0:24
+      type = Window
+      order = 0
+      parent = ""
+      size = 1440, 876
+    [[[child1]]]
+      position = 945
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child2]]]
+      position = 438
+      type = VPaned
+      order = 0
+      parent = child1
+    [[[child3]]]
+      position = 485
+      type = HPaned
+      order = 0
+      parent = child2
+    [[[child6]]]
+      position = 485
+      type = HPaned
+      order = 1
+      parent = child2
+    [[[child9]]]
+      position = 438
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[terminal11]]]
+      profile = HeroiCraft
+      parent = child9
+      title = Games
+      command = sleep 6s && ./run.sh hub terminator
+      type = Terminal
+      order = 1
+    [[[terminal10]]]
+      profile = HeroiCraft
+      parent = child9
+      title = SkyBlock
+      command = ./run.sh bungee terminator
+      type = Terminal
+      order = 0
+    [[[terminal5]]]
+      profile = HeroiCraft
+      parent = child3
+      title = Bungee
+      command = echo This will becomes the Games Server!
+      type = Terminal
+      order = 1
+    [[[terminal4]]]
+      profile = HeroiCraft
+      parent = child3
+      title = Hub
+      command = sleep 24s && ./run.sh skyblock terminator
+      type = Terminal
+      order = 0
+    [[[terminal7]]]
+      profile = HeroiCraft
+      parent = child6
+      title = Survival
+      command = sleep 18s && ./run.sh creative terminator
+      type = Terminal
+      order = 0
+    [[[terminal8]]]
+      profile = HeroiCraft
+      parent = child6
+      title = Creative
+      command = sleep 12s && ./run.sh survival terminator
+      type = Terminal
+      order = 1
 [plugins]
