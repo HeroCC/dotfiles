@@ -69,42 +69,42 @@
       profile = HeroiCraft
       parent = child9
       title = Games
-      command = sleep 6s && ./run.sh hub terminator
+      command = echo This will become the Games server
       type = Terminal
       order = 1
     [[[terminal10]]]
       profile = HeroiCraft
       parent = child9
       title = SkyBlock
-      command = ./run.sh bungee terminator
+      command = sleep 24s && $HOME/terminator_util.sh skyblock
       type = Terminal
       order = 0
     [[[terminal5]]]
       profile = HeroiCraft
       parent = child3
       title = Bungee
-      command = echo This will becomes the Games Server!
+      command = $HOME/terminator_util.sh bungee
       type = Terminal
       order = 1
     [[[terminal4]]]
       profile = HeroiCraft
       parent = child3
       title = Hub
-      command = sleep 24s && ./run.sh skyblock terminator
+      command = sleep 6s && $HOME/terminator_util.sh hub
       type = Terminal
       order = 0
     [[[terminal7]]]
       profile = HeroiCraft
       parent = child6
       title = Survival
-      command = sleep 18s && ./run.sh creative terminator
+      command = sleep 12s && $HOME/terminator_util.sh survival
       type = Terminal
       order = 0
     [[[terminal8]]]
       profile = HeroiCraft
       parent = child6
       title = Creative
-      command = sleep 12s && ./run.sh survival terminator
+      command = sleep 18s && $HOME/terminator_util.sh creative
       type = Terminal
       order = 1
 [plugins]
