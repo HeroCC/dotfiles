@@ -22,6 +22,7 @@
     foreground_color = "#ffffff"
     backspace_binding = automatic
     scroll_on_output = False
+    exit_action = hold
     font = Monospace 11
 [layouts]
   [[default]]
@@ -76,7 +77,7 @@
       profile = HeroiCraft
       parent = child9
       title = SkyBlock
-      command = sleep 24s && $HOME/terminator_util.sh skyblock
+      command = $HOME/terminator_util.sh skyblock
       type = Terminal
       order = 0
     [[[terminal5]]]
@@ -90,21 +91,21 @@
       profile = HeroiCraft
       parent = child3
       title = Hub
-      command = sleep 6s && $HOME/terminator_util.sh hub
+      command = $HOME/terminator_util.sh hub
       type = Terminal
       order = 0
     [[[terminal7]]]
       profile = HeroiCraft
       parent = child6
       title = Survival
-      command = sleep 12s && $HOME/terminator_util.sh survival
+      command = $HOME/terminator_util.sh survival
       type = Terminal
       order = 0
     [[[terminal8]]]
       profile = HeroiCraft
       parent = child6
       title = Creative
-      command = sleep 18s && $HOME/terminator_util.sh creative
+      command = $HOME/terminator_util.sh creative
       type = Terminal
       order = 1
 [plugins]
