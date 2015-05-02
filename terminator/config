@@ -77,35 +77,35 @@
       profile = HeroiCraft
       parent = child9
       title = SkyBlock
-      command = $HOME/terminator_util.sh skyblock
+      command = $HOME/terminator_util.sh mc_skyblock
       type = Terminal
       order = 0
     [[[terminal5]]]
       profile = HeroiCraft
       parent = child3
       title = Bungee
-      command = $HOME/terminator_util.sh bungee
+      command = $HOME/terminator_util.sh mc_bungee
       type = Terminal
       order = 1
     [[[terminal4]]]
       profile = HeroiCraft
       parent = child3
       title = Hub
-      command = $HOME/terminator_util.sh hub
+      command = $HOME/terminator_util.sh mc_hub
       type = Terminal
       order = 0
     [[[terminal7]]]
       profile = HeroiCraft
       parent = child6
       title = Survival
-      command = $HOME/terminator_util.sh survival
+      command = $HOME/terminator_util.sh mc_survival
       type = Terminal
       order = 0
     [[[terminal8]]]
       profile = HeroiCraft
       parent = child6
       title = Creative
-      command = $HOME/terminator_util.sh creative
+      command = $HOME/terminator_util.sh mc_creative
       type = Terminal
       order = 1
 [plugins]
