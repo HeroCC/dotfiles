@@ -3,22 +3,22 @@ function extract {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1  ;;
-      *.tar.gz)    tar xzf $1  ;;
-      *.bz2)       bunzip2 $1  ;;
-      *.rar)       unrar x $1    ;;
-      *.gz)        gunzip $1   ;;
-      *.tar)       tar xf $1   ;;
-      *.tbz2)      tar xjf $1  ;;
-      *.tgz)       tar xzf $1  ;;
-      *.zip)       unzip $1   ;;
-      *.Z)         uncompress $1  ;;
-      *.7z)        7z x $1  ;;
-      *.lrz)       lrzip -d $1;;
-      *)        echo "'$1' cannot be extracted via extract()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+*.tar.gz)    tar xzf $1  ;;
+*.bz2)       bunzip2 $1  ;;
+*.rar)       unrar x $1    ;;
+*.gz)        gunzip $1   ;;
+*.tar)       tar xf $1   ;;
+*.tbz2)      tar xjf $1  ;;
+*.tgz)       tar xzf $1  ;;
+*.zip)       unzip $1   ;;
+*.Z)         uncompress $1  ;;
+*.7z)        7z x $1  ;;
+*.lrz)       lrzip -d $1;;
+*)        echo "'$1' cannot be extracted via extract()" ;;
+esac
+else
+  echo "'$1' is not a valid file"
+fi
 }
 
 function mysql_start {
@@ -47,11 +47,11 @@ bindkey "^M" magic-enter
 function exists { which $1 &> /dev/null }
 
 function bgsc {
-if screen -list | awk '{print $1}' | grep -q "$1$"; then
-  echo "screen $1 already exists"
-else
-  screen -d -m -S $1
-fi
+  if screen -list | awk '{print $1}' | grep -q "$1$"; then
+    echo "screen $1 already exists"
+  else
+    screen -d -m -S $1
+  fi
 }
 
 function ialias {
@@ -62,7 +62,9 @@ function ialias {
   if command -v $baseCmd >/dev/null 2>&1; then
     alias $oldCmd=$newCmd
   else
-    echo "Command '$baseCmd' not found, using '$oldCmd'";
+    if [[ "$ialias_mute" != true ]]
+      echo "Command '$baseCmd' not found, using '$oldCmd'";
+    fi
     #alias $oldCmd='echo "Command $baseCmd not found, using $oldCmd" && $oldCmd'
   fi
 }
