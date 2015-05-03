@@ -61,10 +61,8 @@ function ialias {
 
   if command -v $baseCmd >/dev/null 2>&1; then
     alias $oldCmd=$newCmd
-  else
-    if [[ "$ialias_mute" != true ]]
-      echo "Command '$baseCmd' not found, using '$oldCmd'";
-    fi
+  elif [[ "$ialias_mute" != 'true' ]]; then
+    echo "Command '$baseCmd' not found, using '$oldCmd'"
     #alias $oldCmd='echo "Command $baseCmd not found, using $oldCmd" && $oldCmd'
   fi
 }
