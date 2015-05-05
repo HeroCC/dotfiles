@@ -85,6 +85,9 @@ function installConfigs {
   link $DOTFILE_DIR/vim/vimrc ~/.nvimrc
   link $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
 
+  echo "Installing Gradle Config"
+  link $DOTFILE_DIR/gradle/gradle.properties ~/gradle.properties
+
   #Bin Scripts
   echo "Adding files to bin/"
   mkdir "$HOME/bin"
