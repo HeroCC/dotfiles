@@ -30,9 +30,24 @@ if [[ "$show_rvm" != 'false' ]]; then
   fi
 fi
 
+local nvm_node=''
+if which nvm &> /dev/null; then
+  nvm_node='%{$fg[green]%}‹node-$(nvm_prompt_info)›%{$reset_color%} '
+fi
+
+local jenv_java=''
+if which jenv &> /dev/null; then
+  jenv_java_version='$(jenv version-name)'
+  if [[ "$(jenv version-name)" == system ]]; then
+    jenv_java=''
+  else
+    jenv_java="%{$fg[blue]%}‹$jenv_java_version›%{$reset_color%} "
+  fi
+fi
+
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-PROMPT="${user_host}${current_dir} ${rvm_ruby}${git_branch}%B$%b "
+PROMPT="${user_host}${current_dir} ${rvm_ruby}${nvm_node}${jenv_java}${git_branch}%B$%b "
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"

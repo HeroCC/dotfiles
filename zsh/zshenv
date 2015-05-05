@@ -1,11 +1,16 @@
 # if rbenv is present, configure it for use
 # if which rbenv &> /dev/null; then
 if [ -d $HOME/.rbenv ]; then
-    # Put the rbenv entry at the front of the line
-    export PATH="$HOME/.rbenv/bin:$PATH"
+  # Put the rbenv entry at the front of the line
+  export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
 # Add RVM to PATH for scripting, if rvm is present
 if which rvm-prompt &> /dev/null; then
-    export PATH=$HOME/.rvm/bin:$PATH
+  export PATH="$HOME/.rvm/bin:$PATH"
+fi
+
+# If Jenv exists, add it to PATH
+if [ -d $HOME/.jenv ]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
 fi

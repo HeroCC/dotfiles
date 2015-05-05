@@ -100,6 +100,10 @@ function update_gitpulls {
     cd $HOME/.rbenv && git pull origin master
   fi
 
+  if [ -d $HOME/.jenv ]; then
+    cd $HOME/.jenv && git pull origin master
+  fi
+
   if which antigen &> /dev/null; then
     antigen update
   fi
@@ -114,5 +118,13 @@ function norris {
     else
       norris 3
     fi
+  fi
+}
+
+function jenv_prompt_info {
+  if [ -d "$HOME/.jenv" ]; then
+    echo "$(jenv version-name)"
+  else
+    echo "No Jenv found"
   fi
 }
