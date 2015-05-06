@@ -32,15 +32,15 @@ fi
 
 local nvm_node=''
 if which nvm &> /dev/null; then
-  nvm_node='%{$fg[green]%}‹node-$(nvm_prompt_info)›%{$reset_color%} '
+  if [[ $(nvm version) != system ]]; then
+    nvm_node='%{$fg[green]%}‹node-$(nvm_prompt_info)›%{$reset_color%} '
+  fi
 fi
 
 local jenv_java=''
 if which jenv &> /dev/null; then
   jenv_java_version='$(jenv version-name)'
-  if [[ "$(jenv version-name)" == system ]]; then
-    jenv_java=''
-  else
+  if [[ "$(jenv version-name)" != system ]]; then
     jenv_java="%{$fg[blue]%}‹$jenv_java_version›%{$reset_color%} "
   fi
 fi
