@@ -1,5 +1,4 @@
-HIDDEN_SSH_MOTD='false'
-if [[ -n $SSH_CONNECTION ]] && [[ $HIDDEN_SSH_MOTD = 'true' ]]; then
+if [[ -n $SSH_CONNECTION ]] && [[ $HIDDEN_SSH_MOTD != 'false' ]]; then
 	motd_mode=none
 fi
 
