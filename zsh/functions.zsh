@@ -128,3 +128,9 @@ function jenv_prompt_info {
     echo "No Jenv found"
   fi
 }
+
+function = {
+    calc="${@//p/+}"
+    calc="${calc//x/*}"
+    bc -l <<<"scale=10;$calc"
+}
