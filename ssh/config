@@ -2,7 +2,7 @@ Host server
   Hostname 10.0.0.51
   User herocc
 Host pi
-  Hostname 10.0.0.53
+  Hostname 10.0.1.53
   User pi
 Host cac
   Hostname 167.88.44.121
