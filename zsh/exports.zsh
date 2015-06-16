@@ -37,3 +37,5 @@ if [ -d /opt/android-sdk/ ]; then
 fi
 
 export ialias_mute="true"
+
+export multiline_prompt="true"
