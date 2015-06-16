@@ -1,4 +1,8 @@
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
+
+motd_mode='updates'
+multiline_prompt='true'
+
 source ~/.zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
 
@@ -15,8 +19,6 @@ rupa/z
 EOBUNDLES
 antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
 antigen apply
-
-motd_mode='updates'
 
 source ~/.zsh/history.zsh
 source ~/.zsh/functions.zsh
