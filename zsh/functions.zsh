@@ -130,7 +130,11 @@ function jenv_prompt_info {
 }
 
 function = {
-    calc="${@//p/+}"
-    calc="${calc//x/*}"
-    bc -l <<<"scale=10;$calc"
+  calc="${@//p/+}"
+  calc="${calc//x/*}"
+  bc -l <<<"scale=10;$calc"
+}
+
+function refresh_prompt {
+  antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
 }
