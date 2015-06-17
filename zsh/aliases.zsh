@@ -42,3 +42,5 @@ alias path='echo -e ${PATH//:/\\n}'
 alias mkdir='mkdir -pv'
 
 ialias git='hub'
+
+alias jenv="_jenv"

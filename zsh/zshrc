@@ -21,13 +21,13 @@ antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
 antigen apply
 
 source ~/.zsh/history.zsh
+source ~/.zsh/completions.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
 source ~/.zsh/colors.zsh
 source ~/.zsh/exports.zsh
 source ~/.zsh/setopt.zsh
-source ~/.zsh/completions.zsh
 source ~/.zsh/motd.zsh
 
 if [ -e "$HOME/.zsh/local.zsh" ]; then
