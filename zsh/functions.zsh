@@ -139,7 +139,6 @@ function refresh_prompt {
   antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
 }
 
-# Hackey hacks to make prompt refresh when running jenv
 function _jenv {
   jenv "$@"
   if [[ "$1" == "shell" ]]; then
