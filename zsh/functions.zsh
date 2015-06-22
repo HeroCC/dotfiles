@@ -149,3 +149,8 @@ function _jenv {
     refresh_prompt
   fi
 }
+
+function zle-line-init {
+    zle autosuggest-start
+}
+zle -N zle-line-init

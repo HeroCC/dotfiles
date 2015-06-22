@@ -14,6 +14,7 @@ nvm
 
 zsh-users/zsh-completions src
 zsh-users/zsh-syntax-highlighting
+tarruda/zsh-autosuggestions
 
 rupa/z
 EOBUNDLES
