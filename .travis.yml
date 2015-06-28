@@ -1,3 +1,4 @@
 language: bash
 script:
   - bash install.sh -fi
+irc: "irc.esper.net#herocc"
