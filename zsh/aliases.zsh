@@ -30,6 +30,7 @@ if which apt-get &> /dev/null; then
   alias agu='sudo apt-get update'
   alias agug='sudo apt-get upgrade'
   alias aguu='sudo apt-get update && sudo apt-get upgrade'
+  alias agar='sudo apt-get autoremove'
 fi
 
 alias xtitle='set_terminal_title'
