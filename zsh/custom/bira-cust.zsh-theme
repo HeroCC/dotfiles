@@ -26,15 +26,19 @@ if [[ "$show_rvm" != 'false' ]]; then
     rvm_ruby='%{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%} '
   fi
   # If RVM version is system, don't display
-  if [[ "$rvm_version" == system ]]; then
-    rvm_ruby=''
+  if [[ "$show_if_system" != true ]]; then
+    if [[ "$rvm_version" == system ]]; then
+      rvm_ruby=''
+    fi
   fi
 fi
 
 local nvm_node=''
 if which nvm &> /dev/null; then
-  if [[ $(nvm version) != system ]]; then
-    nvm_node='%{$fg[green]%}‹node-$(nvm_prompt_info)›%{$reset_color%} '
+  if [[ "$show_if_system" != true ]]; then
+    if [[ $(nvm version) != system ]]; then
+      nvm_node='%{$fg[green]%}‹node-$(nvm_prompt_info)›%{$reset_color%} '
+    fi
   fi
 fi
 
@@ -42,8 +46,10 @@ local jenv_java=''
 if which jenv &> /dev/null; then
   jenv_java_version="$(jenv version-name)"
   jenv_java="%{$fg[blue]%}‹$jenv_java_version›%{$reset_color%} "
-  if [[ "$jenv_java_version" == system ]]; then
-    jenv_java=""
+  if [[ "$show_if_system" != true ]]; then
+    if [[ "$jenv_java_version" == system ]]; then
+      jenv_java=""
+    fi
   fi
 fi
 
