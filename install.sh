@@ -45,6 +45,7 @@ function installConfigs {
   echo "Installing Git Config"
   link $DOTFILE_DIR/git/gitconfig ~/.gitconfig
   link $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
+  link $DOTFILE_DIR/git/gitattributes ~/.gitattributes
 
   #Screen
   update screen
