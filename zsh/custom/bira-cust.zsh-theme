@@ -57,7 +57,7 @@ local screen_or_tmux_session=''
 if which screen &> /dev/null; then
 	if [[ -z "$STY" ]]; then # Screen sets this variable if inside screen session
 		if which tmux &> /dev/null; then
-			if [[ -ne $(tmux display-message -p '#S') == "failed to connect to server" ]]; then
+			if [[ $(tmux display-message -p '#S') != "failed to connect to server" ]]; then
 				screen_or_tmux_session="%{$fg[purple]%}‹$(tmux display-message -p '#S')›%{$reset_color%} "
 			fi
 		fi
