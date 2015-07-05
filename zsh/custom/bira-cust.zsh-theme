@@ -58,7 +58,7 @@ local git_branch='$(git_prompt_info)%{$reset_color%}'
 if [[ "$multiline_prompt" != "true" ]]; then
   PROMPT="${user_host}${current_dir} ${rvm_ruby}${nvm_node}${jenv_java}${git_branch}%B$%b "
 else
-  PROMPT="╭─${user_host}${current_dir} ${nvm_node}${rvm_ruby}${jenv_java}${git_branch}"$'\n'"╰─%B$%b "
+  PROMPT="╭─${user_host}${current_dir} ${rvm_ruby}${nvm_node}${jenv_java}${git_branch}"$'\n'"╰─%B$%b "
 fi
 RPS1="${return_code}"
 
