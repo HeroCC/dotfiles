@@ -60,8 +60,9 @@ if which screen &> /dev/null; then
   fi
 fi
 if which tmux &> /dev/null; then
-  tmux_session_name=$(tmux display-message -p '#S')
+  tmux display-message -p '#S' &> /dev/null
   if [[ "$?" -eq 0 ]]; then
+    tmux_session_name="$(tmux display-message -p '#S')"
     screen_or_tmux_session="%{$fg[green]%}‹$(tmux display-message -p '#S')›%{$reset_color%} "
   fi
 fi
