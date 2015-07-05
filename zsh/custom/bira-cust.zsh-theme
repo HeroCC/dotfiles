@@ -56,16 +56,14 @@ fi
 local screen_or_tmux_session=''
 if which screen &> /dev/null; then
 	if [[ -z "$STY" ]]; then # Screen sets this variable if inside screen session
-		if which tmux &> /dev/null; then
-			if [[ $(tmux display-message -p '#S') != "failed to connect to server" ]]; then
-				screen_or_tmux_session="%{$fg[purple]%}‹$(tmux display-message -p '#S')›%{$reset_color%} "
-			fi
-		fi
-		screen_or_tmux_session="%{$fg[purple]%}‹$STY›%{$reset_color%} "
-	fi
+    screen_or_tmux_session="%{$fg[green]%}‹$STY›%{$reset_color%} "
+  fi
+else
+  if which tmux &> /dev/null; then
+   if [[ $(tmux display-message -p '#S') != "failed to connect to server" ]]; then
+    screen_or_tmux_session="%{$fg[green]%}‹$(tmux display-message -p '#S')›%{$reset_color%} "
+  fi
 fi
-
-
 
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
