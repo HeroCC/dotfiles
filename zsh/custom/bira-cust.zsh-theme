@@ -53,12 +53,26 @@ if which jenv &> /dev/null; then
   fi
 fi
 
+local screen_or_tmux_session=''
+if which screen &> /dev/null; then
+	if [[ -z "$STY" ]]; then # Screen sets this variable if inside screen session
+		if which tmux &> /dev/null; then
+			if [[ -ne $(tmux display-message -p '#S') == "failed to connect to server" ]]; then
+				screen_or_tmux_session="%{$fg[purple]%}‹$(tmux display-message -p '#S')›%{$reset_color%} "
+			fi
+		fi
+		screen_or_tmux_session="%{$fg[purple]%}‹$STY›%{$reset_color%} "
+	fi
+fi
+
+
+
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
 if [[ "$multiline_prompt" != "true" ]]; then
-  PROMPT="${user_host}${current_dir} ${rvm_ruby}${nvm_node}${jenv_java}${git_branch}%B$%b "
+  PROMPT="${user_host}${current_dir} ${screen_or_tmux_session}${rvm_ruby}${nvm_node}${jenv_java}${git_branch}%B$%b "
 else
-  PROMPT="╭─${user_host}${current_dir} ${rvm_ruby}${nvm_node}${jenv_java}${git_branch}"$'\n'"╰─%B$%b "
+  PROMPT="╭─${user_host}${current_dir} ${screen_or_tmux_session}${rvm_ruby}${nvm_node}${jenv_java}${git_branch}"$'\n'"╰─%B$%b "
 fi
 RPS1="${return_code}"
 
