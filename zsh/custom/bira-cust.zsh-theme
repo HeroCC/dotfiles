@@ -56,14 +56,14 @@ fi
 local screen_or_tmux_session=''
 if which screen &> /dev/null; then
 	if [[ -n "$STY" ]]; then # Screen sets this variable if inside screen session
-    screen_or_tmux_session="%{$fg[orange]%}‹$STY›%{$reset_color%} "
+    screen_or_tmux_session="%{$fg[magenta]%}‹$STY›%{$reset_color%} "
   fi
 fi
 if which tmux &> /dev/null; then
   tmux display-message -p '#S' &> /dev/null
   if [[ "$?" -eq 0 ]]; then
     tmux_session_name="$(tmux display-message -p '#S')"
-    screen_or_tmux_session="%{$fg[orange]%}‹$tmux_session_name›%{$reset_color%} "
+    screen_or_tmux_session="%{$fg[magenta]%}‹$tmux_session_name›%{$reset_color%} "
   fi
 fi
 
