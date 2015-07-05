@@ -55,7 +55,7 @@ fi
 
 local screen_or_tmux_session=''
 if which screen &> /dev/null; then
-	if [[ -z "$STY" ]]; then # Screen sets this variable if inside screen session
+	if [[ -n "$STY" ]]; then # Screen sets this variable if inside screen session
     screen_or_tmux_session="%{$fg[green]%}‹$STY›%{$reset_color%} "
   fi
 elif which tmux &> /dev/null; then
