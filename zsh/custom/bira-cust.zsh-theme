@@ -59,11 +59,13 @@ if which screen &> /dev/null; then
     screen_or_tmux_session="%{$fg[magenta]%}‹$STY›%{$reset_color%} "
   fi
 fi
-if which tmux &> /dev/null; then
-  tmux display-message -p '#S' &> /dev/null
-  if [[ "$?" -eq 0 ]]; then
-    tmux_session_name="$(tmux display-message -p '#S')"
-    screen_or_tmux_session="%{$fg[magenta]%}‹$tmux_session_name›%{$reset_color%} "
+if [[ -z "$screen_or_tmux_session" ]]; then
+  if which tmux &> /dev/null; then
+    tmux display-message -p '#S' &> /dev/null
+    if [[ "$?" -eq 0 ]]; then
+      tmux_session_name="$(tmux display-message -p '#S')"
+      screen_or_tmux_session="%{$fg[magenta]%}‹$tmux_session_name›%{$reset_color%} "
+    fi
   fi
 fi
 
