@@ -1,4 +1,4 @@
-function extract {
+function extract { # Detect zipped file format, and if supported, extract
   echo Extracting $1 ...
   if [ -f $1 ] ; then
     case $1 in
@@ -44,9 +44,9 @@ magic-enter () {
 zle -N magic-enter
 bindkey "^M" magic-enter
 
-function exists { which $1 &> /dev/null }
+function exists { which $1 &> /dev/null } # If something exists
 
-function bgsc {
+function bgsc { # Start screen session in background if it doesn't exist
   if screen -list | awk '{print $1}' | grep -q "$1$"; then
     echo "screen $1 already exists"
   else
@@ -54,7 +54,7 @@ function bgsc {
   fi
 }
 
-function ialias {
+function ialias { # If command you want to alias to exists, do it, else print an error
   oldCmd=$(cut -f1 -d"=") <<< "$1"
   newCmd=$(cut -f2 -d"=") <<< "$1"
   baseCmd=$(cut -f1 -d" ") <<< "$newCmd"
@@ -67,7 +67,7 @@ function ialias {
   fi
 }
 
-function ipath {
+function ipath { # If directory exists, add it to path
   dir="$1"
 
   if [ -d $dir ]; then
@@ -75,7 +75,7 @@ function ipath {
   fi
 }
 
-function refresh_zshrc {
+function refresh_zshrc { # Refresh zsh
   source ~/.zshrc
 }
 
@@ -90,7 +90,7 @@ function set_terminal_title {
   fi
 }
 
-function update_gitpulls {
+function update_gitpulls { # Update dotfiles, rbenv, jenv, and antigen
   local current_dir="$(pwd)"
   if [ -d $HOME/.dotfiles ]; then
     cd $HOME/.dotfiles && ./install.sh -n
@@ -110,7 +110,7 @@ function update_gitpulls {
   cd $current_dir
 }
 
-function norris {
+function norris { # Print a formatted chuck norris joke
   if [ "$PS1" ]; then
     if [ "$1" ]; then
       timeout $1 wget "http://api.icndb.com/jokes/random" -qO- | jshon -e value -e joke -u |
@@ -121,7 +121,7 @@ function norris {
   fi
 }
 
-function jenv_prompt_info {
+function jenv_prompt_info { # Get only Jenv java version
   if [ -d "$HOME/.jenv" ]; then
     echo "$(jenv version-name)"
   else
@@ -129,17 +129,17 @@ function jenv_prompt_info {
   fi
 }
 
-function = {
+function = { # Simple Calculator
   calc="${@//p/+}"
   calc="${calc//x/*}"
   bc -l <<<"scale=10;$calc"
 }
 
-function refresh_prompt {
+function refresh_prompt { # Refreshes only the theme / propmt
   antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
 }
 
-function _jenv {
+function _jenv { # Jenv workaround to refresh prompt on certian commands
   jenv "$@"
   if [[ "$1" == "shell" ]]; then
     refresh_prompt
@@ -151,6 +151,6 @@ function _jenv {
 }
 
 function zle-line-init {
-    zle autosuggest-start
+  zle autosuggest-start
 }
 zle -N zle-line-init
