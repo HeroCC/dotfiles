@@ -1,17 +1,17 @@
-if [[ -n $SSH_CONNECTION ]] && [[ $HIDDEN_SSH_MOTD != 'false' ]]; then
+if [[ -n $SSH_CONNECTION ]] && [[ $HIDDEN_SSH_MOTD != 'false' ]]; then # If SSH, don't do MOTD
 	motd_mode=none
 fi
 
 if [ "$motd_mode" = norris ]; then
-	norris 2
+	norris 2 # Chuck norris MOTD
 elif [ "$motd_mode" = screenfetch ]; then
-	screenfetch
+	screenfetch # Shows basic information about system
 elif [ "$motd_mode" = fortune ]; then
-	fortune | cowsay -f $cow
+	fortune | cowsay -f $cow # Fortune by CowSay
 elif [ "$motd_mode" = fortune_nocow ]; then
-	fortune
+	fortune # Fortune without the cow
 elif [ "$motd_mode" = updates ]; then
-	updates=$(cat $HOME/.updates | sed -n 1p) # See script @ http://go.herocc.com/refresh-available-updates
+	updates=$(cat $HOME/.updates | sed -n 1p) # See script in bin folder of dotfiles
   update_mode=$(cat $HOME/.updates | sed -n 2p)
 
   if [ "$update_mode" = sec ]; then
@@ -30,10 +30,8 @@ elif [ "$motd_mode" = updates ]; then
   fi
 
   echo "$message"
-elif
-	[ "$motd_mode" = none ]; then
+elif [ "$motd_mode" = none ]; then
   #nada
-elif
-	[ "$motd_mode" ]; then
+elif [ "$motd_mode" ]; then
 	echo "Unknown motd_mode '$motd_mode', please check your .zshrc or motd file"
 fi
