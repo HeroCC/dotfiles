@@ -24,10 +24,10 @@ antigen apply
 
 source ~/.zsh/history.zsh
 source ~/.zsh/completions.zsh
-source ~/.zsh/exports.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
+source ~/.zsh/exports.zsh
 source ~/.zsh/colors.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/motd.zsh
