@@ -11,9 +11,8 @@ alias mysqladmin='mysqladmin -u root'
 
 alias sudo='sudo ' # Makes sudo use aliases, from http://go.herocc.com/sudo_aliases
 ialias apt-get='apt-fast' # http://go.herocc.com/aptfast
-ialias gpg='gpg2'
-alias please='sudo $(fc -nl -1)'
-alias cls='clr'
+alias please='sudo $(fc -nl -1)' # Repeat last command with sudo
+alias cls='clr' # Clear the console
 
 # I like verbose in chmod & chown
 alias chmod='chmod -v'
@@ -33,17 +32,17 @@ if which apt-get &> /dev/null; then
   alias agar='sudo apt-get autoremove'
 fi
 
-alias xtitle='set_terminal_title'
+alias xtitle='set_terminal_title' # Custom function, see functions.zsh
 
-ialias vim='nvim'
+ialias vim='nvim' # Use the new vim
 
-alias ping='ping -c 5'
+alias ping='ping -c 5' # Ping only 5 times
 alias clr='clear;echo "Currently logged in on $(tty), as $USER in directory $PWD."'
-alias path='echo -e ${PATH//:/\\n}'
-alias mkdir='mkdir -pv'
+alias path='echo -e ${PATH//:/\\n}' # Formatted path
+alias mkdir='mkdir -pv' # Verbose & Parents mkdir flag
 
-ialias git='hub'
+ialias git='hub' # Hub by GitHub : http://git.io/xy2eNw
 
-alias jenv="_jenv"
+alias jenv="_jenv" # Use the special jenv function
 
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"' # Coppied from default Ubuntu bash config
