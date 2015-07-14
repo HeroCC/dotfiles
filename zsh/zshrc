@@ -4,8 +4,9 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 motd_mode='updates'
 multiline_prompt='true'
 
+# Add Antigen
 source ~/.zsh/antigen/antigen.zsh
-antigen use oh-my-zsh
+antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 
 antigen bundles <<EOBUNDLES
 screen
@@ -20,8 +21,9 @@ tarruda/zsh-autosuggestions
 rupa/z
 EOBUNDLES
 antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
-antigen apply
+antigen apply # Use it
 
+# Source all the configs
 source ~/.zsh/history.zsh
 source ~/.zsh/completions.zsh
 source ~/.zsh/functions.zsh
@@ -32,6 +34,6 @@ source ~/.zsh/colors.zsh
 source ~/.zsh/setopt.zsh
 source ~/.zsh/motd.zsh
 
-if [ -e "$HOME/.zsh/local.zsh" ]; then
+if [ -e "$HOME/.zsh/local.zsh" ]; then # If local.zsh exists, source it
   source ~/.zsh/local.zsh
 fi
