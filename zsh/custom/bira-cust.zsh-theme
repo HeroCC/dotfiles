@@ -64,8 +64,7 @@ if which screen &> /dev/null; then
 fi
 if [[ -z "$screen_or_tmux_session" ]]; then
   if which tmux &> /dev/null; then
-    tmux display-message -p '#S' &> /dev/null #Exits with 1 if not in tmux session
-    if [[ "$?" -eq 0 ]]; then
+    if [[ -n "${TMUX+set}" ]]; then
       tmux_session_name="$(tmux display-message -p '#S')" # Get proper name
       screen_or_tmux_session="%{$fg[magenta]%}‹$tmux_session_name›%{$reset_color%} "
     fi
