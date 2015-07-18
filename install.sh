@@ -52,6 +52,11 @@ function installConfigs {
   echo "Installing Screen Config"
   link $DOTFILE_DIR/screen/screenrc ~/.screenrc
 
+  # Tmux
+  update tmux
+  echo "Installing Tmux Config"
+  link $DOTFILE_DIR/tmux/tmux.conf ~/.tmux.conf
+
   #SSH
   update openssh-client
   update openssh-server

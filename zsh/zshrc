@@ -3,6 +3,7 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 # Commonly Changed settings
 motd_mode='updates'
 multiline_prompt='true'
+show_if_system='true'
 
 # Add Antigen
 source ~/.zsh/antigen/antigen.zsh
