@@ -80,7 +80,7 @@ function refresh_zshrc { # Refresh zsh
 }
 
 function set_terminal_title {
-  if [[ $1 == "" ]]; then
+  if [ -z $1 ]; then
     # Re-enable oh-my-zsh's title
     DISABLE_AUTO_TITLE=false
   else
