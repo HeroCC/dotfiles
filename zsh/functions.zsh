@@ -111,8 +111,7 @@ function update_gitpulls { # Update dotfiles, rbenv, jenv, and antigen
 }
 
 function norris { # Print a formatted chuck norris joke
-  if [ "$PS1" ]; then
-    if [ "$1" ]; then
+  if [ "$1" ]; then
       timeout $1 wget "http://api.icndb.com/jokes/random" -qO- | jshon -e value -e joke -u |
       recode html | cowsay -f tux
     else
