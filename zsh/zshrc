@@ -33,8 +33,7 @@ source ~/.zsh/bindkeys.zsh
 source ~/.zsh/exports.zsh
 source ~/.zsh/colors.zsh
 source ~/.zsh/setopt.zsh
-source ~/.zsh/motd.zsh
-
 if [ -e "$HOME/.zsh/local.zsh" ]; then # If local.zsh exists, source it
   source ~/.zsh/local.zsh
 fi
+source ~/.zsh/motd.zsh
