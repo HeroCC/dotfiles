@@ -1,4 +1,4 @@
-if [ -n $SSH_CONNECTION ] && [ $HIDDEN_SSH_MOTD != 'true' ]; then # If SSH, don't do MOTD
+if [[ -n $SSH_CONNECTION ]] && [[ $HIDDEN_SSH_MOTD != 'true' ]]; then # If SSH, don't do MOTD
   motd_mode="none"
 fi
 
@@ -30,7 +30,7 @@ elif [[ "$motd_mode" == *"updates"* ]]; then
   motd="$message"
 elif [[ "$motd_mode" == *"none"* ]]; then
   motd=""
-elif [[ "$motd_mode" ]]; then
+elif [ "$motd_mode" ]; then
   motd="Unknown motd_mode '$motd_mode', please check your .zshrc or motd file"
 fi
 
