@@ -25,7 +25,19 @@ function link {
   if [ "$forseLN" = 'true' ]; then
     ln -sf $1 $2
   else
-    ln -s $1 $2
+    if [[ -e "$2" ]]; then
+      echo "$2 already exists, if it is a symlink it will be deleted"
+      if [[ -h "$2" ]]; then
+        rm -rf "$2"
+        ln -s $1 $2
+      else
+        echo "Not a symlink, renaming and linking"
+        mv -f "$2" "$2_old"
+        ln -s $1 $2
+      fi
+    else
+      ln -s $1 $2
+    fi
   fi
 }
 
@@ -36,9 +48,10 @@ function installConfigs {
   link $DOTFILE_DIR/zsh ~/.zsh
   link $DOTFILE_DIR/zsh/zshrc ~/.zshrc
   link $DOTFILE_DIR/zsh/zshenv ~/.zshenv
-  if [ "$CI" == "false" ]; then
+  if [ "$CI" == "false" ] && [ "$SHELL" != "/usr/bin/zsh" ]; then
     chsh -s $(which zsh)
   fi
+  echo ""
 
   #git
   update git
@@ -46,16 +59,19 @@ function installConfigs {
   link $DOTFILE_DIR/git/gitconfig ~/.gitconfig
   link $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
   link $DOTFILE_DIR/git/gitattributes ~/.gitattributes
+  echo ""
 
   #Screen
   update screen
   echo "Installing Screen Config"
   link $DOTFILE_DIR/screen/screenrc ~/.screenrc
+echo ""
 
   # Tmux
   update tmux
   echo "Installing Tmux Config"
   link $DOTFILE_DIR/tmux/tmux.conf ~/.tmux.conf
+  echo ""
 
   #SSH
   update openssh-client
@@ -63,6 +79,7 @@ function installConfigs {
   echo "Installing SSH Config"
   mkdir $DOTFILE_DIR/ssh/
   link $DOTFILE_DIR/ssh/config ~/.ssh/config
+  echo ""
 
   #Gem
   update ruby-full
@@ -70,18 +87,21 @@ function installConfigs {
   link $DOTFILE_DIR/gem/gemrc ~/.gemrc
   echo Installing Rbenv
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  echo ""
 
   #Sublime 3
   echo "Installing Sublime Text 3 Config"
   mkdir -p ~/.config/sublime-text-3/Packages/
   cd ~/.config/sublime-text-3/Packages/
   link $DOTFILE_DIR/sublimetext/User User
+  echo ""
 
   #Terminator
   echo "Installing Terminator Config"
   mkdir -p ~/.config/terminator
   link $DOTFILE_DIR/terminator/config ~/.config/terminator/config
   update terminator
+  echo ""
 
   #VIM
   update vim
@@ -90,9 +110,11 @@ function installConfigs {
   link $DOTFILE_DIR/vim/vimrc ~/.vimrc
   link $DOTFILE_DIR/vim/vimrc ~/.nvimrc
   link $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
+  echo ""
 
   echo "Installing Gradle Config"
   link $DOTFILE_DIR/gradle/gradle.properties ~/gradle.properties
+  echo ""
 
   #Bin Scripts
   echo "Adding files to bin/"
@@ -102,6 +124,7 @@ function installConfigs {
   do
     link $DOTFILE_DIR/bin/$filename ~/bin/$filename
   done
+  echo ""
 }
 
 function main {
