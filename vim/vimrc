@@ -9,3 +9,6 @@ Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'L9' " Vim Script & Plugin Library
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Make vim use system keyboard
+set clipboard=unnamed
