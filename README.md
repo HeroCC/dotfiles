@@ -49,6 +49,9 @@ This may be different on a Mac
 	$ ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 	$ ln -s ~/.dotfiles/vim/gvimrc ~/.gvimrc
 
+##TMUX:
+  $ ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+
 If Vundle is not installed:
 
 	$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
