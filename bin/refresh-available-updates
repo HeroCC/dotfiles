@@ -1,4 +1,6 @@
 #!/bin/bash
+# Don't forget to add this to crontab
+# And use this http://askubuntu.com/a/314414 to run script after using apt-get
 rm $HOME/.updates
 if [[ -d /usr/lib/update-notifier ]]; then
   updates=$(/usr/lib/update-notifier/apt-check 2>&1)
