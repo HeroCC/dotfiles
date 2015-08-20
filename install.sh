@@ -114,7 +114,7 @@ function installConfigs {
   echo ""
 
   echo "Installing Gradle Config"
-  link $DOTFILE_DIR/gradle/gradle.properties ~/gradle.properties
+  link $DOTFILE_DIR/gradle/gradle.properties ~/.gradle/gradle.properties
   echo ""
 
   #Bin Scripts
