@@ -12,3 +12,6 @@ filetype plugin indent on    " required
 
 " Make vim use system keyboard
 set clipboard=unnamed
+
+" Set TAB to two spaces
+set tabstop=2 shiftwidth=2 expandtab
