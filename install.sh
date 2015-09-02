@@ -111,6 +111,7 @@ function installConfigs {
   link $DOTFILE_DIR/vim/vimrc ~/.vimrc
   link $DOTFILE_DIR/vim/vimrc ~/.nvimrc
   link $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
+  vim +PluginInstall +qall
   echo ""
 
   echo "Installing Gradle Config"
