@@ -6,6 +6,7 @@ multiline_prompt='true'
 show_if_system='true'
 
 # Add Antigen
+export _ANTIGEN_CACHE_ENABLED=true
 source ~/.zsh/antigen/antigen.zsh
 antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 
