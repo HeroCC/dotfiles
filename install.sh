@@ -114,7 +114,9 @@ function installConfigs {
   vim +PluginInstall +qall
   echo ""
 
+  #Gradle
   echo "Installing Gradle Config"
+  mkdir -p ~/.gradle/
   link $DOTFILE_DIR/gradle/gradle.properties ~/.gradle/gradle.properties
   echo ""
 
