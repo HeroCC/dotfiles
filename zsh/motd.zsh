@@ -52,7 +52,7 @@ elif [[ "$motd_mode" == *"cowsay"* ]]; then
 elif [[ "$motd_mode" == *"cowthink"* ]]; then
   # Cowthink detected
   if which cowthink &> /dev/null; then
-    # Print message in cowsay mode
+    # Print message in cowthink mode
     echo "$motd" | cowthink -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
   else
     # No cowsay installed, printing normal message
