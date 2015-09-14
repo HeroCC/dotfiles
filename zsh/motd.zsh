@@ -16,7 +16,7 @@ elif [[ "$motd_mode" == *"updates"* ]]; then
     local sec_updates=$(echo "$updates" | cut -d ";" -f 2)
     local non_sec_updates=$(echo "$updates" | cut -d ";" -f 1)
     local reboot_required="$(/usr/lib/update-notifier/update-motd-reboot-required)"
-    message="There are $sec_updates security updates and $non_sec_updates regular updates"
+    message="There are ${fg_bold[red]}$sec_updates$reset_color security updates and ${fg_bold[green]}$non_sec_updates$reset_color regular updates"
 
     if [ -n "$reboot_required" ]; then
       message="$message, possibly requiring a reboot"
