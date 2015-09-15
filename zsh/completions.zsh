@@ -12,3 +12,8 @@ fi
 if which jenv &> /dev/null; then
   eval "$(jenv init -)"
 fi
+
+# Fix typoed commands
+if which thefuck &> /dev/null; then
+  eval "$(thefuck --alias dangit)"
+fi
