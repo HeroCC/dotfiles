@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # Commonly Changed settings
 motd_mode='updates'
