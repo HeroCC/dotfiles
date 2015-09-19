@@ -35,3 +35,5 @@ if [ -d /opt/android-sdk/ ]; then
 	export ANDROID_SDK_HOME="$HOME/.android/"
 	export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools"
 fi
+
+export PATH=$(echo $PATH | sed ':b;s/:\([^:]*\)\(:.*\):\1/:\1\2/;tb;s/^\([^:]*\)\(:.*\):\1/:\1\2/') # Remove path Duplicates, from http://q.gs/8pXB7
