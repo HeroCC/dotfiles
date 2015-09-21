@@ -4,8 +4,6 @@ alias ls='ls -GFh'
 # Same as above, but in long listing format
 alias ll='ls -GFhl'
 
-alias ri='ri -Tf ansi'
-
 alias mysql='mysql -u root'
 alias mysqladmin='mysqladmin -u root'
 
@@ -43,7 +41,9 @@ alias mkdir='mkdir -pv' # Verbose & Parents mkdir flag
 
 ialias git='hub' # Hub by GitHub : http://git.io/xy2eNw
 
-alias jenv="_jenv" # Use the special jenv function
+if [ -d $HOME/.jenv ]; then
+  alias jenv="_jenv" # Use the special jenv function
+fi
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"' # Coppied from default Ubuntu bash config
 
