@@ -5,5 +5,5 @@ Host pi
   Hostname 10.0.1.53
   User pi
 Host cac
-  Hostname 167.88.44.121
+  Hostname cac.herocc.com
   User herocc
