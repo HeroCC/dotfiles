@@ -50,7 +50,7 @@ This may be different on a Mac
 	$ ln -s ~/.dotfiles/vim/gvimrc ~/.gvimrc
 
 ##TMUX:
-  $ ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+	$ ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 ---
 
