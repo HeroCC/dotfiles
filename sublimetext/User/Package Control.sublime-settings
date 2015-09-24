@@ -1,16 +1,13 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
-		"BracketHighlighter",
-		"Google Spell Check",
-		"Package Control",
-		"SideBarEnhancements"
+		"Package Control"
 	],
 	"repositories":
 	[
-		"https://github.com/facelessuser/BracketHighlighter"
 	]
 }

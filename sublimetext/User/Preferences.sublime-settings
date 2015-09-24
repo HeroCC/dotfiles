@@ -3,7 +3,6 @@
 	"font_size": 10,
 	"ignored_packages":
 	[
-		"BracketHighlighter",
 		"Vintage"
 	],
 	"tab_size": 2,
