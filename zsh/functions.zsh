@@ -137,16 +137,18 @@ function refresh_prompt { # Refreshes only the theme / propmt
 antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
 }
 
-function _jenv { # Jenv workaround to refresh prompt on certian commands
-jenv "$@"
-if [[ "$1" == "shell" ]]; then
-  refresh_prompt
-elif [[ "$1" == "local" ]]; then
-  refresh_prompt
-elif [[ "$1" == "global" ]]; then
-  refresh_prompt
-fi
+if [ -d $HOME/.jenv ]; then
+  function _jenv { # Jenv workaround to refresh prompt on certian commands
+  jenv "$@"
+  if [[ "$1" == "shell" ]]; then
+    refresh_prompt
+  elif [[ "$1" == "local" ]]; then
+    refresh_prompt
+  elif [[ "$1" == "global" ]]; then
+    refresh_prompt
+  fi
 }
+fi
 
 function zle-line-init {
   zle autosuggest-start
