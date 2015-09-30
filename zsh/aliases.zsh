@@ -28,6 +28,7 @@ if which apt-get &> /dev/null; then
   alias agug='sudo apt-get upgrade'
   alias aguu='sudo apt-get update && sudo apt-get upgrade'
   alias agar='sudo apt-get autoremove'
+  alias agdu='sudo apt-get dist-upgrade'
 fi
 
 alias xtitle='set_terminal_title' # Custom function, see functions.zsh
