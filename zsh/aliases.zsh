@@ -17,7 +17,6 @@ alias chmod='chmod -v'
 alias chown='chown -v'
 
 ialias rm='trash-put' # Requires trash-cli
-ialias dd='dcfldd' # DD with a progress report
 
 # Apt stuff
 if which apt-get &> /dev/null; then
