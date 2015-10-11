@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+set nocompatible              " Not compatible with vi
 filetype off                  " required
 
 " Add Vundle to Runtime and Initialise
@@ -10,12 +10,14 @@ Plugin 'L9' " Vim Script & Plugin Library
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Make vim use system keyboard
-set clipboard=unnamed
+set clipboard=unnamed " Make vim use system keyboard
 
-" Set TAB to two spaces
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2 shiftwidth=2 expandtab " Set TAB to two spaces
+set number " Enable line numbers
 
 " Syntax & Coloring
 colorscheme deepsea
 syntax on
+
+" Keybindings
+map <F7> mzgg=G`z " Reindent entire file
