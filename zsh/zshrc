@@ -13,7 +13,7 @@ antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 antigen bundles <<EOBUNDLES
 screen
 command-not-found
-colored-man
+colored-man-pages
 nvm
 
 zsh-users/zsh-completions src
