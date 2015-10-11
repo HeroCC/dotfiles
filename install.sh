@@ -111,8 +111,8 @@ function installConfigs {
   echo "Installing VIM config"
   link $DOTFILE_DIR/vim ~/.vim
   link $DOTFILE_DIR/vim/vimrc ~/.vimrc
+  link $DOTFILE_DIR/vim ~/.nvim
   link $DOTFILE_DIR/vim/vimrc ~/.nvimrc
-  link $DOTFILE_DIR/vim/gvimrc ~/.gvimrc
   vim +PluginInstall +qall
   echo ""
 
