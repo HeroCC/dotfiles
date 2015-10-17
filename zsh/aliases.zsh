@@ -45,3 +45,4 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"' # Coppied from default Ubuntu bash config
 
 alias pipe="pipes -p3 -f90 -r0 -t0 -t1 -t2 -t3"
+alias 2048="bash <(wget -q https://raw.githubusercontent.com/mydzor/bash2048/master/bash2048.sh -O -)"
