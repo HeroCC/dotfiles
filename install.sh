@@ -12,12 +12,12 @@ function pull {
 function update {
   if [ "$noUpdate" == 'false' ]; then
     if [ "$autoUpdate" == 'true' ]; then
-      sudo apt-get install $1
+      sudo apt-get install "$@"
     elif [ "$autoUpdate" == 'false' ]; then
-      echo Do you want to update $1
+      echo "Do you want to update $@"
       read update
       if [ "$update" == y ]; then
-        sudo apt-get install $1
+        sudo apt-get install "$@"
       fi
     fi
   fi
