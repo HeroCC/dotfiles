@@ -1,12 +1,12 @@
-export PATH="$HOME/bin:$PATH"
-
 # Commonly Changed settings
 motd_mode='updates'
 multiline_prompt='true'
 show_if_system='true'
 
+source ~/.zsh/preload.zsh # To be loaded before all else
+
 # Add Antigen
-export _ANTIGEN_CACHE_ENABLED=true
+#export _ANTIGEN_CACHE_ENABLED=true
 source ~/.zsh/antigen/antigen.zsh
 antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 
@@ -27,7 +27,7 @@ antigen apply # Use it
 
 # Source all the configs
 source ~/.zsh/history.zsh
-source ~/.zsh/completions.zsh
+source ~/.zsh/sources.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh

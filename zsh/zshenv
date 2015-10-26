@@ -1,8 +1,9 @@
+export PATH="$HOME/bin:$PATH"
+
 # if rbenv is present, configure it for use
-# if which rbenv &> /dev/null; then
 if [ -d $HOME/.rbenv ]; then
-  # Put the rbenv entry at the front of the line
   export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
 fi
 
 # Add RVM to PATH for scripting, if rvm is present
@@ -10,7 +11,18 @@ if which rvm-prompt &> /dev/null; then
   export PATH="$HOME/.rvm/bin:$PATH"
 fi
 
-# If Jenv exists, add it to PATH
+# If Jenv exists, add it to PATH and init
 if [ -d $HOME/.jenv ]; then
   export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+fi
+
+# Node Project Manager Init
+if which npm &> /dev/null; then
+  eval "$(npm completion -)"
+fi
+
+# Node Version Manager
+if [ -d $HOME/.nvm ]; then
+  source $HOME/.nvm/nvm.sh
 fi
