@@ -18,8 +18,10 @@ local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}' # Current Di
 local rvm_ruby=''
 if [[ "$show_rvm" != 'false' ]]; then # Only if $show_rmv is not false show it
   if which rvm-prompt &> /dev/null; then # If RVM exists
+    local rvm_version="$(rvm-prompt i v g)" # Get version
     rvm_ruby='%{$fg[blue]%}‹$(rvm-prompt i v g)›%{$reset_color%} '
   elif which rbenv &> /dev/null; then # If RBENV exists
+    local rvm_version="$(rbenv version | sed 's/\s.*$//')" # Get version
     rvm_ruby='%{$fg[blue]%}‹$(rbenv version-name)›%{$reset_color%} '
   fi
   # If RVM version is system, don't display
