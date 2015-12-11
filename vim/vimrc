@@ -4,7 +4,7 @@ filetype off                  " required
 " Add Vundle to Runtime and Initialise
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle/plugins')
-Plugin 'gmarik/Vundle.vim' " Vundle Plugin Manager
+Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'L9' " Vim Script & Plugin Library
 call vundle#end()            " required
@@ -16,7 +16,7 @@ set tabstop=2 shiftwidth=2 expandtab " Set TAB to two spaces
 set number " Enable line numbers
 
 " Syntax & Coloring
-colorscheme deepsea
+"colorscheme deepsea
 syntax on
 
 " Keybindings
