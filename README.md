@@ -11,7 +11,8 @@ To install automatically, run:
 
 	$ ./install.sh
 
-If you want to do it manually, than follow the instructions below...
+If you want to do it manually, then follow the instructions below...
+
 Please note, the manual instructions may be out of date. Use your best judgement!
 
 ---
