@@ -7,6 +7,9 @@ call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'L9' " Vim Script & Plugin Library
+
+" Themes
+Plugin 'mhartington/oceanic-next'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -16,8 +19,14 @@ set tabstop=2 shiftwidth=2 expandtab " Set TAB to two spaces
 set number " Enable line numbers
 
 " Syntax & Coloring
-"colorscheme deepsea
-syntax on
+syntax enable
+
+" Enable colors
+set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
+
+colorscheme OceanicNext
+set background=dark
 
 " Keybindings
 map <F7> mzgg=G`z " Reindent entire file
