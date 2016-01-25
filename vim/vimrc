@@ -23,7 +23,7 @@ syntax enable
 
 " Enable colors
 set t_Co=256
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
 
 colorscheme OceanicNext
 set background=dark
