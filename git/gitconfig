@@ -17,3 +17,5 @@
 	ui = auto
 [hub]
 	protocol = ssh
+[push]
+	default = simple
