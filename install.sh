@@ -113,6 +113,8 @@ function installConfigs {
   link $DOTFILE_DIR/vim/vimrc ~/.vimrc
   link $DOTFILE_DIR/vim ~/.nvim
   link $DOTFILE_DIR/vim/vimrc ~/.nvimrc
+  link $DOTFILE_DIR/vim/ ~/.config/nvim/
+  link $DOTFILE_DIR/vim/vimrc ~/.config/nvim/init.vim
   vim +PluginInstall +qall
   echo ""
 
