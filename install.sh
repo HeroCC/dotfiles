@@ -124,7 +124,7 @@ function installConfigs {
 
   #Bin Scripts
   echo "Adding files to bin/"
-  mkdir "$HOME/bin"
+  mkdir -p "$HOME/bin"
   cd $DOTFILE_DIR/bin
   for filename in $(find . -maxdepth 1 -type f -printf '%f\n')
   do
