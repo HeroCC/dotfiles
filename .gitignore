@@ -10,6 +10,7 @@ vim/bundle/plugins/*
 !vim/bundle/plugins
 vim/tmp
 .netrwhist
+init.vim
 
 # Local Files
 local.zsh
