@@ -7,6 +7,7 @@ call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'L9' " Vim Script & Plugin Library
+Plugin 'Valloric/YouCompleteMe' " Code Completion
 
 " Themes
 Plugin 'mhartington/oceanic-next'
