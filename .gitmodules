@@ -3,7 +3,7 @@
 	url = https://github.com/gmarik/Vundle.vim.git
 [submodule "zsh/antigen"]
 	path = zsh/antigen
-  url = https://github.com/vim-users/antigen.git
+  url = https://github.com/vim-users/antigen
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
