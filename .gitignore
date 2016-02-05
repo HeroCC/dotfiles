@@ -11,6 +11,7 @@ vim/bundle/plugins/*
 vim/tmp
 .netrwhist
 init.vim
+vim/shada
 
 # Local Files
 local.zsh
