@@ -16,9 +16,9 @@ command-not-found
 colored-man-pages
 git
 
-zsh-users/zsh-completions src
+tarruda/zsh-autosuggestions dist
+zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
-tarruda/zsh-autosuggestions
 
 rupa/z
 EOBUNDLES

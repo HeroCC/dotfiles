@@ -150,12 +150,9 @@ if [ -d $HOME/.jenv ]; then
 }
 fi
 
-function zle-line-init {
-  zle autosuggest-start
-}
-zle -N zle-line-init
-
-function exitf {
+function exitt {
   touch $HOME/.tmuxframeexit
   exit
 }
+
+autosuggest_start
