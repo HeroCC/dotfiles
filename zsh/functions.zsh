@@ -154,5 +154,3 @@ function exitt {
   touch $HOME/.tmuxframeexit
   exit
 }
-
-autosuggest_start
