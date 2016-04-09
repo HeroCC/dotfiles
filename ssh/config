@@ -1,5 +1,8 @@
-Host server
+Host pve
   Hostname 10.0.1.51
+  User herocc
+Host mc
+  Hostname 10.0.1.60
   User herocc
 Host pi
   Hostname 10.0.1.53
