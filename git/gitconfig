@@ -1,6 +1,7 @@
 [user]
 	name = HeroCC
 	email = HeroCC@herocc.com
+	signingkey = FA122C1A
 
 [github]
 	user = HeroCC
@@ -19,3 +20,5 @@
 	protocol = ssh
 [push]
 	default = simple
+[commit]
+	gpgsign = true
