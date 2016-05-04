@@ -10,3 +10,9 @@ Host pi
 Host cac
   Hostname cac.herocc.com
   User herocc
+Host builder bob
+  Hostname 10.0.1.61
+  User herocc
+Host p2p seedbox peer 
+  Hostname 10.0.1.63
+  User herocc
