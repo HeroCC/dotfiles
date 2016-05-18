@@ -13,6 +13,12 @@ Host cac
 Host builder bob
   Hostname 10.0.1.61
   User herocc
+Host web
+  Hostname 10.0.1.62
+  User herocc
 Host p2p seedbox peer 
   Hostname 10.0.1.63
+  User herocc
+Host monit mon monitoring monitor zabbix
+  Hostname 10.0.1.64
   User herocc
