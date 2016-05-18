@@ -92,19 +92,14 @@ function installConfigs {
   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
   echo ""
 
-  #Sublime 3
-  echo "Installing Sublime Text 3 Config"
-  mkdir -p ~/.config/sublime-text-3/Packages/
-  cd ~/.config/sublime-text-3/Packages/
-  link $DOTFILE_DIR/sublimetext/User User
-  echo ""
-
-  #Terminator
-  echo "Installing Terminator Config"
-  mkdir -p ~/.config/terminator
-  link $DOTFILE_DIR/terminator/config ~/.config/terminator/config
-  update terminator
-  echo ""
+  if [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
+    #Sublime 3
+    echo "Installing Sublime Text 3 Config"
+    mkdir -p ~/.config/sublime-text-3/Packages/
+    cd ~/.config/sublime-text-3/Packages/
+    link $DOTFILE_DIR/sublimetext/User User
+    echo ""
+  fi
 
   #VIM
   update vim
