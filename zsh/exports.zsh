@@ -19,7 +19,7 @@ export LESS='--ignore-case --raw-control-chars'
 # Path Stuff
 if [ -d /opt/gradle/ ]; then
 	export GRADLE_HOME='/opt/gradle'
-	export PATH="$PATH:$GRADLE_HOME/bin"
+	export PATH="$GRADLE_HOME/bin:${PATH}"
 fi
 
 ipath /usr/local/heroku/bin
@@ -27,7 +27,7 @@ ipath /usr/local/heroku/bin
 if [ -d /opt/android-sdk/ ]; then
 	export ANDROID_SDK_ROOT="/opt/android-sdk"
 	export ANDROID_SDK_HOME="$HOME/.android/"
-	export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools"
+	export PATH="$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools:${PATH}"
 fi
 
 #export PATH=$(echo $PATH | sed ':b;s/:\([^:]*\)\(:.*\):\1/:\1\2/;tb;s/^\([^:]*\)\(:.*\):\1/:\1\2/') # Remove path Duplicates, from http://q.gs/8pXB7

@@ -16,13 +16,14 @@ local user_host='%{$terminfo[bold]$fg[$username_color]%}%n%{$fg_bold[$host_color
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}' # Current Directory
 
 local rvm_ruby=''
+local rvm_version=''
 if [[ "$show_rvm" != 'false' ]]; then # Only if $show_rmv is not false show it
   if which rvm-prompt &> /dev/null; then # If RVM exists
-    local rvm_version="$(rvm-prompt i v g)" # Get version
+    rvm_version="$(rvm-prompt i v g)" # Get version
     rvm_ruby='%{$fg[blue]%}‹$rvm_version›%{$reset_color%} '
   elif which rbenv &> /dev/null; then # If RBENV exists
-    local rvm_version="$(rbenv version-name)" # Get version
-    rvm_ruby='%{$fg[blue]%}‹$rvm_version›%{$reset_color%} '
+    rvm_version="$(rbenv version-name)" # Get version
+    rvm_ruby='%{$fg[blue]%}‹$(rbenv version-name)›%{$reset_color%} '
   fi
   # If RVM version is system, don't display
   if [[ "$show_if_system" != 'true' && "$rvm_version" == 'system' ]]; then
