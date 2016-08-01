@@ -20,6 +20,7 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
+HeroCC/LS_COLORS
 
 rupa/z
 EOBUNDLES
