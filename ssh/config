@@ -10,7 +10,7 @@ Host pi
 Host cac
   Hostname cac.herocc.com
   User herocc
-Host builder bob
+Host builder bob build git
   Hostname 10.0.1.61
   User herocc
 Host web
