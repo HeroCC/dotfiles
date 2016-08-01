@@ -1,5 +1,5 @@
 # Colorize output, add file type indicator, and put sizes in human readable format
-alias ls='ls -GFh'
+alias ls='ls --GFh --color=auto'
 
 alias mysql='mysql -u root'
 alias mysqladmin='mysqladmin -u root'
@@ -17,14 +17,14 @@ ialias rm='trash-put' # Requires trash-cli
 
 # Apt stuff
 if which apt-get &> /dev/null; then
-  alias agi='sudo apt-get install'
-  alias agp='sudo apt-get purge'
-  alias agr='sudo apt-get remove'
-  alias agu='sudo apt-get update'
-  alias agug='sudo apt-get upgrade'
-  alias aguu='sudo apt-get update && sudo apt-get upgrade'
-  alias agar='sudo apt-get autoremove'
-  alias agdu='sudo apt-get dist-upgrade'
+  alias agi='sudo apt install'
+  alias agp='sudo apt purge'
+  alias agr='sudo apt remove'
+  alias agu='sudo apt update'
+  alias agug='sudo apt upgrade'
+  alias aguu='sudo apt update && sudo apt upgrade'
+  alias agar='sudo apt autoremove'
+  alias agdu='sudo apt dist-upgrade'
 fi
 
 alias xtitle='set_terminal_title' # Custom function, see functions.zsh
