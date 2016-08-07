@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"EditorConfig",
 		"Package Control"
 	],
 	"repositories":
