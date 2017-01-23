@@ -7,7 +7,7 @@ call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'L9' " Vim Script & Plugin Library
-Plugin 'Valloric/YouCompleteMe' " Code Completion
+Plugin 'ajh17/VimCompletesMe' " Code Completion
 
 " Themes
 Plugin 'mhartington/oceanic-next'
@@ -31,3 +31,6 @@ set background=dark
 
 " Keybindings
 map <F7> mzgg=G`z " Reindent entire file
+
+" Functions
+command W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
