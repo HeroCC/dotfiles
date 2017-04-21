@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "HeroCC's Ubuntu (14.04) Server Setup script!"
+echo "HeroCC's Ubuntu (16.04) Server Setup script!"
 echo "This is aimed at the Ubuntu 14.04 Proxmox template"
-packagesToInstall="curl git vim unattended-upgrades"
+packagesToInstall="curl git ntp unattended-upgrades"
 
 function main {
   ## INSTALL REGULAR PACKAGES
@@ -11,7 +11,7 @@ function main {
 
   ## Setting Timezone
   echo "Setting Timezone to America/New_York (EST) with DST"
-  echo "America/New_York" | sudo tee /etc/timezone
+  timedatectl set-timezone America/New_York
 
   ## Generating en_US and en_US.UTF8 localization
   echo "Generating en_US and en_US.UTF-8 localizations"
