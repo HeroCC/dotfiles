@@ -62,7 +62,8 @@ baseCmd=$(cut -f1 -d" ") <<< "$newCmd"
 if command -v $baseCmd >/dev/null 2>&1; then
   alias $oldCmd=$newCmd
 elif [[ "$ialias_mute" != 'true' ]]; then
-  echo "Command '$baseCmd' not found, using '$oldCmd'"
+    #echo "Command '$baseCmd' not found, using '$oldCmd'"
+    true
     #alias $oldCmd='echo "Command $baseCmd not found, using $oldCmd" && $oldCmd'
   fi
 }
@@ -149,8 +150,3 @@ if [ -d $HOME/.jenv ]; then
   fi
 }
 fi
-
-function exitt {
-  touch $HOME/.tmuxframeexit
-  exit
-}

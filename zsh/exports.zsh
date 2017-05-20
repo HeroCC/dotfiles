@@ -1,7 +1,6 @@
 # Setup terminal, and turn on colors
-export TERM=xterm-256color
+if [[ $TERM == xterm ]]; then export TERM=xterm-256color; fi
 export CLICOLOR=1
-#export LS_COLORS=Gxfxcxdxbxegedabagacad
 
 # Enable color in grep
 export GREP_OPTIONS='--color=auto'
@@ -29,5 +28,3 @@ if [ -d /opt/android-sdk/ ]; then
 	export ANDROID_SDK_HOME="$HOME/.android/"
 	export PATH="$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools:${PATH}"
 fi
-
-#export PATH=$(echo $PATH | sed ':b;s/:\([^:]*\)\(:.*\):\1/:\1\2/;tb;s/^\([^:]*\)\(:.*\):\1/:\1\2/') # Remove path Duplicates, from http://q.gs/8pXB7

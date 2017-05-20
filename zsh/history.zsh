@@ -5,6 +5,4 @@ HISTFILE=~/.zsh_history
 HISTCONTROL=ignoredups:erasedups
 HISTIGNORE="exit"
 
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+setopt inc_append_history # Update History in all windows on command execution

@@ -6,12 +6,10 @@ show_if_system='false'
 source ~/.zsh/preload.zsh # To be loaded before all else
 
 # Add Antigen
-#export _ANTIGEN_CACHE_ENABLED=true
 source ~/.zsh/antigen/antigen.zsh
 antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 
 antigen bundles <<EOBUNDLES
-tmux
 command-not-found
 colored-man-pages
 git
@@ -19,7 +17,6 @@ git
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-history-substring-search
 HeroCC/LS_COLORS
 
 rupa/z
@@ -32,10 +29,7 @@ source ~/.zsh/history.zsh
 source ~/.zsh/sources.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
-source ~/.zsh/bindkeys.zsh
 source ~/.zsh/exports.zsh
-source ~/.zsh/colors.zsh
-source ~/.zsh/setopt.zsh
 if [ -e "$HOME/.zsh/local.zsh" ]; then # If local.zsh exists, source it
   source ~/.zsh/local.zsh
 fi

@@ -1,9 +1,10 @@
 #!/usr/bin/env zsh
 # HeroCC's Heavily modified version of Bira / Mira ZSH theme
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 username_color='green'
 host_color='green'
+
 if [[ -n "$SSH_CONNECTION" ]]; then
 	host_color='red' # If using SSH, color host red
 fi
