@@ -1,5 +1,5 @@
 # Colorize output, add file type indicator, and put sizes in human readable format
-alias ls='ls -GFh --color=auto'
+alias ls='ls -GFh'
 
 alias mysql='mysql -u root'
 alias mysqladmin='mysqladmin -u root'
