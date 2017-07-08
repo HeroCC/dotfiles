@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$PATH:/opt/local/bin"
 
 # if rbenv is present, configure it for use
 if [ -d $HOME/.rbenv ]; then
