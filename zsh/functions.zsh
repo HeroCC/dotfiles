@@ -55,12 +55,8 @@ fi
 }
 
 function ialias { # If command you want to alias to exists, do it, else print an error
-oldCmd=$(cut -f1 -d"=") <<< "$1"
-newCmd=$(cut -f2 -d"=") <<< "$1"
-baseCmd=$(cut -f1 -d" ") <<< "$newCmd"
-
-if command -v $baseCmd >/dev/null 2>&1; then
-  alias $oldCmd=$newCmd
+if command -v $2 >/dev/null 2>&1; then
+  alias $1=$2
 elif [[ "$ialias_mute" != 'true' ]]; then
     #echo "Command '$baseCmd' not found, using '$oldCmd'"
     true
