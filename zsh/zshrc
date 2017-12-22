@@ -13,6 +13,7 @@ antigen bundles <<EOBUNDLES
 command-not-found
 colored-man-pages
 git
+extract
 
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
