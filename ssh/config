@@ -7,8 +7,8 @@ Host mc
 Host pi
   Hostname 10.0.1.53
   User pi
-Host hass
-  Hostname 10.0.0.105
+Host hass unifi pihole
+  Hostname 10.0.0.201
   user pi
 Host builder bob build git
   Hostname 10.0.1.61
@@ -29,11 +29,8 @@ Host cash money
   Hostname 10.0.1.67
   User herocc
 
-Host cac
-  Hostname cac.herocc.com
-  User herocc
-Host cac2
-  Hostname cac2.herocc.com
+Host cac cac3
+  Hostname cac3.herocc.com
   User herocc
 
 Host school
