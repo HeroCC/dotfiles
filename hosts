@@ -1,0 +1,4 @@
+# A file used for my internal domain mappings
+# This is automatically grabbed by PiHole on my home network to distribute custom domain names
+
+10.0.1.66 salt
