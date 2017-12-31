@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'ajh17/VimCompletesMe' " Code Completion
 Plugin 'vim-syntastic/syntastic' " Syntax Error Highlighting
+Plugin 'lervag/vimtex'
 " Themes
 Plugin 'mhartington/oceanic-next'
 call vundle#end()            " required
