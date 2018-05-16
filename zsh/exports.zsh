@@ -2,10 +2,6 @@
 if [[ $TERM == xterm ]]; then export TERM=xterm-256color; fi
 export CLICOLOR=1
 
-# Enable color in grep
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='3;33'
-
 if [[ -a /usr/bin/nvim ]]; then
   export EDITOR='nvim'
 else
