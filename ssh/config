@@ -22,3 +22,16 @@ Host p2p seedbox peer
 Host monit mon monitoring monitor zabbix
   Hostname 10.0.1.64
   User herocc
+
+Host oceanai pavlab
+  Hostname oceanai.mit.edu
+  User conlanc
+Host athena mit
+  Hostname athena.dialup.mit.edu
+  User conlanc
+Host csail
+  Hostname login.csail.mit.edu
+  User conlanc
+Host cc
+  Hostname 128.52.182.213
+  User ubuntu
