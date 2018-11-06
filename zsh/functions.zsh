@@ -1,26 +1,3 @@
-function extract { # Detect zipped file format, and if supported, extract
-echo Extracting $1 ...
-if [ -f $1 ] ; then
-  case $1 in
-    *.tar.bz2)   tar xjf $1  ;;
-*.tar.gz)    tar xzf $1  ;;
-*.bz2)       bunzip2 $1  ;;
-*.rar)       unrar x $1    ;;
-*.gz)        gunzip $1   ;;
-*.tar)       tar xf $1   ;;
-*.tbz2)      tar xjf $1  ;;
-*.tgz)       tar xzf $1  ;;
-*.zip)       unzip $1   ;;
-*.Z)         uncompress $1  ;;
-*.7z)        7z x $1  ;;
-*.lrz)       lrzip -d $1;;
-*)        echo "'$1' cannot be extracted via extract()" ;;
-esac
-else
-  echo "'$1' is not a valid file"
-fi
-}
-
 function mysql_start {
   mysql.server start
 }
@@ -55,12 +32,8 @@ fi
 }
 
 function ialias { # If command you want to alias to exists, do it, else print an error
-oldCmd=$(cut -f1 -d"=") <<< "$1"
-newCmd=$(cut -f2 -d"=") <<< "$1"
-baseCmd=$(cut -f1 -d" ") <<< "$newCmd"
-
-if command -v $baseCmd >/dev/null 2>&1; then
-  alias $oldCmd=$newCmd
+if command -v $2 >/dev/null 2>&1; then
+  alias $1=$2
 elif [[ "$ialias_mute" != 'true' ]]; then
     #echo "Command '$baseCmd' not found, using '$oldCmd'"
     true

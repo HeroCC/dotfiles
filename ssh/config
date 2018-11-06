@@ -7,9 +7,9 @@ Host mc
 Host pi
   Hostname 10.0.1.53
   User pi
-Host cac
-  Hostname cac.herocc.com
-  User herocc
+Host hass unifi pihole
+  Hostname 10.0.0.201
+  user pi
 Host builder bob build git
   Hostname 10.0.1.61
   User herocc
@@ -21,6 +21,16 @@ Host p2p seedbox peer
   User herocc
 Host monit mon monitoring monitor zabbix
   Hostname 10.0.1.64
+  User herocc
+Host plex media
+  Hostname 10.0.1.66
+  User herocc
+Host cash money
+  Hostname 10.0.1.67
+  User herocc
+
+Host cac cac3
+  Hostname cac3.herocc.com
   User herocc
 
 Host oceanai pavlab
@@ -35,3 +45,8 @@ Host csail
 Host cc
   Hostname 128.52.182.213
   User ubuntu
+
+Host school
+  Hostname kpol2i25xckp6smk.onion
+  User melrosehs
+  ProxyCommand nc -x 10.0.1.63:9050 %h %p

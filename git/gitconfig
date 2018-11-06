@@ -9,6 +9,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
+	autocrlf = input
 
 [filter "lfs"]
 	clean = git lfs clean %f
