@@ -45,6 +45,7 @@ Host csail
 Host cc
   Hostname 128.52.182.213
   User ubuntu
+  Port 2222
 
 Host school
   Hostname kpol2i25xckp6smk.onion
