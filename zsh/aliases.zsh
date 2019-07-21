@@ -31,7 +31,6 @@ alias xtitle='set_terminal_title' # Custom function, see functions.zsh
 
 ialias vim nvim # Use the new vim
 
-alias ping='ping -c 5' # Ping only 5 times
 alias clr='clear;echo "Currently logged in on $(tty), as $USER in directory $PWD."'
 alias path='echo -e ${PATH//:/\\n}' # Formatted path
 alias mkdir='mkdir -pv' # Verbose & Parents mkdir flag
