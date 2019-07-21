@@ -10,6 +10,9 @@ Host pi
 Host hass unifi pihole
   Hostname 10.0.0.201
   user pi
+Host odroid 
+  Hostname 10.0.1.10
+  User cc
 Host builder bob build git
   Hostname 10.0.1.61
   User herocc
