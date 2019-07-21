@@ -11,6 +11,8 @@ fi
 export PAGER='less'
 export LESS='--ignore-case --raw-control-chars'
 
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
 # Path Stuff
 if [ -d /opt/gradle/ ]; then
 	export GRADLE_HOME='/opt/gradle'

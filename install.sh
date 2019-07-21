@@ -55,13 +55,13 @@ function installConfigs {
   fi
   echo ""
 
-  #git
-  update git
-  echo "Installing Git Config"
-  link $DOTFILE_DIR/git/gitconfig ~/.gitconfig
-  link $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
-  link $DOTFILE_DIR/git/gitattributes ~/.gitattributes
-  echo ""
+#  #git
+#  update git
+#  echo "Installing Git Config"
+#  link $DOTFILE_DIR/git/gitconfig ~/.gitconfig
+#  link $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
+#  link $DOTFILE_DIR/git/gitattributes ~/.gitattributes
+#  echo ""
 
   #Screen
   update screen
@@ -83,23 +83,23 @@ function installConfigs {
   link $DOTFILE_DIR/ssh/config ~/.ssh/config
   echo ""
 
-  #Gem
-  update ruby-full
-  echo "Installing Gem Config"
-  link $DOTFILE_DIR/gem/gemrc ~/.gemrc
-  echo Installing Rbenv
-  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-  echo ""
+#  #Gem
+#  update ruby-full
+#  echo "Installing Gem Config"
+#  link $DOTFILE_DIR/gem/gemrc ~/.gemrc
+#  echo Installing Rbenv
+#  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+#  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+#  echo ""
 
-  if [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
-    #Sublime 3
-    echo "Installing Sublime Text 3 Config"
-    mkdir -p ~/.config/sublime-text-3/Packages/
-    cd ~/.config/sublime-text-3/Packages/
-    link $DOTFILE_DIR/sublimetext/User User
-    echo ""
-  fi
+#  if [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
+#    #Sublime 3
+#    echo "Installing Sublime Text 3 Config"
+#    mkdir -p ~/.config/sublime-text-3/Packages/
+#    cd ~/.config/sublime-text-3/Packages/
+#    link $DOTFILE_DIR/sublimetext/User User
+#    echo ""
+#  fi
 
   #VIM
   update vim
@@ -111,21 +111,11 @@ function installConfigs {
   vim +PluginInstall +qall
   echo ""
 
-  #Gradle
-  echo "Installing Gradle Config"
-  mkdir -p ~/.gradle/
-  link $DOTFILE_DIR/gradle/gradle.properties ~/.gradle/gradle.properties
-  echo ""
-
-  #Bin Scripts
-  echo "Adding files to bin/"
-  mkdir -p "$HOME/bin"
-  cd $DOTFILE_DIR/bin
-  for filename in $(find . -maxdepth 1 -type f -printf '%f\n')
-  do
-    link $DOTFILE_DIR/bin/$filename ~/bin/$filename
-  done
-  echo ""
+#  #Gradle
+#  echo "Installing Gradle Config"
+#  mkdir -p ~/.gradle/
+#  link $DOTFILE_DIR/gradle/gradle.properties ~/.gradle/gradle.properties
+#  echo ""
 }
 
 function main {
