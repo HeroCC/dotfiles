@@ -54,3 +54,6 @@ Host school
   Hostname kpol2i25xckp6smk.onion
   User melrosehs
   ProxyCommand nc -x 10.0.1.63:9050 %h %p
+Host piaware flight 170614D
+  Hostname 10.242.1.148
+  User pi
