@@ -268,7 +268,7 @@ fi
   typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=9
   # Don't show status unless the last command was terminated by a signal.
   # Show signals as "INT", "ABORT", "KILL", etc.
-  typeset -g POWERLEVEL9K_STATUS_ERROR_CONTENT_EXPANSION='${${P9K_CONTENT#SIG}//[!A-Z]}'
+  #typeset -g POWERLEVEL9K_STATUS_ERROR_CONTENT_EXPANSION='${${P9K_CONTENT#SIG}//[!A-Z]}'
 
   # Show duration of the last command if takes longer than this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
