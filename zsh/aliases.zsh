@@ -8,6 +8,10 @@ alias please='sudo $(fc -nl -1)' # Repeat last command with sudo
 alias chmod='chmod -v'
 alias chown='chown -v'
 
+if type "xdg-open" > /dev/null; then
+  alias open='xdg-open '
+fi
+
 # Apt stuff
 if which apt-get &> /dev/null; then
   alias agi='sudo apt-get install'

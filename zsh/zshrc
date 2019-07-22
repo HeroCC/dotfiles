@@ -1,7 +1,3 @@
-# Commonly Changed settings
-multiline_prompt='true'
-show_if_system='false'
-
 source ~/.zsh/preload.zsh # To be loaded before all else
 
 # Add Antigen
