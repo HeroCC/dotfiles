@@ -1,5 +1,4 @@
 # Setup terminal, and turn on colors
-if [[ $TERM == xterm ]]; then export TERM=xterm-256color; fi
 export CLICOLOR=1
 
 if [[ -a /usr/bin/nvim ]]; then

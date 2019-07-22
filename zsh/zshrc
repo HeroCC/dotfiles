@@ -1,7 +1,4 @@
-zmodload zsh/zprof
-
 # Commonly Changed settings
-motd_mode='updates'
 multiline_prompt='true'
 show_if_system='false'
 
@@ -35,4 +32,3 @@ source ~/.zsh/exports.zsh
 if [ -e "$HOME/.zsh/local.zsh" ]; then # If local.zsh exists, source it
   source ~/.zsh/local.zsh
 fi
-source ~/.zsh/motd.zsh
