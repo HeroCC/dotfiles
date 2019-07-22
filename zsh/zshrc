@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 # Commonly Changed settings
 motd_mode='updates'
 multiline_prompt='true'
@@ -27,7 +29,6 @@ antigen apply # Use it
 
 # Source all the configs
 source ~/.zsh/history.zsh
-source ~/.zsh/sources.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/exports.zsh

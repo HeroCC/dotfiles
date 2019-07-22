@@ -13,16 +13,3 @@ export LESS='--ignore-case --raw-control-chars'
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
-# Path Stuff
-if [ -d /opt/gradle/ ]; then
-	export GRADLE_HOME='/opt/gradle'
-	export PATH="$GRADLE_HOME/bin:${PATH}"
-fi
-
-ipath /usr/local/heroku/bin
-
-if [ -d /opt/android-sdk/ ]; then
-	export ANDROID_SDK_ROOT="/opt/android-sdk"
-	export ANDROID_SDK_HOME="$HOME/.android/"
-	export PATH="$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools:${PATH}"
-fi
