@@ -21,7 +21,9 @@ HeroCC/LS_COLORS
 
 rupa/z
 EOBUNDLES
-antigen theme $HOME/.zsh/custom bira-cust --no-local-clone
+antigen theme romkatv/powerlevel10k
+source $HOME/.zsh/themes/p10k-lean.zsh
+#antigen theme $HOME/.zsh/themes bira-cust --no-local-clone
 antigen apply # Use it
 
 # Source all the configs
