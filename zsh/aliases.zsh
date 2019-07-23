@@ -1,5 +1,5 @@
 # Colorize output, add file type indicator, and put sizes in human readable format
-alias ls='ls -GFh'
+alias ls='ls -GFph --color=auto'
 
 alias sudo='sudo ' # Makes sudo use aliases, from https://askubuntu.com/a/22043/353466
 alias please='sudo $(fc -nl -1)' # Repeat last command with sudo
