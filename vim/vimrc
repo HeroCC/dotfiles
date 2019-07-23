@@ -7,7 +7,7 @@ call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 " Themes
-Plugin 'fneu/breezy'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -27,9 +27,17 @@ set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
 set guicursor=
 
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+
 set background=dark
 "colorscheme OceanicNext
-colorscheme breezy
+colorscheme PaperColor
 
 " Keybindings
 map <F7> mzgg=G`z " Reindent entire file
