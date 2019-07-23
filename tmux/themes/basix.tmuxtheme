@@ -1,0 +1,68 @@
+# Spec from https://man.openbsd.org/tmux.1
+# Modified from https://github.com/jimeh/tmux-themepack/blob/7bb2aa5c1c8bca6f3f1799443873c35f14433e51/basic.tmuxtheme
+
+# Status update interval
+set -g status-interval 1
+
+# Basic status bar colors
+set -g status-style bg=black,fg=red
+
+# Prefix highlight preferences
+set -g @prefix_highlight_empty_prompt '   '
+set -g @prefix_highlight_fg 'black'
+set -g @prefix_highlight_bg 'magenta'
+
+# Left side of status bar
+set -g status-left-style bg=black,fg=green
+set -g status-left-length 40
+set -g status-left "#S #[fg=white]» #[fg=yellow]#I #[fg=red]#P"
+
+# Right side of status bar
+set -g status-right-style bg=black,fg=red
+set -g status-right-length 40
+set -g status-right "#{prefix_highlight} #H #[fg=white]« #[fg=yellow]%r #[fg=green]%D"
+
+# Window status
+set -g window-status-format " #I:#W#F "
+set -g window-status-current-format " #I:#W#F "
+
+# Window status
+set -g window-status-style bg=black,fg=blue
+
+# Current window status
+set -g window-status-current-style bg=black,fg=cyan
+
+# Window with activity status
+set -g window-status-activity-style bg=black,fg=yellow
+
+# Window with bell status
+set -g window-status-bell-style bg=black,fg=red
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify centre
+
+# Pane border
+set -g pane-border-style bg=default,fg=default
+
+# Active pane border
+set -g pane-active-border-style bg=default,fg=red
+
+# Pane number indicator
+set -g display-panes-colour default
+set -g display-panes-active-colour default
+
+# Clock mode
+set -g clock-mode-colour red
+set -g clock-mode-style 12
+
+# Message
+set -g message-style bg=default,fg=default
+
+# Command message
+set -g message-command-style bg=default,fg=default
+
+# Mode
+set -g mode-style bg=red,fg=default
