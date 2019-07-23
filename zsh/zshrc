@@ -1,4 +1,5 @@
-source ~/.zsh/preload.zsh # To be loaded before all else
+[ -z "$SSH_CONNECTION" ] && ZSH_TMUX_AUTOSTART="true"
+ZSH_AUTOSUGGEST_USE_ASYNC="tue"
 
 # Add Antigen
 source ~/.zsh/antigen/antigen.zsh
@@ -7,11 +8,13 @@ antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 antigen bundles <<EOBUNDLES
 command-not-found
 colored-man-pages
-git
+magic-enter
 extract
+tmux
+git
 
-zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 HeroCC/LS_COLORS
 

@@ -21,5 +21,3 @@
 	protocol = ssh
 [push]
 	default = simple
-[commit]
-	gpgsign = true
