@@ -1,7 +1,7 @@
 # Setup terminal, and turn on colors
 export CLICOLOR=1
 
-if [[ -a /usr/bin/nvim ]]; then
+if type "nvim" > /dev/null; then
   export EDITOR='nvim'
 else
   export EDITOR='vim'
