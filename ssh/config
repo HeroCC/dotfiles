@@ -62,7 +62,7 @@ Host shoreside pavlab
   Hostname pavlabshoreside.csail.mit.edu 
 # Hostname 128.30.31.69
   User conlanc
-  LocalForward 5901:localhost:5900
+  LocalForward 5901 localhost:5900
 
 # CSail Jump Policy
 Host jump.csail.mit.edu
