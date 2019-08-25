@@ -36,6 +36,7 @@ Host cac cac3
   Hostname cac3.herocc.com
   User herocc
 
+# Don't forget the BTVM MacMini Server + Raspis
 Host oceanai pavlab
   Hostname oceanai.mit.edu
   User conlanc
@@ -49,6 +50,18 @@ Host cc
   Hostname 128.52.182.213
   User ubuntu
   Port 2222
+Host csaildell mitdell mitminibox
+  Hostname 128.30.29.89
+  User conlanc
+  Port 2222
+Host mitalienware csailalienware
+  Hostname 128.30.31.232
+  User conlanc
+  Port 2222
+Host shoreside pavlab
+  Hostname pavlabshoreside.csail.mit.edu # 128.30.31.69
+  User conlanc
+  LocalForward 5901:localhost:5900
 
 Host school
   Hostname kpol2i25xckp6smk.onion
