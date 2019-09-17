@@ -75,6 +75,15 @@ Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
   GSSAPIDelegateCredentials yes
 #  GSSAPIKeyExchange yes
 
+# UMass
+Host umass
+  Hostname webadmin.oit.umass.edu
+  User ccesar
+Host edlab elab elinux elnux
+  Hostname elnux.cs.umass.edu
+  User ccesar
+
+# MHS
 Host school
   Hostname kpol2i25xckp6smk.onion
   User melrosehs
