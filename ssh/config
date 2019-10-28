@@ -32,8 +32,8 @@ Host cash money
   Hostname 10.0.1.67
   User herocc
 
-Host cac cac3
-  Hostname cac3.herocc.com
+Host cac
+  Hostname 104.167.109.107
   User herocc
 
 # Don't forget the BTVM MacMini Server + Raspis
@@ -64,6 +64,26 @@ Host shoreside pavlab
   User conlanc
   LocalForward 5901 localhost:5900
 
+# CSail Jump Policy
+Host jump.csail.mit.edu
+  GSSAPIAuthentication yes
+#  GSSAPIKeyExchange yes
+  VerifyHostKeyDNS yes
+Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+  ProxyCommand ssh -W %h:%p jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
+#  GSSAPIKeyExchange yes
+
+# UMass
+Host umass
+  Hostname webadmin.oit.umass.edu
+  User ccesar
+Host edlab elab elinux elnux
+  Hostname elnux.cs.umass.edu
+  User ccesar
+
+# MHS
 Host school
   Hostname kpol2i25xckp6smk.onion
   User melrosehs
