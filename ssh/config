@@ -66,6 +66,7 @@ Host shoreside pavlab
 
 # CSail Jump Policy
 Host jump.csail.mit.edu
+  User conlanc
   GSSAPIAuthentication yes
 #  GSSAPIKeyExchange yes
   VerifyHostKeyDNS yes
