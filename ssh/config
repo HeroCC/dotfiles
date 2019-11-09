@@ -36,6 +36,13 @@ Host cac
   Hostname 104.167.109.107
   User herocc
 
+# Amis
+Host liam
+  Port 2022
+  Hostname penis.casa 
+  # 13.82.170.45 / ZT 10.147.20.233
+  User cc
+
 # Don't forget the BTVM MacMini Server + Raspis
 Host oceanai pavlab
   Hostname oceanai.mit.edu
