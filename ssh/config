@@ -36,8 +36,19 @@ Host cac
   Hostname 104.167.109.107
   User herocc
 
+# CSail Jump Policy
+Host jump.csail.mit.edu
+  GSSAPIAuthentication yes
+#  GSSAPIKeyExchange yes
+  VerifyHostKeyDNS yes
+Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+  ProxyCommand ssh -W %h:%p jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
+#  GSSAPIKeyExchange yes
+
 # Don't forget the BTVM MacMini Server + Raspis
-Host oceanai pavlab
+Host oceanai
   Hostname oceanai.mit.edu
   User conlanc
 Host athena mit
@@ -58,23 +69,12 @@ Host mitalienware csailalienware
   Hostname 128.30.31.232
   User conlanc
   Port 2222
-Host shoreside pavlab
+Host shoreside
 #  Hostname pavlabshoreside.csail.mit.edu 
 # Hostname 128.30.31.69
   Hostname 128.30.27.41
   User conlanc
   LocalForward 5901 localhost:5900
-
-# CSail Jump Policy
-Host jump.csail.mit.edu
-  GSSAPIAuthentication yes
-#  GSSAPIKeyExchange yes
-  VerifyHostKeyDNS yes
-Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
-  ProxyCommand ssh -W %h:%p jump.csail.mit.edu
-  GSSAPIAuthentication yes
-  GSSAPIDelegateCredentials yes
-#  GSSAPIKeyExchange yes
 
 # UMass
 Host umass
