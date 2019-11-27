@@ -83,6 +83,10 @@ Host shoreside
   User conlanc
   LocalForward 5901 localhost:5900
 
+Host mike
+  Hostname 173.48.235.62
+  User conlanc
+
 # UMass
 Host umass
   Hostname webadmin.oit.umass.edu
