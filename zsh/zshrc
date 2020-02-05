@@ -1,5 +1,6 @@
 [ -z "$SSH_CONNECTION" ] && ZSH_TMUX_AUTOSTART="true"
-ZSH_AUTOSUGGEST_USE_ASYNC="tue"
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line)
 
 # Add Antigen
 source ~/.zsh/antigen/antigen.zsh
