@@ -15,3 +15,6 @@ vim/shada
 
 # Local Files
 local.zsh
+
+# MacOS
+.DS_Store
