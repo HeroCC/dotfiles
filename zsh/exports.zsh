@@ -12,3 +12,6 @@ export LESS='--ignore-case --raw-control-chars'
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
+# https://stackoverflow.com/a/55344565/1709894
+export SDKROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+
