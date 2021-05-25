@@ -97,6 +97,9 @@ Host umass
 Host edlab elab elinux elnux
   Hostname elnux.cs.umass.edu
   User ccesar
+Host hpcc mghpcc
+  Hostname ghpcc06.umassrc.org
+  User cc67a
 
 # MHS
 Host school
