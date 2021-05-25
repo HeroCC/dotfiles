@@ -1,6 +1,6 @@
 [ -z "$SSH_CONNECTION" ] && ZSH_TMUX_AUTOSTART="true"
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line)
+#ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line)
 
 # Add Antigen
 source ~/.zsh/antigen/antigen.zsh
@@ -35,3 +35,4 @@ source ~/.zsh/exports.zsh
 if [ -e "$HOME/.zsh/local.zsh" ]; then # If local.zsh exists, source it
   source ~/.zsh/local.zsh
 fi
+
