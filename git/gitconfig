@@ -6,10 +6,10 @@
 	attributesfile = ~/.gitattributes
 	autocrlf = input
 
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+#[filter "lfs"]
+#	clean = git lfs clean %f
+#	smudge = git lfs smudge %f
+#	required = true
 [color]
 	ui = auto
 [hub]
