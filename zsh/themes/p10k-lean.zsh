@@ -32,7 +32,7 @@ fi
       dir                     # current directory
       vcs                     # git status
       # =========================[ Line #2 ]=========================
-      newline
+      #newline
       context
       prompt_char             # prompt symbol
   )
@@ -53,10 +53,10 @@ fi
       # nvm                   # node.js version from nvm (https://github.com/nvm-sh/nvm)
       # nodeenv               # node.js environment (https://github.com/ekalinin/nodeenv)
       # node_version          # node.js version
-      kubecontext           # current kubernetes context (https://kubernetes.io/)
+      #kubecontext           # current kubernetes context (https://kubernetes.io/)
       # context                 # user@host
       # =========================[ Line #2 ]=========================
-      newline
+      #newline
       # public_ip             # public IP address
       # battery               # internal battery
       # time                  # current time
