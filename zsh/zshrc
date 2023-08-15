@@ -21,7 +21,7 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 HeroCC/LS_COLORS
 
-rupa/z
+agkozak/zsh-z
 EOBUNDLES
 antigen theme romkatv/powerlevel10k
 source $HOME/.zsh/themes/p10k-lean.zsh
