@@ -14,6 +14,7 @@ source ~/.zsh/antigen/antigen.zsh
 antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 
 antigen bundles <<EOBUNDLES
+brew
 command-not-found
 colored-man-pages
 magic-enter
