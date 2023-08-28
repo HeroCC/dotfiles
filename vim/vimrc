@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
+Plugin 'editorconfig/editorconfig-vim' " .editorconfig support
 " Themes
 Plugin 'NLKNguyen/papercolor-theme'
 
@@ -44,3 +45,7 @@ map <F7> mzgg=G`z " Reindent entire file
 
 " Functions
 command W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+au FileType gitcommit let b:EditorConfig_disable = 1
+
