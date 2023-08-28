@@ -24,7 +24,6 @@ magic-enter
 extract
 tmux
 git
-docker docker-compose kubectl
 
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
@@ -35,21 +34,12 @@ agkozak/zsh-z
 EOBUNDLES
 antigen theme romkatv/powerlevel10k
 source $HOME/.zsh/themes/p10k.zsh
-#antigen theme $HOME/.zsh/themes bira-cust --no-local-clone
-
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 antigen apply # Use it
-
-
 
 # Source all the configs
 source ~/.zsh/history.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/exports.zsh
-if [ -e "$HOME/.zsh/local.zsh" ]; then # If local.zsh exists, source it
-  source ~/.zsh/local.zsh
-fi
-
+[ -e "$HOME/.zsh/local.zsh" ] && source ~/.zsh/local.zsh
