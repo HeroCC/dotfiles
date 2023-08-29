@@ -26,11 +26,12 @@ tmux
 git
 
 zsh-users/zsh-completions
+HeroCC/LS_COLORS
+Aloxaf/fzf-tab
+agkozak/zsh-z
+
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
-HeroCC/LS_COLORS
-
-agkozak/zsh-z
 EOBUNDLES
 antigen theme romkatv/powerlevel10k
 source $HOME/.zsh/themes/p10k.zsh
