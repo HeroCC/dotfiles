@@ -7,7 +7,7 @@ zstyle ':completion:*:descriptions' format '[%d]'
 [ -n "$TMUX" ] && zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 (( $+commands[exa] )) && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 
-if type "nvim" > /dev/null; then
+if (( $+commands[nvim] )); then
   export EDITOR='nvim'
 else
   export EDITOR='vim'
