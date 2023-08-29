@@ -13,12 +13,12 @@ alias please='sudo $(fc -nl -1)' # Repeat last command with sudo
 alias chmod='chmod -v'
 alias chown='chown -v'
 
-if type "xdg-open" > /dev/null; then
+if (( $+commands[xdg-open] )); then
   alias open='xdg-open '
 fi
 
 # Apt stuff
-if which apt-get &> /dev/null; then
+if (( $+commands[apt-get] )); then
   alias agi='sudo apt-get install'
   alias agp='sudo apt-get purge'
   alias agr='sudo apt-get remove'

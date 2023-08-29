@@ -7,21 +7,11 @@ fi
 }
 
 function ialias { # If command you want to alias to exists, do it, else print an error
-if command -v $2 >/dev/null 2>&1; then
-  alias $1=$2
-elif [[ "$ialias_mute" != 'true' ]]; then
-    #echo "Command '$baseCmd' not found, using '$oldCmd'"
-    true
-    #alias $oldCmd='echo "Command $baseCmd not found, using $oldCmd" && $oldCmd'
-  fi
+  (( $+commands[$2] )) && alias $1=$2
 }
 
 function ipath { # If directory exists, add it to path
-dir="$1"
-
-if [ -d $dir ]; then
-  export PATH="$PATH:$dir"
-fi
+  [ -d "$1" ] && export PATH="$PATH:$dir"
 }
 
 function = { # Simple Calculator
