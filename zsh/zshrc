@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ -r "${ZINIT_MODULE_PATH:=${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/module/Src}/zdharma_continuum/zinit.so" ]]; then
+  # Automatically compile `source` usages -- use after `zinit module build`
+  module_path+=( "$ZINIT_MODULE_PATH" )
+  zmodload zdharma_continuum/zinit
+fi
+
 [[ -z "$SSH_CONNECTION" && ! "$TERMINAL_EMULATOR" =~ "JetBrains-JediTerm" ]] && ZSH_TMUX_AUTOSTART="true"
 if [[ -n "$TMUX" && "$ZSH_TMUX_AUTOSTART" -eq "true" ]] && (( $+commands[tmux] )); then
   # Only reattach to disconnected tmux sessions, otherwise open a new one
@@ -12,31 +18,45 @@ if [[ -n "$TMUX" && "$ZSH_TMUX_AUTOSTART" -eq "true" ]] && (( $+commands[tmux] )
   [ -z "$ZSH_TMUX_DEFAULT_SESSION_NAME" ] && ZSH_TMUX_AUTOCONNECT="false"
 fi
 
-# Add Antigen
-source ~/.zsh/antigen/antigen.zsh
-antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
+# Add Plugins
+source "$HOME/.zsh/zinit/zinit.zsh"
 
-antigen bundles <<EOBUNDLES
+while read line; do 
+  zinit snippet OMZ::lib/${line} 
+done <<EOLIBS
+git.zsh
+key-bindings.zsh
+grep.zsh
+EOLIBS
+
+while read line; do
+  zinit snippet OMZ::plugins/${line} 
+done <<EOPLUGINS
 brew
+magic-enter
+tmux
+EOPLUGINS
+
+while read line; do
+  zinit ice wait lucid
+  zinit snippet OMZ::plugins/${line} 
+done <<EOPLUGINS
 command-not-found
 colored-man-pages
-magic-enter
 extract
-tmux
 git
+EOPLUGINS
 
-zsh-users/zsh-completions
-HeroCC/LS_COLORS
-Aloxaf/fzf-tab
-agkozak/zsh-z
+zinit ice lucid wait atclone"dircolors -b LS_COLORS > clrs.zsh" \
+    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
+zinit light trapd00r/LS_COLORS
 
-zsh-users/zsh-autosuggestions
-zdharma-continuum/fast-syntax-highlighting
-EOBUNDLES
-antigen theme romkatv/powerlevel10k
-source $HOME/.zsh/themes/p10k.zsh
-
-antigen apply # Use it
+zinit blockf for zsh-users/zsh-completions
+zinit depth"1" atload"source $HOME/.zsh/themes/p10k.zsh" for romkatv/powerlevel10k
+zinit lucid wait for Aloxaf/fzf-tab agkozak/zsh-z
+zinit lucid wait atload'_zsh_autosuggest_start' for zsh-users/zsh-autosuggestions
+zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
 
 # Source all the configs
 source ~/.zsh/history.zsh

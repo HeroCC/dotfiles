@@ -1,9 +1,9 @@
 [submodule "Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
-[submodule "zsh/antigen"]
-	path = zsh/antigen
-  url = https://github.com/zsh-users/antigen.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "zsh/zinit"]
+	path = zsh/zinit
+	url = https://github.com/zdharma-continuum/zinit.git

@@ -1,6 +1,6 @@
 # Setup terminal, and turn on colors
 export CLICOLOR=1
-
+setopt promptsubst
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:descriptions' format '[%d]'
