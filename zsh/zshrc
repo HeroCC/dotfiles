@@ -12,11 +12,12 @@ if [[ "$ZSH_TMUX_AUTOSTART" -eq "true" ]] && (( $+commands[tmux] )); then
   [ -z "$ZSH_TMUX_DEFAULT_SESSION_NAME" ] && ZSH_TMUX_AUTOCONNECT="false"
 fi
 
-# Add Antigen
-source ~/.zsh/antigen/antigen.zsh
-antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
+# Add Plugins
+source "$HOME/.zsh/zinit/zinit.zsh"
 
-antigen bundles <<EOBUNDLES
+while read line; do 
+  zinit snippet OMZP::${line} 
+done <<EOBUNDLES
 brew
 command-not-found
 colored-man-pages
@@ -24,19 +25,18 @@ magic-enter
 extract
 tmux
 git
-
-zsh-users/zsh-completions
-HeroCC/LS_COLORS
-Aloxaf/fzf-tab
-agkozak/zsh-z
-
-zsh-users/zsh-autosuggestions
-zdharma-continuum/fast-syntax-highlighting
 EOBUNDLES
-antigen theme romkatv/powerlevel10k
-source $HOME/.zsh/themes/p10k.zsh
 
-antigen apply # Use it
+zinit ice lucid wait atclone"dircolors -b LS_COLORS > clrs.zsh" \
+    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
+zinit light trapd00r/LS_COLORS
+
+zinit blockf for zsh-users/zsh-completions
+zinit depth"1" atload"source $HOME/.zsh/themes/p10k.zsh" for romkatv/powerlevel10k
+zinit lucid wait for Aloxaf/fzf-tab agkozak/zsh-z
+zinit lucid wait atload'_zsh_autosuggest_start' for zsh-users/zsh-autosuggestions
+zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
 
 # Source all the configs
 source ~/.zsh/history.zsh
