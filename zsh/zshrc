@@ -16,8 +16,16 @@ fi
 source "$HOME/.zsh/zinit/zinit.zsh"
 
 while read line; do 
-  zinit snippet OMZP::${line} 
-done <<EOBUNDLES
+  zinit snippet OMZ::lib/${line} 
+done <<EOLIBS
+git.zsh
+key-bindings.zsh
+grep.zsh
+EOLIBS
+
+while read line; do
+  zinit snippet OMZ::plugins/${line} 
+done <<EOPLUGINS
 brew
 command-not-found
 colored-man-pages
@@ -25,7 +33,7 @@ magic-enter
 extract
 tmux
 git
-EOBUNDLES
+EOPLUGINS
 
 zinit ice lucid wait atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
