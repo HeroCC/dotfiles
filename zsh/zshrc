@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ -r "${ZINIT_MODULE_PATH:=${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/module/Src}/zdharma_continuum/zinit.so" ]]; then
+  # Automatically compile `source` usages -- use after `zinit module build`
+  module_path+=( "$ZINIT_MODULE_PATH" )
+  zmodload zdharma_continuum/zinit
+fi
+
 [[ -z "$SSH_CONNECTION" && ! "$TERMINAL_EMULATOR" =~ "JetBrains-JediTerm" ]] && ZSH_TMUX_AUTOSTART="true"
 if [[ "$ZSH_TMUX_AUTOSTART" -eq "true" ]] && (( $+commands[tmux] )); then
   # Only reattach to disconnected tmux sessions, otherwise open a new one
