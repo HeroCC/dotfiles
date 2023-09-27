@@ -27,11 +27,17 @@ while read line; do
   zinit snippet OMZ::plugins/${line} 
 done <<EOPLUGINS
 brew
+magic-enter
+tmux
+EOPLUGINS
+
+while read line; do
+  zinit ice wait lucid
+  zinit snippet OMZ::plugins/${line} 
+done <<EOPLUGINS
 command-not-found
 colored-man-pages
-magic-enter
 extract
-tmux
 git
 EOPLUGINS
 
