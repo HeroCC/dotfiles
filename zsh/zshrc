@@ -12,7 +12,7 @@ if [[ -r "${ZINIT_MODULE_PATH:=${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/modu
 fi
 
 [[ -z "$SSH_CONNECTION" && ! "$TERMINAL_EMULATOR" =~ "JetBrains-JediTerm" ]] && ZSH_TMUX_AUTOSTART="true"
-if [[ -n "$TMUX" && "$ZSH_TMUX_AUTOSTART" -eq "true" ]] && (( $+commands[tmux] )); then
+if [[ -z "$TMUX" && "$ZSH_TMUX_AUTOSTART" -eq "true" ]] && (( $+commands[tmux] )); then
   # Only reattach to disconnected tmux sessions, otherwise open a new one
   ZSH_TMUX_DEFAULT_SESSION_NAME="$(tmux list-sessions -F '#{?session_attached,,#{session_name}}' 2>/dev/null | grep -v '^$' | head -1)"
   [ -z "$ZSH_TMUX_DEFAULT_SESSION_NAME" ] && ZSH_TMUX_AUTOCONNECT="false"
