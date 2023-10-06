@@ -35,7 +35,6 @@ done <<EOPLUGINS
 brew
 magic-enter
 EOPLUGINS
-
 zinit snippet OMZ::plugins/tmux
 
 while read line; do
@@ -55,6 +54,7 @@ zinit light trapd00r/LS_COLORS
 
 zinit blockf for zsh-users/zsh-completions
 zinit depth"1" atload"source $HOME/.zsh/themes/p10k.zsh" for romkatv/powerlevel10k
+zinit lucid wait if'(( $+commands[thefuck] ))' for OMZ::plugins/thefuck
 zinit lucid wait for Aloxaf/fzf-tab agkozak/zsh-z
 zinit lucid wait atload'_zsh_autosuggest_start' for zsh-users/zsh-autosuggestions
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
