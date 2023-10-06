@@ -34,8 +34,9 @@ while read line; do
 done <<EOPLUGINS
 brew
 magic-enter
-tmux
 EOPLUGINS
+
+zinit snippet OMZ::plugins/tmux
 
 while read line; do
   zinit ice wait lucid
