@@ -27,6 +27,7 @@ done <<EOLIBS
 git.zsh
 key-bindings.zsh
 grep.zsh
+completion.zsh
 EOLIBS
 
 while read line; do
