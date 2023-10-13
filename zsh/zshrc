@@ -48,10 +48,10 @@ extract
 git
 EOPLUGINS
 
-zinit ice lucid wait atclone"dircolors -b LS_COLORS > clrs.zsh" \
+zinit lucid wait atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
-zinit light trapd00r/LS_COLORS
+    atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"' \
+    for trapd00r/LS_COLORS
 
 zinit blockf for zsh-users/zsh-completions
 zinit depth"1" atload"source $HOME/.zsh/themes/p10k.zsh" for romkatv/powerlevel10k
