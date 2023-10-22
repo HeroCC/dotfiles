@@ -8,9 +8,7 @@ alias please='sudo $(fc -nl -1)' # Repeat last command with sudo
 alias chmod='chmod -v'
 alias chown='chown -v'
 
-if (( $+commands[xdg-open] )); then
-  alias open='xdg-open '
-fi
+(( $+commands[xdg-open] )) && alias open='xdg-open '
 
 # Apt stuff
 if (( $+commands[apt-get] )); then
