@@ -62,8 +62,12 @@ zinit lucid wait atload'_zsh_autosuggest_start' for zsh-users/zsh-autosuggestion
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
 
 # Source all the configs
-source ~/.zsh/history.zsh
-source ~/.zsh/functions.zsh
-source ~/.zsh/aliases.zsh
-source ~/.zsh/exports.zsh
-[ -e "$HOME/.zsh/local.zsh" ] && source ~/.zsh/local.zsh
+while read line; do
+  zinit lucid is-snippet for $line
+done <<-EOPLUGINS
+$HOME/.zsh/history.zsh
+$HOME/.zsh/functions.zsh
+$HOME/.zsh/aliases.zsh
+$HOME/.zsh/exports.zsh
+EOPLUGINS
+zinit lucid if'[ -e "$HOME/.zsh/local.zsh" ]' is-snippet for ~/.zsh/local.zsh
