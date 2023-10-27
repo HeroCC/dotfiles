@@ -36,7 +36,7 @@ done <<EOPLUGINS
 brew
 magic-enter
 EOPLUGINS
-zinit snippet OMZ::plugins/tmux
+zinit svn is-snippet for OMZP::tmux
 
 while read line; do
   zinit ice wait lucid
