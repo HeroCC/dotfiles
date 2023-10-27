@@ -48,14 +48,10 @@ extract
 git
 EOPLUGINS
 
-zinit lucid wait atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"' \
-    for trapd00r/LS_COLORS
-
 zinit depth"1" atload"source $HOME/.zsh/themes/p10k.zsh" for romkatv/powerlevel10k
 zinit lucid wait blockf for zsh-users/zsh-completions
 zinit lucid wait for agkozak/zsh-z
+zinit lucid wait pack for ls_colors
 zinit lucid wait if'(( $+commands[fzf] ))' for Aloxaf/fzf-tab
 zinit lucid wait if'(( $+commands[thefuck] ))' for OMZ::plugins/thefuck
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
