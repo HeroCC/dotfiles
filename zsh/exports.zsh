@@ -19,5 +19,3 @@ export LESS='--ignore-case --raw-control-chars'
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && source ~/.config/tabtab/__tabtab.zsh || true
-(( $+commands[pyenv-virtualenv-init] )) && eval "$(pyenv virtualenv-init -)"
-
