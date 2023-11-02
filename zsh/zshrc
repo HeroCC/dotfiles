@@ -51,10 +51,14 @@ EOPLUGINS
 
 zinit depth"1" atload'zinit is-snippet for $HOME/.zsh/themes/p10k.zsh' for romkatv/powerlevel10k
 
+if (( $+commands[fzf] )); then
+  zinit lucid wait is-snippet for OMZ::plugins/fzf
+  zinit lucid wait for Aloxaf/fzf-tab
+fi
+
 zinit lucid wait blockf for zsh-users/zsh-completions
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait pack for ls_colors
-zinit lucid wait if'(( $+commands[fzf] ))' for Aloxaf/fzf-tab
 zinit lucid wait if'(( $+commands[thefuck] ))' for OMZ::plugins/thefuck
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
 zinit lucid wait atload'!_zsh_autosuggest_start' for zsh-users/zsh-autosuggestions
