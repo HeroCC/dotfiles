@@ -12,6 +12,11 @@ if [[ -n "$TMUX" ]]; then
   zstyle ':fzf-tab:*' popup-min-size 50 8
 fi
 
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic --ansi
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
 if (( $+commands[nvim] )); then
   export EDITOR='nvim'
 else
