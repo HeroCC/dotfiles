@@ -3,9 +3,14 @@ export CLICOLOR=1
 setopt promptsubst
 
 zstyle ':completion:*:descriptions' format '[%d]'
-[ -n "$TMUX" ] && zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 (( $+commands[exa] )) && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-zstyle ':fzf-tab:*' popup-min-size 50 8
+
+if [[ -n "$TMUX" ]]; then
+  export FZF_TMUX=1
+  export FZF_TMUX_OPTS='-p80%,60%'
+  zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup # TODO use fzf-tmux so tab and fzf's behavior is the same
+  zstyle ':fzf-tab:*' popup-min-size 50 8
+fi
 
 if (( $+commands[nvim] )); then
   export EDITOR='nvim'
