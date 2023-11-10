@@ -37,7 +37,7 @@ brew
 magic-enter
 EOPLUGINS
 zinit svn is-snippet for OMZP::tmux
-zinit if'(( $+commands[pyenv-virtualenv-init] ))' atclone'pyenv virtualenv-init - > pyenv-venv.zsh' atpull'%atclone' pick'pyenv-venv.zsh' nocompile'!' id-as'pyenv-venv' for @zdharma-continuum/null
+zinit has'pyenv-virtualenv-init' atclone'pyenv virtualenv-init - > pyenv-venv.zsh' atpull'%atclone' pick'pyenv-venv.zsh' nocompile'!' id-as'pyenv-venv' for @zdharma-continuum/null
 
 while read line; do
   zinit ice wait lucid
@@ -59,7 +59,7 @@ fi
 zinit lucid wait blockf for zsh-users/zsh-completions
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait pack for ls_colors
-zinit lucid wait if'(( $+commands[thefuck] ))' for OMZ::plugins/thefuck
+zinit lucid wait has'thefuck' for OMZ::plugins/thefuck
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
 zinit lucid wait atload'!_zsh_autosuggest_start' for zsh-users/zsh-autosuggestions
 
