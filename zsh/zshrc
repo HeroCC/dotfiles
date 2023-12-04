@@ -20,6 +20,9 @@ fi
 
 # Add Plugins
 source "$HOME/.zsh/zinit/zinit.zsh"
+zinit snippet OMZ::plugins/brew
+zinit svn is-snippet for OMZP::tmux
+zinit has'pyenv-virtualenv-init' atclone'pyenv virtualenv-init - > pyenv-venv.zsh' atpull'%atclone' pick'pyenv-venv.zsh' nocompile'!' id-as'pyenv-venv' for @zdharma-continuum/null
 
 while read line; do 
   zinit snippet OMZ::lib/${line}
@@ -31,18 +34,10 @@ completion.zsh
 EOLIBS
 
 while read line; do
-  zinit snippet OMZ::plugins/${line}
-done <<EOPLUGINS
-brew
-magic-enter
-EOPLUGINS
-zinit svn is-snippet for OMZP::tmux
-zinit has'pyenv-virtualenv-init' atclone'pyenv virtualenv-init - > pyenv-venv.zsh' atpull'%atclone' pick'pyenv-venv.zsh' nocompile'!' id-as'pyenv-venv' for @zdharma-continuum/null
-
-while read line; do
   zinit ice wait lucid
   zinit snippet OMZ::plugins/${line}
 done <<EOPLUGINS
+magic-enter
 command-not-found
 colored-man-pages
 extract
