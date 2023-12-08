@@ -22,7 +22,8 @@ fi
 source "$HOME/.zsh/zinit/zinit.zsh"
 zinit snippet OMZ::plugins/brew
 zinit svn is-snippet for OMZP::tmux
-zinit has'pyenv-virtualenv-init' atclone'pyenv virtualenv-init - > pyenv-venv.zsh' atpull'%atclone' pick'pyenv-venv.zsh' nocompile'!' id-as'pyenv-venv' for @zdharma-continuum/null
+zinit light NICHOLAS85/z-a-eval
+zinit has'pyenv-virtualenv-init' eval'pyenv virtualenv-init -' id-as'pyenv-venv' for @zdharma-continuum/null
 
 zinit lucid svn is-snippet atinit'zstyle :omz:plugins:iterm2 shell-integration yes' for OMZP::iterm2
 zinit depth"1" atload'zinit is-snippet for $HOME/.zsh/themes/p10k.zsh' for romkatv/powerlevel10k
@@ -46,8 +47,6 @@ colored-man-pages
 extract
 git
 EOPLUGINS
-
-zinit depth"1" atload'zinit is-snippet for $HOME/.zsh/themes/p10k.zsh' for romkatv/powerlevel10k
 
 if (( $+commands[fzf] )); then
   zinit lucid wait is-snippet for OMZ::plugins/fzf
