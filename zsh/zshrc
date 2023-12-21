@@ -34,6 +34,7 @@ git.zsh
 key-bindings.zsh
 grep.zsh
 completion.zsh
+directories.zsh
 EOLIBS
 
 while read line; do
