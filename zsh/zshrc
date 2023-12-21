@@ -58,6 +58,7 @@ zinit lucid wait blockf for zsh-users/zsh-completions
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait pack for ls_colors
 zinit lucid wait has'thefuck' for OMZ::plugins/thefuck
+zinit lucid wait atinit'YSU_MESSAGE_POSITION="after" YSU_IGNORED_ALIASES+=("g")' for MichaelAquilina/zsh-you-should-use
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
 zinit lucid wait atinit"ZSH_AUTOSUGGEST_MANUAL_REBIND=1" atload'!_zsh_autosuggest_start' for zsh-users/zsh-autosuggestions
 
