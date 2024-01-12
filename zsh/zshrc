@@ -19,6 +19,7 @@ if [[ -z "$TMUX" && "$ZSH_TMUX_AUTOSTART" -eq "true" ]] && (( $+commands[tmux] )
 fi
 
 # Add Plugins
+declare -A ZINIT && ZINIT[NO_ALIASES]="true"
 source "$HOME/.zsh/zinit/zinit.zsh"
 zinit snippet OMZ::plugins/brew
 zinit svn is-snippet for OMZP::tmux
