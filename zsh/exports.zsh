@@ -3,7 +3,7 @@ export CLICOLOR=1
 setopt promptsubst
 
 zstyle ':completion:*:descriptions' format '[%d]'
-(( $+commands[exa] )) && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+(( $+commands[eza] )) && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
 if [[ -n "$TMUX" ]]; then
   export FZF_TMUX=1
