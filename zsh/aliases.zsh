@@ -31,3 +31,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias k='kubectl'
 
+alias code='TMUX= code'
