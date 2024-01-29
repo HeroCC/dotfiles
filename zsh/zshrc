@@ -55,7 +55,6 @@ if (( $+commands[fzf] )); then
 fi
 
 zinit lucid wait has'pyenv-virtualenv-init' eval'pyenv virtualenv-init -' id-as'pyenv-venv' nocompile'!' for @zdharma-continuum/null
-zinit lucid wait blockf for zsh-users/zsh-completions
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait pack for ls_colors
 zinit lucid wait has'thefuck' for OMZ::plugins/thefuck
