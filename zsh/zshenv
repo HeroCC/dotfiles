@@ -1,2 +1,4 @@
 export PATH="$HOME/bin:$PATH:/opt/local/bin"
+HISTSIZE=900000
+SAVEHIST=900000
 
