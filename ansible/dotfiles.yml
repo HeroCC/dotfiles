@@ -1,0 +1,35 @@
+---
+- name: Playbook to manage my dotfiles and system preferences
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: load custom vars
+      include_vars: ./vars.yml
+      tags:
+        - always
+
+    - name: Make sure dotfiles are present
+      git:
+        repo: https://github.com/HeroCC/dotfiles.git
+        dest: ~/.dotfiles
+      register: dotfiles_clone
+      failed_when:
+        - not 'Local modifications exist in' in dotfiles_clone.msg
+
+    # - include_tasks: tasks/link_files.yml
+    #   tags:
+    #     - links
+
+    - include_tasks: tasks/packages.yml
+      tags:
+        - packages
+
+    # Needs to be after packages
+    # - include_tasks: tasks/tmux_plugins.yml
+    #   tags:
+    #     - tmux_plugins
+
+    - include_tasks: tasks/macos_defaults.yml
+      when: ansible_os_family == "Darwin"
+      tags:
+        - macos_defaults

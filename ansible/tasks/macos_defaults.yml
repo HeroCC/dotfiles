@@ -1,0 +1,15 @@
+---
+- name: Set Bluesnooze settings
+  osx_defaults: domain=com.oliverpeate.Bluesnooze key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    # Don’t prompt for confirmation before downloading
+    - { key: "hideIcon", type: "bool", value: "true" }
+  notify:
+    - Kill Bluesnooze
+
+
+# - name: Adjust Menu Bar Whitespace Settings
+#   osx_defaults: domain=NSGlobalDomain host=currentHost key={{ item.key }} type={{ item.type }} value={{ item.value }}
+#   with_items:
+#     - { key: "NSStatusItemSelectionPadding", type: "int", value: "6" }
+#     - { key: "NSStatusItemSpacing", type: "int", value: "6" }

@@ -1,0 +1,12 @@
+---
+casks:
+  iterm2:
+  hiddenbar:
+  rectangle:
+
+formula:
+  #bluesnooze:
+  fzf:
+  ripgrep:
+  neovim:
+  
