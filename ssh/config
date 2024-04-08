@@ -1,9 +1,6 @@
 Host pve
   Hostname 10.0.1.51
   User herocc
-Host mc
-  Hostname 10.0.1.60
-  User herocc
 Host pi
   Hostname 10.0.1.53
   User pi
@@ -13,35 +10,10 @@ Host hass unifi pihole
 Host odroid 
   Hostname 10.0.1.10
   User cc
-Host builder bob build git
-  Hostname 10.0.1.61
-  User herocc
-Host web
-  Hostname 10.0.1.62
-  User herocc
-Host p2p seedbox peer 
-  Hostname 10.0.1.63
-  User herocc
-Host monit mon monitoring monitor zabbix
-  Hostname 10.0.1.64
-  User herocc
-Host plex media
-  Hostname 10.0.1.66
-  User herocc
-Host cash money
-  Hostname 10.0.1.67
-  User herocc
 
 Host cac
   Hostname 45.62.210.200
   User herocc
-
-# Amis
-Host liam
-  Port 2022
-  Hostname penis.casa 
-  # 13.82.170.45 / ZT 10.147.20.233
-  User cc
 
 # CSail Jump Policy
 Host jump.csail.mit.edu
@@ -68,28 +40,10 @@ Host cc
   Hostname 128.52.182.213
   User ubuntu
   Port 2222
-Host csaildell mitdell mitminibox
-  Hostname 128.30.29.89
-  User conlanc
-  Port 2222
-Host mitalienware csailalienware
-  Hostname 128.30.31.232
-  User conlanc
-  Port 2222
-Host shoreside
-#  Hostname pavlabshoreside.csail.mit.edu 
-# Hostname 128.30.31.69
-#  Hostname 128.30.27.41
-#  Hostname 128.30.27.82
-  Hostname 30-27-82.dynamic.csail.mit.edu
-  User conlanc
-  LocalForward 5901 localhost:5900
-
-Host mike
-  Hostname 173.48.235.62
-  User conlanc
-  LocalForward 5901 localhost:5900
-
+Host satori
+  Hostname satori-login-002.mit.edu
+  user conlanc
+  
 # UMass
 Host umass
   Hostname webadmin.oit.umass.edu
@@ -97,15 +51,3 @@ Host umass
 Host edlab elab elinux elnux
   Hostname elnux.cs.umass.edu
   User ccesar
-Host hpcc mghpcc
-  Hostname ghpcc06.umassrc.org
-  User cc67a
-
-# MHS
-Host school
-  Hostname kpol2i25xckp6smk.onion
-  User melrosehs
-  ProxyCommand nc -x 10.0.1.63:9050 %h %p
-Host piaware flight 170614D
-  Hostname 10.242.1.148
-  User pi
