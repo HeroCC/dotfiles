@@ -49,15 +49,18 @@ extract
 git
 EOPLUGINS
 
-if (( $+commands[fzf] )); then
+if (( $+commands[atuin] )); then
+  # Purposefully not `wait`ing async -- my shell history is important
+  zinit has'atuin' for atuinsh/atuin
+elif (( $+commands[fzf] )); then
   zinit lucid wait is-snippet for OMZ::plugins/fzf
-  zinit lucid wait for Aloxaf/fzf-tab
 fi
 
 zinit lucid wait has'pyenv-virtualenv-init' eval'pyenv virtualenv-init -' id-as'pyenv-venv' nocompile'!' for @zdharma-continuum/null
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait for zpm-zsh/ls
 zinit lucid wait pack for ls_colors
+zinit lucid wait has'fzf' for Aloxaf/fzf-tab
 zinit lucid wait has'thefuck' for OMZ::plugins/thefuck
 zinit lucid wait atinit'YSU_MESSAGE_POSITION="after" YSU_IGNORED_ALIASES+=("g")' for MichaelAquilina/zsh-you-should-use
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
