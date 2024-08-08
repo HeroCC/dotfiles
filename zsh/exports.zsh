@@ -5,7 +5,7 @@ setopt promptsubst
 zstyle ':completion:*:descriptions' format '[%d]'
 (( $+commands[eza] )) && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
-if [[ -n "$TMUX" ]]; then
+if [[ -n "$TMUX" && -z "$ITERM_SHELL_INTEGRATION_INSTALLED" ]]; then
   export FZF_TMUX=1
   export FZF_TMUX_OPTS='-p80%,60%'
   zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup # TODO use fzf-tmux so tab and fzf's behavior is the same
