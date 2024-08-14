@@ -1,6 +1,7 @@
 # Setup terminal, and turn on colors
 export CLICOLOR=1
 setopt promptsubst
+setopt interactivecomments
 
 zstyle ':completion:*:descriptions' format '[%d]'
 (( $+commands[eza] )) && zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
