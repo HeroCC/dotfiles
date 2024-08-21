@@ -14,7 +14,7 @@
   - name: Manage formula
     homebrew:
       name: "{{ item.key }}"
-      install_options: "{{ item.value.options | default(omit) }}"
+      install_options: "{{ item.value.options | default('formula') }}"
       state: "{{ item.value.state | default('present') }}"
     with_dict: "{{formula}}"
     tags:

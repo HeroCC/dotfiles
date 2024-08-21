@@ -3,10 +3,11 @@ casks:
   iterm2:
   hiddenbar:
   rectangle:
+  MonitorControl:
+  bluesnooze:
+
 
 formula:
-  #bluesnooze:
   fzf:
   ripgrep:
   neovim:
-  MonitorControl:
