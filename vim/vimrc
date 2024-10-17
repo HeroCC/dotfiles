@@ -7,6 +7,7 @@ call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'editorconfig/editorconfig-vim' " .editorconfig support
+Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Themes
 Plugin 'NLKNguyen/papercolor-theme'
 
@@ -21,6 +22,13 @@ set mouse=a " Enable mouse integration
 
 " Syntax & Coloring
 syntax enable
+lua require'nvim-treesitter.configs'.setup{
+\  ensure_installed = { "yaml", "vimdoc", "markdown", "markdown_inline" },
+\  auto_install = true,
+\  highlight={
+\    enable=true
+\  },
+\}
 
 " Enable colors
 set t_Co=256
@@ -48,4 +56,3 @@ command W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 au FileType gitcommit let b:EditorConfig_disable = 1
-
