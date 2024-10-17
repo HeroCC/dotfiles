@@ -20,6 +20,11 @@ set tabstop=2 shiftwidth=2 expandtab " Set TAB to two spaces
 set number " Enable line numbers
 set mouse=a " Enable mouse integration
 
+" use treesitter for folds
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=99 " default all folds open
+
 " Syntax & Coloring
 syntax enable
 lua require'nvim-treesitter.configs'.setup{
