@@ -1,4 +1,5 @@
 alias sudo='sudo ' # Makes sudo use aliases, from https://askubuntu.com/a/22043/353466
+alias watch='watch '
 alias please='sudo $(fc -nl -1)' # Repeat last command with sudo
 
 # I like verbose in chmod & chown
