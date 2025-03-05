@@ -13,8 +13,8 @@ if [[ -n "$TMUX" && -z "$ITERM_SHELL_INTEGRATION_INSTALLED" ]]; then
   zstyle ':fzf-tab:*' popup-min-size 50 8
 fi
 
-export FZF_CTRL_R_OPTS="
-  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+export FZF_DEFAULT_OPTS="
+  --bind 'ctrl-y:execute(echo -n {} | pbcopy)'
   --color header:italic --ansi
   --header 'Press CTRL-Y to copy command into clipboard'"
 
