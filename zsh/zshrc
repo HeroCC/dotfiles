@@ -56,6 +56,7 @@ elif (( $+commands[fzf] )); then
   zinit lucid wait is-snippet for OMZ::plugins/fzf
 fi
 
+zinit lucid wait has'pyenv' eval'pyenv init - zsh' id-as'pyenv' for @zdharma-continuum/null
 zinit lucid wait has'pyenv-virtualenv-init' eval'pyenv virtualenv-init -' id-as'pyenv-venv' nocompile'!' for @zdharma-continuum/null
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait for zpm-zsh/ls
