@@ -8,8 +8,8 @@
     - Kill Bluesnooze
 
 
-# - name: Adjust Menu Bar Whitespace Settings
-#   osx_defaults: domain=NSGlobalDomain host=currentHost key={{ item.key }} type={{ item.type }} value={{ item.value }}
-#   with_items:
-#     - { key: "NSStatusItemSelectionPadding", type: "int", value: "6" }
-#     - { key: "NSStatusItemSpacing", type: "int", value: "6" }
+- name: Adjust Menu Bar Whitespace Settings
+  osx_defaults: domain=NSGlobalDomain host=currentHost key={{ item.key }} type={{ item.type }} value={{ item.value }}
+  with_items:
+    - { key: "NSStatusItemSelectionPadding", type: "int", value: "6" }
+    - { key: "NSStatusItemSpacing", type: "int", value: "6" }
