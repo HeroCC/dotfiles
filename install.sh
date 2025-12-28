@@ -64,10 +64,9 @@ function installConfigs {
   echo ""
 
   #SSH
-  #echo "Installing SSH Config"
-  #mkdir -p ~/.ssh/
-  #link $DOTFILE_DIR/ssh/config ~/.ssh/config
-  #echo ""
+  echo "Installing SSH Config"
+  link $DOTFILE_DIR/ssh ~/.ssh
+  echo ""
 
 #  if [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
 #    #Sublime 3
