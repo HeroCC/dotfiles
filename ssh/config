@@ -16,9 +16,17 @@ Host cac
   User herocc
 
 CanonicalDomains csail.mit.edu
+Host csail
+  User conlanc
+  Hostname login.csail.mit.edu
 Host mfa-jump.csail.mit.edu jump.csail.mit.edu
+  User conlanc
+  ControlMaster auto
+  ControlPersist 1800
+  ControlPath ~/.ssh/cm_socket/%C
+
   VerifyHostKeyDNS yes
-Host *.csail.mit.edu !mfa-jump.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+Host csail *.csail.mit.edu !mfa-jump.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
   ProxyJump mfa-jump.csail.mit.edu
   ForwardAgent yes
 
@@ -28,9 +36,6 @@ Host oceanai
   User conlanc
 Host athena mit
   Hostname athena.dialup.mit.edu
-  User conlanc
-Host csail
-  Hostname login.csail.mit.edu
   User conlanc
 Host cc
   Hostname 128.52.182.213
