@@ -15,16 +15,12 @@ Host cac
   Hostname 45.62.210.200
   User herocc
 
-# CSail Jump Policy
-Host jump.csail.mit.edu
-#  GSSAPIAuthentication yes
-#  GSSAPIKeyExchange yes
+CanonicalDomains csail.mit.edu
+Host mfa-jump.csail.mit.edu jump.csail.mit.edu
   VerifyHostKeyDNS yes
-Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
-  ProxyCommand ssh -W %h:%p jump.csail.mit.edu
-#  GSSAPIAuthentication yes
-#  GSSAPIDelegateCredentials yes
-#  GSSAPIKeyExchange yes
+Host *.csail.mit.edu !mfa-jump.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+  ProxyJump mfa-jump.csail.mit.edu
+  ForwardAgent yes
 
 # Don't forget the BTVM MacMini Server + Raspis
 Host oceanai
