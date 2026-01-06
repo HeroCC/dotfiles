@@ -60,6 +60,7 @@ zinit lucid wait has'pyenv' eval'pyenv init - zsh' id-as'pyenv' for @zdharma-con
 zinit lucid wait has'pyenv-virtualenv-init' eval'pyenv virtualenv-init -' id-as'pyenv-venv' nocompile'!' for @zdharma-continuum/null
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait for zpm-zsh/ls
+zinit lucid wait has'direnv' for OMZ::plugins/direnv
 zinit lucid wait for olets/zsh-abbr
 zinit lucid wait pack for ls_colors
 zinit lucid wait has'fzf' for Aloxaf/fzf-tab
