@@ -5,7 +5,7 @@
     # Don’t prompt for confirmation before downloading
     - { key: "hideIcon", type: "bool", value: "true" }
   notify:
-    - Kill Bluesnooze
+    # - Kill Bluesnooze
 
 
 - name: Adjust Menu Bar Whitespace Settings
