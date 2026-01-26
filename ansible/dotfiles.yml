@@ -44,7 +44,7 @@
     #     - tmux_plugins
 
     - include_tasks: tasks/macos_defaults.yml
-      when: ansible_os_family == "Darwin"
+      when: ansible_facts.os_family == "Darwin"
       tags:
         - macos_defaults
 

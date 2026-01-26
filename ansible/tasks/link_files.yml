@@ -5,13 +5,13 @@
     state: directory
     mode: '0755'
   with_items:
-    - "{{ ansible_env.HOME }}/.config"
-    - "{{ ansible_env.HOME }}/.config/tmux"
+    - "{{ ansible_facts.env.HOME }}/.config"
+    - "{{ ansible_facts.env.HOME }}/.config/tmux"
 
 - name: Link ZSH directory
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/zsh"
-    dest: "{{ ansible_env.HOME }}/.zsh"
+    src: "{{ ansible_facts.env.HOME }}/.dotfiles/zsh"
+    dest: "{{ ansible_facts.env.HOME }}/.zsh"
     state: link
     force: yes
   tags:
@@ -19,8 +19,8 @@
 
 - name: Link ZSH config files
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/zsh/{{ item.src }}"
-    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+    src: "{{ ansible_facts.env.HOME }}/.dotfiles/zsh/{{ item.src }}"
+    dest: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
     state: link
     force: yes
   with_items:
@@ -31,8 +31,8 @@
 
 - name: Link git config files
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/git/{{ item.src }}"
-    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+    src: "{{ ansible_facts.env.HOME }}/.dotfiles/git/{{ item.src }}"
+    dest: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
     state: link
     force: yes
   with_items:
@@ -43,8 +43,8 @@
 
 - name: Link Tmux config
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/tmux/tmux.conf"
-    dest: "{{ ansible_env.HOME }}/.config/tmux/tmux.conf"
+    src: "{{ ansible_facts.env.HOME }}/.dotfiles/tmux/tmux.conf"
+    dest: "{{ ansible_facts.env.HOME }}/.config/tmux/tmux.conf"
     state: link
     force: yes
   tags:
@@ -52,8 +52,8 @@
 
 - name: Link VIM directory
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/vim"
-    dest: "{{ ansible_env.HOME }}/.vim"
+    src: "{{ ansible_facts.env.HOME }}/.dotfiles/vim"
+    dest: "{{ ansible_facts.env.HOME }}/.vim"
     state: link
     force: yes
   tags:
@@ -61,8 +61,8 @@
 
 - name: Link VIM config file
   file:
-    src: "{{ ansible_env.HOME }}/.dotfiles/vim/vimrc"
-    dest: "{{ ansible_env.HOME }}/.vimrc"
+    src: "{{ ansible_facts.env.HOME }}/.dotfiles/vim/vimrc"
+    dest: "{{ ansible_facts.env.HOME }}/.vimrc"
     state: link
     force: yes
   tags:
@@ -70,8 +70,8 @@
 
 - name: Link VIM directory to Neovim
   file:
-    src: "{{ ansible_env.HOME }}/.vim"
-    dest: "{{ ansible_env.HOME }}/.config/nvim"
+    src: "{{ ansible_facts.env.HOME }}/.vim"
+    dest: "{{ ansible_facts.env.HOME }}/.config/nvim"
     state: link
     force: yes
   tags:
@@ -80,8 +80,8 @@
 
 - name: Link VIM config to Neovim init.vim
   file:
-    src: "{{ ansible_env.HOME }}/.vimrc"
-    dest: "{{ ansible_env.HOME }}/.config/nvim/init.vim"
+    src: "{{ ansible_facts.env.HOME }}/.vimrc"
+    dest: "{{ ansible_facts.env.HOME }}/.config/nvim/init.vim"
     state: link
     force: yes
   tags:
