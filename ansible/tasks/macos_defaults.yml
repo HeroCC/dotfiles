@@ -24,3 +24,8 @@
 
 - name: Enable sound feedback for volume changes
   osx_defaults: domain=NSGlobalDomain key=com.apple.sound.beep.feedback type=int value=1
+
+- name: Show hidden files in Finder
+  osx_defaults: domain=com.apple.finder key=AppleShowAllFiles type=bool value=true
+  notify:
+    - Restart Finder

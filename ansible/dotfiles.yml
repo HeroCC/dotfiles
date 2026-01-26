@@ -15,6 +15,10 @@
       shell: killall Bluesnooze
       ignore_errors: yes
 
+    - name: Restart Finder
+      shell: killall Finder
+      ignore_errors: yes
+
   tasks:
     - name: load custom vars
       include_vars: ./vars.yml
