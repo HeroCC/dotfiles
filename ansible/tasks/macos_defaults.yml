@@ -5,7 +5,7 @@
     # Don’t prompt for confirmation before downloading
     - { key: "hideIcon", type: "bool", value: "true" }
   notify:
-    # - Kill Bluesnooze
+    - Kill Bluesnooze
 
 
 - name: Adjust Menu Bar Whitespace Settings
@@ -13,6 +13,9 @@
   with_items:
     - { key: "NSStatusItemSelectionPadding", type: "int", value: "6" }
     - { key: "NSStatusItemSpacing", type: "int", value: "6" }
+  notify:
+    - Restart SystemUIServer
+    - Restart ControlCenter
 
 - name: Allow multi-user login & fast switching
   osx_defaults: domain=.GlobalPreferences host=currentHost key={{ item.key }} type={{ item.type }} value={{ item.value }}

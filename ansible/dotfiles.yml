@@ -2,6 +2,19 @@
 - name: Playbook to manage my dotfiles and system preferences
   hosts: localhost
   connection: local
+  handlers:
+    - name: Restart SystemUIServer
+      shell: killall SystemUIServer
+      ignore_errors: yes
+
+    - name: Restart ControlCenter
+      shell: killall ControlCenter
+      ignore_errors: yes
+
+    - name: Kill Bluesnooze
+      shell: killall Bluesnooze
+      ignore_errors: yes
+
   tasks:
     - name: load custom vars
       include_vars: ./vars.yml
@@ -33,3 +46,4 @@
       when: ansible_os_family == "Darwin"
       tags:
         - macos_defaults
+
