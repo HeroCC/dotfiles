@@ -1,15 +1,11 @@
 ---
-- name: Include brew package list
-  include_vars: vars/packages/macos.yml
-  tags:
-    - brew
-
 - block:
+  - name: Include brew package list
+    include_vars: vars/packages/macos.yml
+
   - name: Update/Upgrade Homebrew
     homebrew:
       update_homebrew: true
-    tags:
-      - brew
 
   - name: Manage formula
     homebrew:
@@ -17,15 +13,13 @@
       install_options: "{{ item.value.options | default('formula') }}"
       state: "{{ item.value.state | default('present') }}"
     with_dict: "{{formula}}"
-    tags:
-      - brew
 
   - name: Manage casks
     homebrew_cask:
       name: "{{ item.key }}"
       state: "{{ item.value.state | default('present') }}"
     with_dict: "{{casks}}"
-    tags:
-      - brew
 
   when: ansible_facts.os_family == "Darwin"
+  tags:
+    - brew
