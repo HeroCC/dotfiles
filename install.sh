@@ -60,7 +60,7 @@ function installConfigs {
   # Tmux
   update tmux
   echo "Installing Tmux Config"
-  link $DOTFILE_DIR/tmux/tmux.conf ~/.tmux.conf
+  link $DOTFILE_DIR/tmux/tmux.conf ${XDG_CONFIG_HOME:-~/.config}/tmux/tmux.conf
   echo ""
 
   #SSH
