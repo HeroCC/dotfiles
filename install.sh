@@ -45,29 +45,17 @@ function link {
 
 function installConfigs {
   #ZSH
-  update zsh
   echo "Installing ZSH Config"
   link $DOTFILE_DIR/zsh ~/.zsh
   link $DOTFILE_DIR/zsh/zshrc ~/.zshrc
   link $DOTFILE_DIR/zsh/zshenv ~/.zshenv
-  if [ "$CI" == "false" ] && [ "$SHELL" != "/usr/bin/zsh" ]; then
-    chsh -s $(which zsh)
-  fi
-  echo ""
 
 #  #git
-#  update git
 #  echo "Installing Git Config"
 #  link $DOTFILE_DIR/git/gitconfig ~/.gitconfig
-#  link $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
-#  link $DOTFILE_DIR/git/gitattributes ~/.gitattributes
+  link $DOTFILE_DIR/git/gitignore_global ~/.gitignore_global
+  link $DOTFILE_DIR/git/gitattributes ~/.gitattributes
 #  echo ""
-
-  #Screen
-  update screen
-  echo "Installing Screen Config"
-  link $DOTFILE_DIR/screen/screenrc ~/.screenrc
-  echo ""
 
   # Tmux
   update tmux
@@ -76,21 +64,10 @@ function installConfigs {
   echo ""
 
   #SSH
-  update openssh-client
-  update openssh-server
-  echo "Installing SSH Config"
-  mkdir -p ~/.ssh/
-  link $DOTFILE_DIR/ssh/config ~/.ssh/config
-  echo ""
-
-#  #Gem
-#  update ruby-full
-#  echo "Installing Gem Config"
-#  link $DOTFILE_DIR/gem/gemrc ~/.gemrc
-#  echo Installing Rbenv
-#  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-#  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-#  echo ""
+  #echo "Installing SSH Config"
+  #mkdir -p ~/.ssh/
+  #link $DOTFILE_DIR/ssh/config ~/.ssh/config
+  #echo ""
 
 #  if [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
 #    #Sublime 3
@@ -102,20 +79,13 @@ function installConfigs {
 #  fi
 
   #VIM
-  update vim
   echo "Installing VIM config"
   link $DOTFILE_DIR/vim ~/.vim
   link $DOTFILE_DIR/vim/vimrc ~/.vimrc
   link ~/.vim ~/.config/nvim
   link ~/.vimrc ~/.config/nvim/init.vim
-  vim +PluginInstall +qall
-  echo ""
-
-#  #Gradle
-#  echo "Installing Gradle Config"
-#  mkdir -p ~/.gradle/
-#  link $DOTFILE_DIR/gradle/gradle.properties ~/.gradle/gradle.properties
-#  echo ""
+  #vim +PluginInstall +qall
+  #echo ""
 }
 
 function main {
