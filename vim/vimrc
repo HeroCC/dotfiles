@@ -27,7 +27,7 @@ set foldlevel=99 " default all folds open
 
 " Syntax & Coloring
 syntax enable
-lua require'nvim-treesitter.configs'.setup{
+lua require'nvim-treesitter'.setup{
 \  ensure_installed = { "yaml", "vimdoc", "markdown", "markdown_inline" },
 \  auto_install = true,
 \  highlight={
