@@ -9,3 +9,5 @@ formula:
   fzf:
   ripgrep:
   neovim:
+  watch:
+  tmux:
