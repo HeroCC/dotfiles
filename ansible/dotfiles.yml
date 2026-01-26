@@ -33,6 +33,7 @@
     - include_tasks: tasks/packages.yml
       tags:
         - packages
+        - brew
 
     - include_tasks: tasks/link_files.yml
       tags:
