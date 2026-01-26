@@ -18,3 +18,6 @@
   osx_defaults: domain=.GlobalPreferences host=currentHost key={{ item.key }} type={{ item.type }} value={{ item.value }}
   with_items:
     - { key: "MultipleSessionsEnabled", type: "bool", value: "YES" }
+
+- name: Enable sound feedback for volume changes
+  osx_defaults: domain=NSGlobalDomain key=com.apple.sound.beep.feedback type=int value=1
