@@ -7,7 +7,26 @@ My Main OS is Ubuntu (14.04 ATM), and settings will be tuned to that platform, a
 
 This clones the respository, and CDs into it
 
-To install automatically, run:
+### Recommended: Using Ansible (Current)
+
+To install using Ansible (recommended), first ensure you have ansible installed:
+
+	$ brew install ansible  # macOS
+	$ pip install ansible   # Linux/other
+
+Then run the ansible playbook:
+
+	$ ./run-ansible.sh
+
+You can run specific tasks using tags:
+
+	$ ./run-ansible.sh packages        # Install packages only
+	$ ./run-ansible.sh links           # Create symlinks only
+	$ ./run-ansible.sh macos_defaults  # Apply macOS settings only
+
+### Legacy: Using install.sh
+
+The old install.sh script is deprecated but still available:
 
 	$ ./install.sh
 
