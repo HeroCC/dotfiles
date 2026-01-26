@@ -38,12 +38,6 @@ echo -e "${GREEN}Running ansible playbook...${NC}"
 echo -e "${YELLOW}Command: ${ANSIBLE_CMD}${NC}"
 echo ""
 
-# Ask for sudo password upfront
-sudo -v
-
-# Keep sudo alive in background
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 # Run the playbook
 eval $ANSIBLE_CMD
 
