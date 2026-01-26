@@ -25,17 +25,18 @@
       git:
         repo: https://github.com/HeroCC/dotfiles.git
         dest: ~/.dotfiles
+        recursive: yes
       register: dotfiles_clone
       failed_when:
         - not 'Local modifications exist in' in dotfiles_clone.msg
 
-    # - include_tasks: tasks/link_files.yml
-    #   tags:
-    #     - links
-
     - include_tasks: tasks/packages.yml
       tags:
         - packages
+
+    - include_tasks: tasks/link_files.yml
+      tags:
+        - links
 
     # Needs to be after packages
     # - include_tasks: tasks/tmux_plugins.yml
