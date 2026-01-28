@@ -67,7 +67,6 @@ zinit lucid wait has'fzf' for Aloxaf/fzf-tab
 zinit lucid wait has'thefuck' for OMZ::plugins/thefuck
 zinit lucid wait atinit'YSU_MESSAGE_POSITION="after" YSU_IGNORED_ALIASES+=("g")' for MichaelAquilina/zsh-you-should-use
 zinit lucid wait atinit"zicompinit; zicdreplay" for zdharma-continuum/fast-syntax-highlighting
-zinit lucid wait for Myzel394/zsh-copilot
 zinit lucid wait atinit"ZSH_AUTOSUGGEST_MANUAL_REBIND=1" atload'!_zsh_autosuggest_start' for zsh-users/zsh-autosuggestions
 
 # Source all the configs
