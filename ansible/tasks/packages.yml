@@ -32,7 +32,7 @@
     register: zinit_plugins
 
   - name: Initialize zinit plugins
-    command: zsh -ic 'zinit update --parallel'
+    command: zsh -ic 'zinit update --parallel --quiet'
     environment:
       GIT_CONFIG_GLOBAL: /dev/null
     when: zinit_plugins.matched == 0
