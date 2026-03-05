@@ -34,6 +34,7 @@
   - name: Initialize zinit plugins
     command: zsh -ic 'zinit update --parallel --quiet && wait'
     environment:
+      TERM:
       GIT_CONFIG_GLOBAL: /dev/null
     when: zinit_plugins.matched == 0
 
