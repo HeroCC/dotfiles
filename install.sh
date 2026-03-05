@@ -6,6 +6,7 @@ function runAnsible {
 }
 
 function main {
+    [ "$USER" == "bits" ] && sudo apt-get install -y ansible
     runAnsible
 }
 
