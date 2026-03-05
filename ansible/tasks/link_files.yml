@@ -41,6 +41,11 @@
   tags:
     - git
 
+- name: Include personal gitconfig
+  command: git config --global --replace-all include.path "{{ dotfiles_dir }}/git/gitconfig"
+  tags:
+    - git
+
 - name: Link Tmux config
   file:
     src: "{{ dotfiles_dir }}/tmux/tmux.conf"
