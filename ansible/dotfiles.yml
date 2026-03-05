@@ -34,6 +34,7 @@
         GIT_CONFIG_GLOBAL: /dev/null
       register: dotfiles_clone
       failed_when:
+        - dotfiles_clone.msg is defined
         - not 'Local modifications exist in' in dotfiles_clone.msg
 
     - include_tasks: tasks/packages.yml
