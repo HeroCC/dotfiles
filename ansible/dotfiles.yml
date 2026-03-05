@@ -33,6 +33,8 @@
       register: dotfiles_clone
       failed_when:
         - not 'Local modifications exist in' in dotfiles_clone.msg
+        # We don't have permissions to pull - but assume someone else did for us
+        - not 'Permission denied (publickey)' in dotfiles_clone.msg  
 
     - include_tasks: tasks/packages.yml
       tags:
