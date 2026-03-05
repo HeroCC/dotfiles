@@ -21,8 +21,14 @@ if ! command -v ansible-playbook &> /dev/null; then
     exit 1
 fi
 
+EXTRA_VARS=""
+if [ "$USER" = "bits" ]; then
+    # Datadog goodies
+    EXTRA_VARS="-e dotfiles_dir=~/dotfiles"
+fi
+
 # Build the ansible-playbook command
-ANSIBLE_CMD="ansible-playbook ${PLAYBOOK} --connection=local -i localhost,"
+ANSIBLE_CMD="ansible-playbook ${PLAYBOOK} --connection=local -i localhost, ${EXTRA_VARS}"
 
 # Add tags if provided as arguments
 if [ $# -gt 0 ]; then

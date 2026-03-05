@@ -28,7 +28,7 @@
     - name: Make sure dotfiles are present
       git:
         repo: https://github.com/HeroCC/dotfiles.git
-        dest: ~/.dotfiles
+        dest: "{{ dotfiles_dir | default('~/.dotfiles') }}"
         recursive: yes
       register: dotfiles_clone
       failed_when:
