@@ -42,7 +42,10 @@
     - git
 
 - name: Include personal gitconfig
-  command: git config --global --replace-all include.path "{{ dotfiles_dir }}/git/gitconfig"
+  community.general.git_config:
+    name: include.path
+    value: "{{ dotfiles_dir }}/git/gitconfig"
+    scope: global
   tags:
     - git
 
