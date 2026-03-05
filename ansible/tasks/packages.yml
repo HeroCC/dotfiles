@@ -23,3 +23,19 @@
   when: ansible_facts.os_family == "Darwin"
   tags:
     - brew
+
+- block:
+  - name: Check zinit plugins directory
+    find:
+      paths: "{{ ansible_facts.env.HOME }}/.local/share/zinit/plugins"
+      file_type: directory
+    register: zinit_plugins
+
+  - name: Initialize zinit plugins
+    command: zsh -ic 'zinit update --parallel'
+    environment:
+      GIT_CONFIG_GLOBAL: /dev/null
+    when: zinit_plugins.matched == 0
+
+  tags:
+    - zinit

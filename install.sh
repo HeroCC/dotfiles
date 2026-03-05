@@ -8,8 +8,6 @@ function runAnsible {
 function main {
     [ "$USER" == "bits" ] && sudo apt-get install -y ansible
     runAnsible
-    # Rebuild the zinit cache so our next shell starts quickly
-    zsh -ic 'zinit update --parallel'
 }
 
 main "$@"
