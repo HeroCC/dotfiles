@@ -10,7 +10,7 @@
 
 - name: Link ZSH directory
   file:
-    src: "{{ ansible_facts.env.HOME }}/.dotfiles/zsh"
+    src: "{{ dotfiles_dir }}/zsh"
     dest: "{{ ansible_facts.env.HOME }}/.zsh"
     state: link
     force: yes
@@ -19,7 +19,7 @@
 
 - name: Link ZSH config files
   file:
-    src: "{{ ansible_facts.env.HOME }}/.dotfiles/zsh/{{ item.src }}"
+    src: "{{ dotfiles_dir }}/zsh/{{ item.src }}"
     dest: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
     state: link
     force: yes
@@ -31,7 +31,7 @@
 
 - name: Link git config files
   file:
-    src: "{{ ansible_facts.env.HOME }}/.dotfiles/git/{{ item.src }}"
+    src: "{{ dotfiles_dir }}/git/{{ item.src }}"
     dest: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
     state: link
     force: yes
@@ -43,7 +43,7 @@
 
 - name: Link Tmux config
   file:
-    src: "{{ ansible_facts.env.HOME }}/.dotfiles/tmux/tmux.conf"
+    src: "{{ dotfiles_dir }}/tmux/tmux.conf"
     dest: "{{ ansible_facts.env.HOME }}/.config/tmux/tmux.conf"
     state: link
     force: yes
@@ -52,7 +52,7 @@
 
 - name: Link VIM directory
   file:
-    src: "{{ ansible_facts.env.HOME }}/.dotfiles/vim"
+    src: "{{ dotfiles_dir }}/vim"
     dest: "{{ ansible_facts.env.HOME }}/.vim"
     state: link
     force: yes
@@ -61,7 +61,7 @@
 
 - name: Link VIM config file
   file:
-    src: "{{ ansible_facts.env.HOME }}/.dotfiles/vim/vimrc"
+    src: "{{ dotfiles_dir }}/vim/vimrc"
     dest: "{{ ansible_facts.env.HOME }}/.vimrc"
     state: link
     force: yes
