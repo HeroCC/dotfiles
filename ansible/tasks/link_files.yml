@@ -49,6 +49,15 @@
   tags:
     - git
 
+- name: Include personal SSH config
+  lineinfile:
+    path: "{{ ansible_facts.env.HOME }}/.ssh/config"
+    line: "Include {{ dotfiles_dir }}/ssh/config"
+    insertbefore: BOF
+    create: yes
+  tags:
+    - ssh
+
 - name: Link Tmux config
   file:
     src: "{{ dotfiles_dir }}/tmux/tmux.conf"
