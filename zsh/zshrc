@@ -60,7 +60,6 @@ zinit lucid wait for agkozak/zsh-z
 zinit lucid wait has'eza' for zpm-zsh/ls
 zinit lucid wait has'direnv' for OMZ::plugins/direnv
 zinit lucid wait for olets/zsh-abbr
-zinit lucid wait pack for ls_colors
 zinit lucid wait has'fzf' for Aloxaf/fzf-tab
 zinit lucid wait has'thefuck' for OMZ::plugins/thefuck
 zinit lucid wait atinit'YSU_MESSAGE_POSITION="after" YSU_IGNORED_ALIASES+=("g")' for MichaelAquilina/zsh-you-should-use
