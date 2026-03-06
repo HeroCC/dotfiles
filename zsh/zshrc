@@ -21,8 +21,8 @@ fi
 # Add Plugins
 declare -A ZINIT && ZINIT[NO_ALIASES]="true"
 source "$HOME/.zsh/zinit/zinit.zsh"
-zinit snippet OMZ::plugins/brew
 zinit light NICHOLAS85/z-a-eval
+zinit lucid has'brew' eval'command brew shellenv' id-as'brew' for @zdharma-continuum/null
 
 zinit depth"1" atload'zinit is-snippet for $HOME/.zsh/themes/p10k.zsh' for romkatv/powerlevel10k
 
