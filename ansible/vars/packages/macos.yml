@@ -11,3 +11,5 @@ formula:
   neovim:
   watch:
   tmux:
+  git-absorb:
+  eza:
