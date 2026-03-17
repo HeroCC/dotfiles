@@ -24,3 +24,8 @@
   osx_defaults: domain=com.apple.finder key=AppleShowAllFiles type=bool value=true
   notify:
     - Restart Finder
+
+- name: Show all filename extensions
+  osx_defaults: domain=NSGlobalDomain key=AppleShowAllExtensions type=bool value=true
+  notify:
+    - Restart Finder
