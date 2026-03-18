@@ -40,3 +40,18 @@
 
   tags:
     - zinit
+
+- block:
+  - name: Check vim plugins directory
+    find:
+      paths: "{{ ansible_facts.env.HOME }}/.vim/bundle/plugins"
+      file_type: directory
+    register: vim_bundle_dir
+
+  - name: Install VIM plugins
+    command: nvim +PluginInstall +qall
+    when: vim_bundle_dir.matched == 0
+
+  tags:
+    - vim
+    - neovim
