@@ -1,13 +1,4 @@
 ---
-- name: Ensure config directories exist
-  file:
-    path: "{{ item }}"
-    state: directory
-    mode: '0755'
-  with_items:
-    - "{{ ansible_facts.env.HOME }}/.config"
-    - "{{ ansible_facts.env.HOME }}/.config/tmux"
-
 - name: Link ZSH directory
   file:
     src: "{{ dotfiles_dir }}/zsh"
@@ -58,12 +49,12 @@
   tags:
     - ssh
 
-- name: Link Tmux config
-  file:
-    src: "{{ dotfiles_dir }}/tmux/tmux.conf"
-    dest: "{{ ansible_facts.env.HOME }}/.config/tmux/tmux.conf"
-    state: link
-    force: yes
+- name: Include Tmux config
+  lineinfile:
+    path: "{{ ansible_facts.env.HOME }}/.config/tmux/tmux.conf"
+    line: "source-file {{ dotfiles_dir }}/tmux/tmux.conf"
+    insertbefore: BOF
+    create: yes
   tags:
     - tmux
 
