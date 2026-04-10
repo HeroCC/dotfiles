@@ -1,0 +1,13 @@
+---
+- name: Stat Atuin config file
+  stat:
+    path: "{{ ansible_facts.env.HOME }}/.config/atuin/config.toml"
+  register: atuin_config_stat
+
+- block:
+  - name: Unique Atuin session history
+    ini_file:
+      path: "{{ ansible_facts.env.HOME }}/.config/atuin/config.toml"
+      option: "filter_mode_shell_up_key_binding"
+      value: '"session-preload"'
+  when: atuin_config_stat.stat.exists

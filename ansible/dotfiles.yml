@@ -41,6 +41,10 @@
       tags:
         - links
 
+    - include_tasks: tasks/config_patches.yml
+      tags:
+        - config_patches
+
     - include_tasks: tasks/packages.yml
       tags:
         - packages
