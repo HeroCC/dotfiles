@@ -49,7 +49,7 @@ EOPLUGINS
 
 if (( $+commands[atuin] )); then
   # Purposefully not `wait`ing async -- my shell history is important
-  zinit has'atuin' for atuinsh/atuin
+  zinit has'atuin' depth"1" for atuinsh/atuin
 elif (( $+commands[fzf] )); then
   zinit lucid wait is-snippet for OMZ::plugins/fzf
 fi
