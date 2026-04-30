@@ -1,6 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -54,11 +55,11 @@ elif (( $+commands[fzf] )); then
   zinit lucid wait is-snippet for OMZ::plugins/fzf
 fi
 
+zinit lucid wait has'direnv' eval'direnv hook zsh' id-as'direnv-hook' for @zdharma-continuum/null
 zinit lucid wait has'pyenv' eval'pyenv init - zsh' id-as'pyenv' for @zdharma-continuum/null
 zinit lucid wait has'pyenv-virtualenv-init' eval'pyenv virtualenv-init -' id-as'pyenv-venv' nocompile'!' for @zdharma-continuum/null
 zinit lucid wait for agkozak/zsh-z
 zinit lucid wait has'eza' for zpm-zsh/ls
-zinit lucid wait has'direnv' for OMZ::plugins/direnv
 zinit lucid wait for olets/zsh-abbr
 zinit lucid wait has'fzf' for Aloxaf/fzf-tab
 zinit lucid wait has'thefuck' for OMZ::plugins/thefuck
