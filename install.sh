@@ -5,8 +5,18 @@ function runAnsible {
     ./run-ansible.sh
 }
 
+function has {
+    command -v "$1" &> /dev/null
+}
+
+function installAnsible {
+    if has apt-get && ! has ansible-playbook; then
+        sudo apt-get install -y ansible
+    fi
+}
+
 function main {
-    [ "$USER" == "bits" ] && sudo apt-get install -y ansible
+    installAnsible
     runAnsible
 }
 
