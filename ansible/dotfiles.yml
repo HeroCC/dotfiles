@@ -19,6 +19,10 @@
       shell: killall Finder
       ignore_errors: yes
 
+    - name: Reload Ghostty
+      command: pkill -USR2 ghostty
+      ignore_errors: yes
+
   tasks:
     - name: load custom vars
       include_vars: ./vars.yml
@@ -59,4 +63,3 @@
       when: ansible_facts.os_family == "Darwin"
       tags:
         - macos_defaults
-

@@ -11,3 +11,29 @@
       option: "filter_mode_shell_up_key_binding"
       value: '"session-preload"'
   when: atuin_config_stat.stat.exists
+
+- name: Stat Ghostty config file
+  stat:
+    path: "{{ ansible_facts.env.HOME }}/Library/Application Support/com.mitchellh.ghostty/config"
+  register: ghostty_config_stat
+
+- block:
+  - name: Configure Ghostty
+    ini_file:
+      path: "{{ ansible_facts.env.HOME }}/Library/Application Support/com.mitchellh.ghostty/config"
+      option: "{{ item.option }}"
+      value: "{{ item.value }}"
+      mode: "0644"
+    with_items:
+      # pass our TERM info to older SSH hosts which may not have it
+      - option: "shell-integration-features"
+        value: "true"
+
+      # switch between light and dark with the system
+      # https://github.com/ghostty-org/ghostty/discussions/5437
+      - option: "theme"
+        value: "dark:Catppuccin Frappe, light:Catppuccin Latte"
+    notify: Reload Ghostty
+  when:
+    - ansible_facts.os_family == "Darwin"
+    - ghostty_config_stat.stat.exists
