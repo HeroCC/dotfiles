@@ -33,5 +33,8 @@ export PATH="$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
 
 (( $+commands[bazel] )) && compdef _bazel bzl
 
-(( $+commands[brew] )) && (( $+commands[rustup] )) && export PATH="$(brew --prefix rustup)/bin:$PATH"
-
+if (( $+commands[brew] )) && (( $+commands[rustup] )); then
+  local rustup_brew_prefix="$(brew --prefix rustup)"
+  export PATH="${rustup_brew_prefix}/bin:$PATH" # add rustup tools to path
+  fpath+=("${rustup_brew_prefix}/share/zsh/site-functions") # add rustup shell completions
+fi
