@@ -32,3 +32,6 @@ export PATH="$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && source ~/.config/tabtab/__tabtab.zsh || true
 
 (( $+commands[bazel] )) && compdef _bazel bzl
+
+(( $+commands[brew] )) && (( $+commands[rustup] )) && export PATH="$(brew --prefix rustup)/bin:$PATH"
+
