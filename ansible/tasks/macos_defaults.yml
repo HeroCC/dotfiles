@@ -29,3 +29,6 @@
   osx_defaults: domain=NSGlobalDomain key=AppleShowAllExtensions type=bool value=true
   notify:
     - Restart Finder
+
+- name: Disable automatic period substitution
+  osx_defaults: domain=NSGlobalDomain key=NSAutomaticPeriodSubstitutionEnabled type=bool value=false
