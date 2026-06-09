@@ -53,6 +53,7 @@
       tags:
         - packages
         - brew
+        - apt
 
     # Needs to be after packages
     # - include_tasks: tasks/tmux_plugins.yml

@@ -25,6 +25,26 @@
     - brew
 
 - block:
+  - name: Include apt package list
+    include_vars: vars/packages/apt.yml
+
+  - name: Update apt cache
+    apt:
+      update_cache: true
+      cache_valid_time: 3600
+    become: true
+
+  - name: Manage apt packages
+    apt:
+      name: "{{ apt_packages }}"
+      state: present
+    become: true
+
+  when: ansible_facts.os_family == "Debian"
+  tags:
+    - apt
+
+- block:
   - name: Check zinit plugins directory
     find:
       paths: "{{ ansible_facts.env.HOME }}/.local/share/zinit/plugins"
