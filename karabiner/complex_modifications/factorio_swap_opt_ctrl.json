@@ -21,9 +21,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^com\\.factorio\\.factorio$",
-                "^com\\.factorio\\.Factorio$",
-                "^com\\.valvesoftware\\.steam\\.games\\.427520$"
+                "^com\\.factorio$"
               ]
             }
           ]
@@ -45,9 +43,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^com\\.factorio\\.factorio$",
-                "^com\\.factorio\\.Factorio$",
-                "^com\\.valvesoftware\\.steam\\.games\\.427520$"
+                "^com\\.factorio$"
               ]
             }
           ]
@@ -69,9 +65,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^com\\.factorio\\.factorio$",
-                "^com\\.factorio\\.Factorio$",
-                "^com\\.valvesoftware\\.steam\\.games\\.427520$"
+                "^com\\.factorio$"
               ]
             }
           ]
@@ -93,9 +87,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^com\\.factorio\\.factorio$",
-                "^com\\.factorio\\.Factorio$",
-                "^com\\.valvesoftware\\.steam\\.games\\.427520$"
+                "^com\\.factorio$"
               ]
             }
           ]
