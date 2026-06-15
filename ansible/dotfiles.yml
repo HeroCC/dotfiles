@@ -29,6 +29,11 @@
       tags:
         - always
 
+    - name: Check whether dotfiles directory exists
+      stat:
+        path: "{{ dotfiles_dir }}"
+      register: dotfiles_dir_stat
+
     - name: Make sure dotfiles are present
       git:
         repo: https://github.com/HeroCC/dotfiles.git
@@ -40,6 +45,7 @@
       failed_when:
         - dotfiles_clone.msg is defined
         - not 'Local modifications exist in' in dotfiles_clone.msg
+      when: not dotfiles_dir_stat.stat.exists
 
     - include_tasks: tasks/link_files.yml
       tags:
