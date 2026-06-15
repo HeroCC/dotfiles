@@ -58,37 +58,6 @@
       force: yes
     loop: "{{ karabiner_complex_modification_rules.files }}"
 
-  - name: Find Karabiner complex modification symlinks
-    find:
-      paths: "{{ ansible_facts.env.HOME }}/.config/karabiner/assets/complex_modifications"
-      file_type: link
-    register: karabiner_complex_modification_links
-
-  - name: Stat Karabiner complex modification symlinks
-    stat:
-      path: "{{ item.path }}"
-      follow: false
-    loop: "{{ karabiner_complex_modification_links.files }}"
-    register: karabiner_complex_modification_link_stats
-
-  - name: Stat Karabiner complex modification symlink targets
-    stat:
-      path: "{{ item.stat.lnk_source }}"
-    loop: "{{ karabiner_complex_modification_link_stats.results }}"
-    register: karabiner_complex_modification_link_target_stats
-    when:
-      - item.stat.islnk | default(false)
-      - item.stat.lnk_source is defined
-      - item.stat.lnk_source | dirname == dotfiles_dir ~ '/karabiner/complex_modifications'
-
-  - name: Remove dead Karabiner complex modification symlinks
-    file:
-      path: "{{ item.item.stat.path }}"
-      state: absent
-    loop: "{{ karabiner_complex_modification_link_target_stats.results | rejectattr('skipped', 'defined') }}"
-    when:
-      - not item.stat.exists
-
   when:
     - ansible_facts.os_family == "Darwin"
     - karabiner_dir_stat.stat.isdir | default(false)
