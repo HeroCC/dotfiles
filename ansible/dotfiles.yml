@@ -47,6 +47,16 @@
         - not 'Local modifications exist in' in dotfiles_clone.msg
       when: not dotfiles_dir_stat.stat.exists
 
+    - name: Make sure dotfiles submodules are initialized
+      command: git submodule update --init
+      args:
+        chdir: "{{ dotfiles_dir }}"
+      environment:
+        GIT_CONFIG_GLOBAL: /dev/null
+      register: dotfiles_submodules
+      changed_when:
+        - dotfiles_submodules.stdout != "" or dotfiles_submodules.stderr != ""
+
     - include_tasks: tasks/link_files.yml
       tags:
         - links
