@@ -104,13 +104,3 @@
   tags:
     - vim
     - neovim
-
-- name: Link VIM config to Neovim init.vim
-  file:
-    src: "{{ ansible_facts.env.HOME }}/.vimrc"
-    dest: "{{ ansible_facts.env.HOME }}/.config/nvim/init.vim"
-    state: link
-    force: yes
-  tags:
-    - vim
-    - neovim

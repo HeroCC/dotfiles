@@ -10,7 +10,6 @@ vim/bundle/plugins/*
 !vim/bundle/plugins
 vim/tmp
 .netrwhist
-init.vim
 vim/shada
 
 # Local Files
