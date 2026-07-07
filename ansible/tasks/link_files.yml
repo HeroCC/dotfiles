@@ -8,12 +8,31 @@
   tags:
     - zsh
 
-- name: Link ZSH config files
+- name: Check ZSH config files
+  stat:
+    path: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
+    follow: false
+  with_items:
+    - { src: "zshrc", dest: ".zshrc" }
+    - { src: "zshenv", dest: ".zshenv" }
+  register: zsh_config_files
+  tags:
+    - zsh
+
+- name: Remove linked ZSH config files
   file:
-    src: "{{ dotfiles_dir }}/zsh/{{ item.src }}"
-    dest: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
-    state: link
-    force: yes
+    path: "{{ ansible_facts.env.HOME }}/{{ item.item.dest }}"
+    state: absent
+  with_items: "{{ zsh_config_files.results }}"
+  when: item.stat.islnk | default(false)
+  tags:
+    - zsh
+
+- name: Source ZSH config files
+  lineinfile:
+    path: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
+    line: 'source "{{ dotfiles_dir }}/zsh/{{ item.src }}"'
+    create: yes
   with_items:
     - { src: "zshrc", dest: ".zshrc" }
     - { src: "zshenv", dest: ".zshenv" }
