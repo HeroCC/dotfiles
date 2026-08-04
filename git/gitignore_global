@@ -1,5 +1,6 @@
 #General Ignores
 *~
+**/.claude/settings.local.json
 
 # Mac OS
 .DS_Store
