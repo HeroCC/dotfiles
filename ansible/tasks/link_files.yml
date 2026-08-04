@@ -39,15 +39,22 @@
   tags:
     - zsh
 
+- name: Ensure ~/.config/git directory exists
+  file:
+    path: "{{ ansible_facts.env.HOME }}/.config/git"
+    state: directory
+  tags:
+    - git
+
 - name: Link git config files
   file:
     src: "{{ dotfiles_dir }}/git/{{ item.src }}"
-    dest: "{{ ansible_facts.env.HOME }}/{{ item.dest }}"
+    dest: "{{ ansible_facts.env.HOME }}/.config/git/{{ item.dest }}"
     state: link
     force: yes
   with_items:
-    - { src: "gitignore_global", dest: ".gitignore_global" }
-    - { src: "gitattributes", dest: ".gitattributes" }
+    - { src: "gitignore_global", dest: "ignore" }
+    - { src: "gitattributes", dest: "attributes" }
   tags:
     - git
 
@@ -55,7 +62,8 @@
   community.general.git_config:
     name: include.path
     value: "{{ dotfiles_dir }}/git/gitconfig"
-    scope: global
+    scope: file
+    file: "{{ ansible_facts.env.HOME }}/.config/git/config"
   tags:
     - git
 

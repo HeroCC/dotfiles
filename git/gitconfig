@@ -2,8 +2,8 @@
 	user = HeroCC
 
 [core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
+	excludesfile = ~/.config/git/ignore
+	attributesfile = ~/.config/git/attributes
 	autocrlf = input
 
 #[filter "lfs"]
