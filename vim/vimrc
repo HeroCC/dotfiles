@@ -30,7 +30,7 @@ set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
 set guicursor=
 
-if has('lua') 
+if has('nvim') || has('lua')
   colorscheme catppuccin-nvim 
 endif
 
