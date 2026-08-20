@@ -9,7 +9,7 @@ Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'editorconfig/editorconfig-vim' " .editorconfig support
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Themes
-Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'catppuccin/nvim', { 'branch': 'vim', 'as': 'catppuccin' }
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,17 +41,8 @@ set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
 set guicursor=
 
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.dark': {
-  \       'transparent_background': 1
-  \     }
-  \   }
-  \ }
-
 set background=dark
-"colorscheme OceanicNext
-colorscheme PaperColor
+colorscheme catppuccin-nvim
 
 " Keybindings
 map <F7> mzgg=G`z " Reindent entire file
