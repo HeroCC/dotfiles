@@ -30,7 +30,9 @@ set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
 set guicursor=
 
-colorscheme catppuccin-nvim
+if has('lua') 
+  colorscheme catppuccin-nvim 
+endif
 
 " Keybindings
 map <F7> mzgg=G`z " Reindent entire file
