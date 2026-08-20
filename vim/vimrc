@@ -10,7 +10,7 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 " Themes
-Plug 'catppuccin/nvim', { 'branch': 'vim', 'as': 'catppuccin' }
+Plug 'catppuccin/nvim', { 'branch': has('nvim') ? 'main' : 'vim', 'as': 'catppuccin' }
 
 call plug#end()
 filetype plugin indent on    " required
