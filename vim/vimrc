@@ -7,7 +7,9 @@ call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
 Plugin 'tpope/vim-fugitive' " Git Wrapper
 Plugin 'editorconfig/editorconfig-vim' " .editorconfig support
-Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+if has('nvim')
+  Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
 " Themes
 Plugin 'catppuccin/nvim', { 'branch': 'vim', 'as': 'catppuccin' }
 
@@ -20,20 +22,8 @@ set tabstop=2 shiftwidth=2 expandtab " Set TAB to two spaces
 set number " Enable line numbers
 set mouse=a " Enable mouse integration
 
-" use treesitter for folds
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-set foldlevel=99 " default all folds open
-
 " Syntax & Coloring
 syntax enable
-lua require'nvim-treesitter'.setup{
-\  ensure_installed = { "yaml", "vimdoc", "markdown", "markdown_inline" },
-\  auto_install = true,
-\  highlight={
-\    enable=true
-\  },
-\}
 
 " Enable colors
 set t_Co=256
