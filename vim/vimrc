@@ -41,7 +41,6 @@ set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " Neovim only
 set guicursor=
 
-set background=dark
 colorscheme catppuccin-nvim
 
 " Keybindings
