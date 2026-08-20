@@ -27,7 +27,7 @@ fi
 export PAGER='less'
 export LESS='--ignore-case --raw-control-chars'
 
-export PATH="$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.dotfiles/bin:$HOME/.local/bin:$PATH"
 
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && source ~/.config/tabtab/__tabtab.zsh || true
 
