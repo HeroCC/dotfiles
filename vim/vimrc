@@ -1,19 +1,18 @@
 set nocompatible              " Not compatible with vi
 filetype off                  " required
 
-" Add Vundle to Runtime and Initialise
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/bundle/plugins')
-Plugin 'VundleVim/Vundle.vim' " Vundle Plugin Manager
-Plugin 'tpope/vim-fugitive' " Git Wrapper
-Plugin 'editorconfig/editorconfig-vim' " .editorconfig support
+" Load vim-plug from the tracked submodule and initialise it.
+source ~/.vim/bundle/vim-plug/plug.vim
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive' " Git Wrapper
+Plug 'editorconfig/editorconfig-vim' " .editorconfig support
 if has('nvim')
-  Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 " Themes
-Plugin 'catppuccin/nvim', { 'branch': 'vim', 'as': 'catppuccin' }
+Plug 'catppuccin/nvim', { 'branch': 'vim', 'as': 'catppuccin' }
 
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 
 set clipboard=unnamed " Make vim use system keyboard

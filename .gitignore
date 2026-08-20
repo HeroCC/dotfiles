@@ -8,6 +8,9 @@ vim/bundle/*
 !vim/bundle/Vundle.vim
 vim/bundle/plugins/*
 !vim/bundle/plugins
+!vim/bundle/vim-plug
+vim/plugged/*
+!vim/plugged
 vim/tmp
 .netrwhist
 vim/shada
