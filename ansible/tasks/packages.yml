@@ -68,9 +68,17 @@
       file_type: directory
     register: vim_plug_dir
 
-  - name: Install Vim plugins
+  - name: Check whether Neovim is installed
+    command: which nvim
+    register: nvim_check
+    changed_when: false
+    failed_when: false
+
+  - name: Install neovim plugins
     command: nvim +PlugInstall +qall
-    when: vim_plug_dir.matched == 0
+    when:
+      - vim_plug_dir.matched == 0
+      - nvim_check.rc == 0
 
   tags:
     - vim
