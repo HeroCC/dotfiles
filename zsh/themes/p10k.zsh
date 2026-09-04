@@ -362,7 +362,7 @@
   # VCS_STATUS_* parameters are set by gitstatus plugin. See reference:
   # https://github.com/romkatv/gitstatus/blob/master/gitstatus.plugin.zsh.
   function my_git_formatter() {
-    emulate -L zsh
+    emulate -L zsh -o extended_glob
 
     if [[ -n $P9K_CONTENT ]]; then
       # If P9K_CONTENT is not empty, use it. It's either "loading" or from vcs_info (not from
@@ -395,7 +395,7 @@
       # Otherwise show the first 12 … the last 12.
       # Tip: To always show local branch name in full without truncation, delete the next line.
       branch="${branch:s/cc\//\~}"
-      branch="${branch:s/\~DNAWF-/𝕏}"
+      branch="${branch/\~(#i)DNAWF-/𝕏}"
       (( $#branch > 32 )) && branch[6,-24]="…"  # <-- this line
       res+="${clean}${(g::)POWERLEVEL9K_VCS_BRANCH_ICON}${branch//\%/%%}"
     fi
