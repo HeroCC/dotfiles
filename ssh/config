@@ -19,6 +19,9 @@ CanonicalDomains csail.mit.edu
 Host csail
   User conlanc
   Hostname login.csail.mit.edu
+Host slurm
+  Hostname slurm-login.csail.mit.edu
+  User conlanc
 Host mfa-jump.csail.mit.edu jump.csail.mit.edu
   User conlanc
   ControlMaster auto
@@ -26,7 +29,7 @@ Host mfa-jump.csail.mit.edu jump.csail.mit.edu
   ControlPath ~/.ssh/cm_socket/%C
 
   VerifyHostKeyDNS yes
-Host csail *.csail.mit.edu !mfa-jump.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+Host csail slurm *.csail.mit.edu !mfa-jump.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
   ProxyJump mfa-jump.csail.mit.edu
   ForwardAgent yes
 
