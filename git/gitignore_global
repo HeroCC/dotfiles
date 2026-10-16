@@ -1,6 +1,7 @@
 #General Ignores
 *~
 **/.claude/settings.local.json
+mise.local.toml
 
 # Mac OS
 .DS_Store
